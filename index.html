@@ -113,8 +113,6 @@
   }
   .btn-small:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
 
-  .milestones { margin-top: 10px; }
-  .milestone-note { font-size: 0.78rem; color: rgba(255,255,255,0.9); margin-top: 6px; line-height: 1.5; padding: 0 12px; }
 
   /* ─── Nav ───────────────────────────────────────── */
   .nav-bar {
@@ -199,7 +197,14 @@
   }
   .phase-banner .phase-name { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-bright); margin-bottom: 6px; }
   .phase-banner .phase-desc { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
-  .phase-banner .phase-sub { font-size: 0.84rem; color: rgba(255,255,255,0.5); margin-top: 8px; line-height: 1.6; }
+  .phase-banner .phase-sub { font-size: 0.84rem; color: rgba(255,255,255,0.72); margin-top: 8px; line-height: 1.6; }
+  .phase-label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.55); margin-top: 16px; }
+  .phase-chips { margin-top: 8px; }
+  .phase-chips .chip { background: rgba(255,255,255,0.12); color: white; }
+  .phase-normal { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 8px; line-height: 1.5; }
+  .phase-tip { margin-top: 14px; background: rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px; font-size: 0.84rem; line-height: 1.55; }
+  .phase-next { margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px; font-size: 0.84rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+  .phase-next-label { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-bright); margin-bottom: 3px; }
 
   /* ─── Chips ─────────────────────────────────────── */
   .chip-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
@@ -272,9 +277,6 @@
   .science-section:last-child { margin-bottom: 0; }
   .science-section-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 5px; }
   .science-section-body { font-size: 0.88rem; line-height: 1.65; color: var(--text); }
-  .science-next { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 3px; }
-  .science-next-label { font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
-  .science-next-title { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
   .science-prev-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
   .science-prev-chip { background: var(--blue-pale); color: var(--blue); border-radius: 20px; padding: 4px 12px; font-size: 0.7rem; font-weight: 700; }
 
@@ -287,11 +289,13 @@
   .used-btn.selected-no   { border-color: #3d7a5e; background: #e8f5ee; color: #3d7a5e; }
   .used-btn.selected-yes  { border-color: var(--red); background: #fff0f0; color: var(--red); }
   .used-btn.selected-note { border-color: var(--blue); background: var(--blue-pale); color: var(--blue); }
+  .used-btn.selected-urge { border-color: #3d7a5e; background: #e8f5ee; color: #3d7a5e; }
 
   .used-badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; margin-left: 4px; }
   .used-badge-no   { background: #e8f5ee; color: #3d7a5e; }
   .used-badge-yes  { background: #fff0f0; color: var(--red); }
   .used-badge-note { background: var(--blue-pale); color: var(--blue); }
+  .used-badge-urge { background: #e8f5ee; color: #3d7a5e; }
   .form-field { margin-bottom: 14px; }
   .form-field label { display: block; font-size: 0.68rem; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
   .form-field input, .form-field select, .form-field textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 0.9rem; color: var(--text); background: var(--bg); font-family: inherit; transition: border-color 0.15s; -webkit-appearance: none; }
@@ -475,12 +479,14 @@
   .flow-controls .flow-side { flex: 1; }
   .flow-sound { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 8px; }
   .sos-flow-btn { background: #5558e8; border-color: #5558e8; }
+  .practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  .practice-btn { background: var(--blue-pale); border: 1px solid var(--blue-mid); border-radius: 12px; padding: 12px 10px; min-height: 44px; font-weight: 800; font-size: 0.82rem; color: var(--navy); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; font-family: inherit; }
+  .practice-btn span { font-size: 1.4rem; }
+  .practice-btn small { font-weight: 600; font-size: 0.7rem; color: var(--blue); }
 
   /* ─── Growing Flower ─────────────────────────────── */
   .bloom-plant { width: 230px; max-width: 100%; margin: 4px auto 0; text-align: center; }
   .bloom-plant svg { width: 150px; height: 170px; overflow: visible; }
-  .bloom-stage-name { font-size: 0.8rem; font-weight: 800; color: white; letter-spacing: 0.5px; margin-top: 2px; }
-  .bloom-stage-next { font-size: 0.7rem; color: rgba(255,255,255,0.75); margin-top: 2px; }
   @keyframes bloomSway { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
   .bloom-plant .sway { transform-box: view-box; transform-origin: 75px 160px; animation: bloomSway 6s ease-in-out infinite; }
   @media (prefers-reduced-motion: reduce) { .bloom-plant .sway { animation: none; } }
@@ -523,8 +529,6 @@
   .identity-prev-text { font-size: 0.84rem; color: var(--navy); line-height: 1.55; font-style: italic; }
 
   /* ─── Urge Log ────────────────────────────────────── */
-  .urge-field-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 14px 0 6px; }
-  .urge-field-label:first-child { margin-top: 0; }
   .urge-int-row { display: flex; gap: 5px; }
 
   /* ─── Milestone Shield ──────────────────────────────── */
@@ -549,15 +553,10 @@
   .urge-trigger-row { display: flex; gap: 6px; flex-wrap: wrap; }
   .urge-trigger-btn { padding: 7px 13px; border: 1.5px solid var(--border); border-radius: 50px; background: none; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--text); transition: all 0.12s; }
   .urge-trigger-btn.selected { background: var(--blue); border-color: var(--blue); color: white; }
-  .urge-instead-input { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.88rem; font-family: inherit; color: var(--text); background: var(--bg); }
-  .urge-instead-input:focus { outline: none; border-color: var(--blue); }
   .urge-log-btn { width: 100%; background: var(--blue); color: white; border: none; border-radius: 12px; padding: 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer; margin-top: 14px; transition: background 0.2s; }
   .urge-pattern { background: var(--blue-pale); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
   .urge-pattern-line { font-size: 0.85rem; color: var(--navy); line-height: 1.9; }
   .urge-pattern-line strong { color: var(--blue); }
-  .urge-history-item { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; color: var(--text); line-height: 1.5; }
-  .urge-history-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .urge-history-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
 
   .pattern-insight { background: var(--blue-pale); border-left: 3px solid var(--blue); border-radius: 10px; padding: 12px 14px; font-size: 0.82rem; color: var(--navy); margin-bottom: 14px; line-height: 1.6; }
 
@@ -699,7 +698,6 @@
       </div>
     </div>
     <div class="bloom-plant" id="bloomPlant" role="img" aria-label="Your recovery flower"></div>
-    <div class="milestones" id="milestones"></div>
     <div class="streak-meta">
       <div class="streak-meta-item" id="prevStreakBadge"></div>
       <div class="streak-meta-item" id="cumulativeBadge"></div>
@@ -835,14 +833,7 @@
   </div>
 
   <div class="section-title">Where You Are</div>
-  <div id="withdrawalStageCard"></div>
-
-  <div class="section-title">What's Happening Today</div>
-  <p class="edu-note" id="eduNote">Set your quit date to see personalized info</p>
-
-  <div id="phaseContent">
-    <!-- Injected by JS -->
-  </div>
+  <div id="phaseContent"></div>
 
   <div class="section-title">Today's Journal Prompt</div>
   <div id="todayJournalContent">
@@ -856,10 +847,6 @@
 
 <!-- SECTION: Health -->
 <div class="section" id="section-health">
-
-  <div class="section-title">Your Recovery Right Now</div>
-
-  <div id="recoverySnapshotCard"></div>
 
   <div class="section-title">Recovery Progress</div>
 
@@ -1022,7 +1009,7 @@
 <!-- SECTION: Science / Learn -->
 <div class="section" id="section-science">
 
-  <div class="section-title">Today in Your Brain</div>
+  <div class="section-title">Right Now in Your Brain &amp; Body</div>
   <div id="brainTodayCard"></div>
 
   <div class="section-title">Deep Dives</div>
@@ -1101,38 +1088,12 @@
 
   <div class="section-title" style="background:var(--warm-pale); border-left:4px solid var(--warm); border-radius:10px; padding:10px 14px; font-size:0.8rem; letter-spacing:0.08em; color:var(--warm);">⚡ WHEN A CRAVING HITS</div>
 
-  <div class="section-title" style="margin-top:4px;">Log This Urge</div>
-    <div class="card">
+  <div class="card">
     <div class="card-body">
-      <div class="urge-field-label">How intense is it? (1–10)</div>
-      <div class="urge-int-row">
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(1,this)">1</button>
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(2,this)">2</button>
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(3,this)">3</button>
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(4,this)">4</button>
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(5,this)">5</button>
-        <button class="urge-int-btn" onclick="selectUrgeIntensity(6,this)">6</button>
-        <button class="urge-int-btn high" onclick="selectUrgeIntensity(7,this)">7</button>
-        <button class="urge-int-btn high" onclick="selectUrgeIntensity(8,this)">8</button>
-        <button class="urge-int-btn high" onclick="selectUrgeIntensity(9,this)">9</button>
-        <button class="urge-int-btn high" onclick="selectUrgeIntensity(10,this)">10</button>
-      </div>
-      <div class="urge-field-label">What triggered it?</div>
-      <div class="urge-trigger-row">
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Stress',this)">Stress</button>
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Boredom',this)">Boredom</button>
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Social',this)">Social</button>
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Habit',this)">Habit</button>
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Mood',this)">Mood</button>
-        <button class="urge-trigger-btn" onclick="selectUrgeTrigger('Other',this)">Other</button>
-      </div>
-      <div class="urge-field-label">What did you do instead? (optional)</div>
-      <input class="urge-instead-input" id="urgeInstead" type="text" placeholder="e.g. went for a walk, made tea…">
-      <button class="urge-log-btn" id="urgeLogBtn" onclick="logUrge()">Log It</button>
+      <div style="font-size:0.85rem; color:#333; line-height:1.55;">Rode out a craving? Log it. Every urge you log is proof that the next one will pass too.</div>
+      <button class="urge-log-btn" onclick="goLogUrge()">🌊 Log this urge</button>
     </div>
   </div>
-
-  <div id="urgePatternCard"></div>
 
   <div class="section-title">My Go-To Rituals</div>
   <div class="card">
@@ -1483,10 +1444,6 @@
 <!-- SECTION: Recharge (Mindfulness, Nervous System, Sleep, Stress, Motivation, Recipes) -->
 <div class="section" id="section-recharge">
 
-  <div class="card" style="background:var(--blue-pale); border-left:4px solid var(--blue);">
-    <div class="card-title" style="color:var(--blue);">This is your daily practice library — not just for hard moments. The more you use these on ordinary days, the stronger they work when you actually need them.</div>
-    <div class="card-body" style="margin-top:4px;">Craving-specific tools live in <strong>Tools</strong>. Your quit-date-aware journal prompts live in <strong>Today</strong>. Everything here supports the whole picture: mind, body, sleep, stress, and motivation.</div>
-  </div>
 
   <div class="section-title">Move: Guided Flows</div>
 
@@ -1510,20 +1467,14 @@
 
   <div id="flowList"></div>
 
+  <div class="section-title">Quick Practices</div>
+  <div class="flow-card">
+    <div class="flow-card-desc" style="margin-top:0;">One guided exercise, 1 to 2 minutes. Use them on ordinary days so they work better on hard ones.</div>
+    <div class="practice-grid" id="practiceGrid"></div>
+  </div>
+
   <div class="section-title">Mindfulness Exercises</div>
 
-  <div class="strategy-card">
-    <div class="strategy-emoji">📦</div>
-    <div><div class="strategy-name">Box Breathing (4-4-4-4)</div><div class="strategy-desc">A guided version lives in Craving SOS — use this any time, not just during an urge.</div>
-      <ol class="strategy-steps"><li>Inhale through the nose for 4 counts</li><li>Hold for 4 counts</li><li>Exhale through the mouth for 4 counts</li><li>Hold empty for 4 counts — repeat 4–6 rounds</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🌙</div>
-    <div><div class="strategy-name">4-7-8 Breathing</div><div class="strategy-desc">A longer exhale than inhale slows the heart rate and is especially good before bed.</div>
-      <ol class="strategy-steps"><li>Inhale quietly through the nose for 4 counts</li><li>Hold the breath for 7 counts</li><li>Exhale completely through the mouth for 8 counts</li><li>Repeat 4 cycles</li></ol>
-    </div>
-  </div>
   <div class="strategy-card">
     <div class="strategy-emoji">🧍</div>
     <div><div class="strategy-name">Body Scan Meditation</div><div class="strategy-desc">Builds the skill of noticing sensation without needing to fix or escape it — the core muscle of riding out a craving.</div>
@@ -1555,12 +1506,6 @@
   </div>
 
   <div class="strategy-card">
-    <div class="strategy-emoji">😮‍💨</div>
-    <div><div class="strategy-name">Physiological Sigh</div><div class="strategy-desc">The fastest known way to lower stress in real time — used by the body automatically during crying.</div>
-      <ol class="strategy-steps"><li>Take a full inhale through the nose</li><li>At the top, sneak in one more short inhale on top of it</li><li>Let out a long, slow exhale through the mouth</li><li>Repeat 2–3 times</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
     <div class="strategy-emoji">🐝</div>
     <div><div class="strategy-name">Humming / Bee Breath</div><div class="strategy-desc">The vibration from humming directly stimulates the vagus nerve where it runs through the throat.</div>
       <ol class="strategy-steps"><li>Close your mouth, breathe in through the nose</li><li>Hum steadily on the exhale until your breath runs out</li><li>Feel the vibration in your throat and chest</li><li>Repeat 5–10 rounds</li></ol>
@@ -1570,12 +1515,6 @@
     <div class="strategy-emoji">🦋</div>
     <div><div class="strategy-name">Butterfly Hug</div><div class="strategy-desc">Alternating bilateral tapping is used in trauma therapy to calm the nervous system and can be done anywhere, discreetly.</div>
       <ol class="strategy-steps"><li>Cross your arms over your chest, hands on opposite shoulders</li><li>Slowly alternate tapping left, then right</li><li>Breathe slowly as you tap for 1–2 minutes</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">💪</div>
-    <div><div class="strategy-name">Progressive Muscle Relaxation</div><div class="strategy-desc">Releases physical tension that builds up during withdrawal-related restlessness.</div>
-      <ol class="strategy-steps"><li>Start at your feet — tense hard for 5 seconds</li><li>Release completely, notice the contrast for 10 seconds</li><li>Move upward: calves, thighs, stomach, hands, arms, shoulders, face</li><li>End with a full-body release breath</li></ol>
     </div>
   </div>
   <div class="strategy-card">
@@ -1788,12 +1727,12 @@
 
 <!-- SECTION: Log -->
 <div class="section" id="section-log">
-  <div class="section-title">Usage Log</div>
+  <div class="section-title">Your Log</div>
 
   <div class="log-stats">
     <div class="log-stat">
-      <div class="stat-num" id="logTotal">0</div>
-      <div class="stat-lbl">Entries</div>
+      <div class="stat-num" id="logUrgeCount">0</div>
+      <div class="stat-lbl">Urges Beaten</div>
     </div>
     <div class="log-stat">
       <div class="stat-num" id="logUsedCount">0</div>
@@ -1805,14 +1744,15 @@
     </div>
   </div>
 
-  <div class="pattern-insight" id="reasonsInsight" style="display:none;"></div>
+  <div id="urgePatternCard"></div>
 
   <div class="log-form">
     <h3>Add Entry</h3>
     <div class="form-field">
       <label>Log Type</label>
       <div class="used-toggle">
-        <button type="button" class="used-btn selected-yes" id="usedYes"  onclick="setUsed('yes')">✅ Used</button>
+        <button type="button" class="used-btn" id="usedUrge" onclick="setUsed('urge')">🌊 Urge</button>
+        <button type="button" class="used-btn" id="usedYes"  onclick="setUsed('yes')">✅ Used</button>
         <button type="button" class="used-btn"              id="usedNote" onclick="setUsed('note')">📝 Note</button>
       </div>
       <div id="relapseMessage" style="display:none; margin-top:10px; background:#fff5f5; border-left:3px solid #e07070; border-radius:8px; padding:10px 14px; font-size:0.88rem; color:#666; line-height:1.65;">
@@ -1822,6 +1762,21 @@
     <div class="form-field">
       <label>Date &amp; Time</label>
       <input type="datetime-local" id="logDateTime">
+    </div>
+    <div class="form-field" id="urgeFields">
+      <label>How intense was it? (1–10)</label>
+      <div class="urge-int-row">
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(1,this)">1</button>
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(2,this)">2</button>
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(3,this)">3</button>
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(4,this)">4</button>
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(5,this)">5</button>
+        <button type="button" class="urge-int-btn" onclick="selectUrgeIntensity(6,this)">6</button>
+        <button type="button" class="urge-int-btn high" onclick="selectUrgeIntensity(7,this)">7</button>
+        <button type="button" class="urge-int-btn high" onclick="selectUrgeIntensity(8,this)">8</button>
+        <button type="button" class="urge-int-btn high" onclick="selectUrgeIntensity(9,this)">9</button>
+        <button type="button" class="urge-int-btn high" onclick="selectUrgeIntensity(10,this)">10</button>
+      </div>
     </div>
     <div id="useFieldsWrapper">
     <div class="form-field">
@@ -1853,7 +1808,8 @@
         </select>
       </div>
     </div>
-    <div class="form-field">
+    </div><!-- /useFieldsWrapper -->
+    <div class="form-field" id="logTriggerField">
       <label>Trigger</label>
       <div class="urge-trigger-row" id="logTriggerRow">
         <button type="button" class="urge-trigger-btn" onclick="selectLogTrigger('Stress',this)">Stress</button>
@@ -1864,9 +1820,8 @@
         <button type="button" class="urge-trigger-btn" onclick="selectLogTrigger('Other',this)">Other</button>
       </div>
     </div>
-    </div><!-- /useFieldsWrapper -->
     <div class="form-field">
-      <label>Notes</label>
+      <label id="logNotesLabel">Notes</label>
       <textarea id="logNotes" placeholder="What was going on? How did you feel before, during, after?"></textarea>
     </div>
     <button class="btn-primary" style="width:100%;" onclick="saveLogEntry()">Save Entry</button>
@@ -2510,11 +2465,9 @@ function tickCounter() {
     document.getElementById('minCount').textContent = mins;
     document.getElementById('secCount').textContent = secs;
 
-    try { renderMilestones(diff / 3600000); } catch(e) {}
     try { renderBloom(diff / 86400000); } catch(e) {}
     try { renderStreakMeta(); } catch(e) {}
     try { renderEducation(diff / 3600000); } catch(e) {}
-    try { renderRecoverySnapshot(diff / 3600000); } catch(e) {}
   } catch(e) {}
 }
 
@@ -2590,11 +2543,8 @@ function renderBloom(days) {
   }
   svg += '</g></svg>';
 
-  var nextLine = nxt
-    ? 'Next: ' + nxt.name.toLowerCase() + ' in ' + Math.max(1, Math.ceil(nxt.d - days)) + (Math.ceil(nxt.d - days) === 1 ? ' day' : ' days')
-    : 'Keep tending it. You grew this.';
-  el.innerHTML = svg + '<div class="bloom-stage-name">🌱 ' + cur.name + '</div><div class="bloom-stage-next">' + nextLine + '</div>';
-  el.setAttribute('aria-label', 'Your recovery flower: ' + cur.name + '. ' + nextLine);
+  el.innerHTML = svg;
+  el.setAttribute('aria-label', 'Your recovery flower: ' + cur.name.toLowerCase());
 }
 
 function bloomLeaf(x, y, dir, size) {
@@ -2629,22 +2579,13 @@ function bloomFlower(x, y, open, scale) {
   return out + '</g>';
 }
 
-// One line saying what the latest milestone means (the flower shows progress)
-function renderMilestones(totalHours) {
-  const el = document.getElementById('milestones');
-  const reached = MILESTONES.filter(m => totalHours >= m.h);
-  const latest = reached[reached.length - 1];
-  const html = latest ? `<div class="milestone-note">★ ${latest.label}: ${latest.note}</div>` : '';
-  if (el.innerHTML !== html) el.innerHTML = html;
-}
-
 function resetDate() {
   storageRemove('quitDate');
   clearInterval(timerInterval);
   document.getElementById('counterSetup').style.display = 'block';
   document.getElementById('counterDisplay').style.display = 'none';
   try { renderEducation(-1); } catch(e) {}
-  try { renderRecoverySnapshot(-1); } catch(e) {}
+  bloomLastKey = null;
 }
 
 function renderCBT(days) {
@@ -2691,21 +2632,10 @@ function renderScienceTimeline(totalHours) {
 
   var current = unlocked[unlocked.length - 1];
   var previous = unlocked.slice(0, -1);
-  var next = SCIENCE_TIMELINE.find(function(e) { return totalHours < e.minHours; });
 
   var h = totalHours;
   var color = h < 24 ? '#c0392b' : h < 72 ? '#b8621a' : h < 168 ? '#7c6b9e' : h < 720 ? '#2d8a8a' : '#3d7a5e';
   var bgColor = h < 24 ? '#fff5f5' : h < 72 ? '#fef3e8' : h < 168 ? '#f2eef9' : h < 720 ? '#e6f4f4' : '#eaf5ee';
-
-  var nextHTML = '';
-  if (next) {
-    var hoursLeft = next.minHours - totalHours;
-    var dLeft = Math.floor(hoursLeft / 24);
-    var hLeft = Math.floor(hoursLeft % 24);
-    var mLeft = Math.floor((hoursLeft * 60) % 60);
-    var timeStr = dLeft > 0 ? (dLeft + 'd ' + hLeft + 'h') : (hLeft > 0 ? hLeft + 'h ' + mLeft + 'm' : mLeft + 'm');
-    nextHTML = '<div class="science-next"><span class="science-next-label">Next milestone in ' + timeStr + '</span><span class="science-next-title">' + next.label + ' — ' + next.title + '</span></div>';
-  }
 
   return '<div class="science-current" style="border-left-color:' + color + '; background:' + bgColor + ';">' +
     '<div class="science-window-label" style="color:' + color + ';">' + current.label + '</div>' +
@@ -2713,7 +2643,7 @@ function renderScienceTimeline(totalHours) {
     '<div class="science-section"><div class="science-section-label">🧠 Your Brain</div><div class="science-section-body">' + current.brain + '</div></div>' +
     '<div class="science-section"><div class="science-section-label">🫀 Your Body</div><div class="science-section-body">' + current.body + '</div></div>' +
     '<div class="science-section"><div class="science-section-label">💭 Why You Feel This</div><div class="science-section-body">' + current.feel + '</div></div>' +
-    '</div>' + nextHTML;
+    '</div>';
 }
 
 function renderRecoveryTimeline(days) {
@@ -2750,34 +2680,28 @@ function renderEducation(totalHours) {
   var days = totalHours < 0 ? -1 : Math.floor(totalHours / 24);
   renderCBT(days);
   var phase = getPhase(days);
-  var noteEl = document.getElementById('eduNote');
-  if (totalHours < 0) {
-    noteEl.textContent = 'Content tailored to your preparation stage';
-  } else if (totalHours < 24) {
-    noteEl.textContent = 'Day 0 — your journey begins now';
-  } else {
-    noteEl.textContent = 'Day ' + days + ' — science updated to your timeline';
+  var tip = phase.tips[(days < 0 ? 0 : days) % phase.tips.length];
+  var next = totalHours < 0 ? null : MILESTONES.find(function(m) { return totalHours < m.h; });
+  var nextHTML = '';
+  if (next) {
+    var hrsLeft = next.h - totalHours;
+    var left = hrsLeft >= 48 ? Math.ceil(hrsLeft / 24) + ' days' : Math.ceil(hrsLeft) + ' hours';
+    nextHTML = '<div class="phase-next"><span class="phase-next-label">Next milestone · ' + next.label + ' in ' + left + '</span>' + next.note + '</div>';
   }
-
-  var scienceHTML = renderScienceTimeline(totalHours);
-
-  var symptomsHTML = '<div class="card"><div class="card-title"><span>⚡</span> You May Be Experiencing</div><div class="card-body"><div class="chip-list">' +
-    phase.symptoms.map(function(s) { return '<div class="chip">' + s + '</div>'; }).join('') +
-    '</div><div class="info-box" style="margin-top:12px;">All of these are normal and temporary. They are signs your brain is healing, not signs that something is wrong.</div></div></div>';
-
-  var content = document.getElementById('phaseContent');
-  content.innerHTML =
+  document.getElementById('phaseContent').innerHTML =
     '<div class="phase-banner">' +
       '<div class="phase-name">' + phase.name + '</div>' +
       '<div class="phase-desc">' + phase.desc + '</div>' +
       '<div class="phase-sub">' + phase.sub + '</div>' +
-    '</div>' +
-    (scienceHTML ? '<div class="section-title" style="margin-top:20px;">What\'s Happening Right Now</div>' + scienceHTML : '') +
-    symptomsHTML;
+      '<div class="phase-label">You may be feeling</div>' +
+      '<div class="chip-list phase-chips">' + phase.symptoms.map(function(x) { return '<div class="chip">' + x + '</div>'; }).join('') + '</div>' +
+      '<div class="phase-normal">All normal and temporary. These are signs your brain is healing, not signs something is wrong.</div>' +
+      '<div class="phase-tip">💡 ' + tip + '</div>' +
+      nextHTML +
+    '</div>';
   renderRecoveryTimeline(days);
   renderBrainToday(totalHours);
   renderDeepDives(totalHours);
-  renderWithdrawalStage(totalHours);
 }
 
 // ——— SOS Emergency ———
@@ -2862,6 +2786,28 @@ function stopBreathing() {
 }
 
 // ——— Guided Movement Flows ———
+// Exercises used in more than one place live here once.
+// breath: [label, seconds] steps the player cycles through as a live cue.
+var POSES = {
+  box: { e: '📦', n: 'Box Breathing', s: 120, breath: [['Breathe in', 4], ['Hold', 4], ['Breathe out', 4], ['Hold', 4]],
+    cue: 'Breathe in through your nose for 4, hold for 4, breathe out through your mouth for 4, hold empty for 4. Follow the cue above the timer.',
+    why: 'Equal, slow counts steady your heart rate and give your mind one simple job. It activates your body\u2019s built-in off switch for anxiety and craving.' },
+  breath478: { e: '🛌', n: 'Rest with 4-7-8 Breathing', s: 90, breath: [['Breathe in', 4], ['Hold', 7], ['Breathe out slowly', 8]],
+    cue: 'Lie down or sit back, body relaxed. Breathe in for 4, hold for 7, breathe out slowly for 8. Follow the cue above the timer.',
+    why: 'An exhale twice as long as your inhale slows your heart rate. It is especially good before bed, and many people fall asleep during it.' },
+  sigh: { e: '😮‍💨', n: 'Physiological Sighs', s: 45,
+    cue: 'Two quick inhales through the nose (one big, one small top-up), then one long, slow exhale through the mouth. Repeat.',
+    why: 'The double inhale reopens tiny air sacs in your lungs; the long exhale slows your heart. Your body does this on its own after crying. Researchers call it the fastest known way to calm down in real time.' },
+  squeeze: { e: '✊', n: 'Squeeze and Release', s: 30,
+    cue: 'Tense a muscle group hard for 5 seconds, then let it go completely for 5. Start with fists and arms. With more time, work up: feet, legs, stomach, shoulders, face.',
+    why: 'This is progressive muscle relaxation. Tensing first, then releasing, teaches your muscles what relaxed actually feels like and drains the restlessness of withdrawal.' }
+};
+var PRACTICES = [
+  { pose: 'box', secs: 120 },
+  { pose: 'breath478', secs: 120 },
+  { pose: 'sigh', secs: 60 },
+  { pose: 'squeeze', secs: 90 }
+];
 // side: true means "switch sides halfway" (the player announces it)
 var FLOWS = [
   { id: 'craving', emoji: '🌊', name: 'Craving Flow', where: 'Standing · anywhere · no mat',
@@ -2881,8 +2827,7 @@ var FLOWS = [
         why: 'Short bursts of exercise are one of the best-studied ways to cut craving strength. Effects show up within minutes.' },
       { e: '🫶', n: 'Chest Opener', s: 30, cue: 'Clasp your hands behind your back (or hold a towel). Lift your chest, draw your shoulder blades together, and look slightly up.',
         why: 'Stress pulls us into a hunched, protective shape. Opening the chest reverses it and gives your breath more room.' },
-      { e: '😮‍💨', n: 'Physiological Sighs', s: 45, cue: 'Two quick inhales through the nose (one big, one small top-up), then one long, slow exhale through the mouth. Repeat.',
-        why: 'The double inhale reopens tiny air sacs in your lungs; the long exhale slows your heart. Researchers call it the fastest known way to calm down in real time.' }
+      POSES.sigh
     ]
   },
   { id: 'seated', emoji: '💺', name: 'No-Floor Flow', where: 'Seated · desk, couch or parked car',
@@ -2900,8 +2845,7 @@ var FLOWS = [
         why: 'Twists move your spine through a range it rarely uses while sitting. Many people find twisting feels like wringing out tension.' },
       { e: '4️⃣', n: 'Seated Figure-Four', s: 40, side: true, cue: 'Rest one ankle on the opposite knee. Keep your back straight and lean forward slightly until you feel the outer hip stretch.',
         why: 'Hips hold a lot of tension from sitting and stress. This stretch is easy to do almost anywhere, including in a parked car.' },
-      { e: '✊', n: 'Squeeze and Release', s: 30, cue: 'Make tight fists and tense your arms for 5 seconds. Then let everything go for 5 seconds. Repeat.',
-        why: 'This is progressive muscle relaxation. Tensing first, then releasing, teaches your muscles what relaxed actually feels like.' },
+      POSES.squeeze,
       { e: '😌', n: 'Eyes Closed, Five Breaths', s: 35, cue: 'Close your eyes. Take five slow breaths, making each exhale a little longer than the inhale. Notice how you feel now.',
         why: 'Checking in at the end builds awareness. Noticing that the craving shrank is proof for next time that it always does.' }
     ]
@@ -2921,8 +2865,7 @@ var FLOWS = [
         why: 'Gently opening the hips and rocking is calming in the same way rocking soothes a baby. Rhythm settles the nervous system.' },
       { e: '🦵', n: 'Legs Up the Wall', s: 90, cue: 'Scoot your hips close to a wall (or headboard) and rest your legs up it. Arms relaxed by your sides. Just breathe.',
         why: 'This gentle inversion is one of the most popular poses for winding down. It is restful and asks almost nothing of you.' },
-      { e: '🛌', n: 'Rest with 4-7-8 Breathing', s: 90, cue: 'Lie flat, arms and legs relaxed. Breathe in for 4, hold for 7, breathe out slowly for 8. Repeat until the timer ends.',
-        why: 'An exhale twice as long as your inhale slows your heart rate. Many people fall asleep during this, which is the point.' }
+      POSES.breath478
     ]
   },
   { id: 'morning', emoji: '☀️', name: 'Morning Wake-Up', where: 'Standing and floor · about 6 minutes',
@@ -2965,6 +2908,20 @@ function renderFlowList() {
   }).join('');
 }
 
+function renderPractices() {
+  var el = document.getElementById('practiceGrid');
+  if (!el) return;
+  el.innerHTML = PRACTICES.map(function(pr, i) {
+    var p = POSES[pr.pose];
+    return '<button class="practice-btn" onclick="openPractice(' + i + ')"><span>' + p.e + '</span>' + p.n.replace('Rest with ', '') + '<small>' + (pr.secs / 60) + ' min</small></button>';
+  }).join('');
+}
+function openPractice(i) {
+  var pr = PRACTICES[i], p = POSES[pr.pose];
+  openFlow({ id: 'practice-' + pr.pose, emoji: p.e, name: p.n.replace('Rest with ', ''), where: (pr.secs / 60) + ' minutes · sitting or lying down',
+    desc: p.why, poses: [Object.assign({}, p, { s: pr.secs })] });
+}
+
 var flowState = { flow: null, idx: -1, secsLeft: 0, running: false, timer: null, wakeLock: null };
 var FLOW_RING_C = 2 * Math.PI * 52;
 
@@ -2995,8 +2952,8 @@ function flowChime() {
   } catch(e) {}
 }
 
-function openFlow(id) {
-  var flow = FLOWS.find(function(f) { return f.id === id; });
+function openFlow(idOrFlow) {
+  var flow = typeof idOrFlow === 'object' ? idOrFlow : FLOWS.find(function(f) { return f.id === idOrFlow; });
   if (!flow) return;
   stopBreathing();
   flowState.flow = flow;
@@ -3066,6 +3023,12 @@ function renderFlowTick() {
   document.getElementById('flowRingFill').style.strokeDashoffset = (FLOW_RING_C * (1 - flowState.secsLeft / pose.s)).toFixed(1);
   var side = document.getElementById('flowSide');
   if (pose.side) side.textContent = flowState.secsLeft > Math.floor(pose.s / 2) ? 'First side' : 'Switch sides ↔';
+  if (pose.breath) {
+    var cycle = pose.breath.reduce(function(t, b) { return t + b[1]; }, 0);
+    var at = (pose.s - flowState.secsLeft) % cycle, k = 0;
+    while (at >= pose.breath[k][1]) { at -= pose.breath[k][1]; k++; }
+    side.textContent = flowState.running ? pose.breath[k][0] + ' · ' + (pose.breath[k][1] - at) : 'Follow the breathing cue';
+  }
 }
 
 function renderFlow() {
@@ -3080,7 +3043,7 @@ function renderFlow() {
   if (idx === -1) {
     var mins = Math.round(flowTotalSecs(flow) / 60);
     stage.innerHTML =
-      '<div class="sos-step-num">' + mins + ' minutes · ' + n + ' poses</div>' +
+      '<div class="sos-step-num">' + (n > 1 ? mins + ' minutes · ' + n + ' poses' : 'Quick practice') + '</div>' +
       '<div class="sos-step-title">' + flow.where + '</div>' +
       '<div class="sos-step-body">' + flow.desc + '</div>' +
       '<div class="flow-why"><strong>How it works:</strong> each pose has a countdown. A chime plays when it is time to move on, and halfway through any pose that switches sides. Go gently and skip anything that hurts.</div>' +
@@ -3095,7 +3058,7 @@ function renderFlow() {
       '<div class="flow-pose-name">Flow complete</div>' +
       '<div class="flow-cue" style="margin-top:12px; text-align:center;">Notice how you feel right now compared to when you started. If you had a craving, it is probably smaller. Remember this feeling. It is proof for next time.</div>';
     controls.innerHTML =
-      '<button class="sos-action-btn flow-side" onclick="openFlow(\'' + flow.id + '\')">↺ Again</button>' +
+      '<button class="sos-action-btn flow-side" onclick="openFlow(flowState.flow)">↺ Again</button>' +
       '<button class="sos-action-btn flow-main" onclick="closeFlow()">✓ Done</button>';
     return;
   }
@@ -3212,7 +3175,7 @@ function confirmSlip(type) {
 
   // "Log only" — record it but leave the streak and quit date alone
   if (type === 'logonly') {
-    setUsed('yes');
+    setUsed('urge');
     document.getElementById('logMethod').value = '';
     document.getElementById('logAmount').value = '';
     document.getElementById('logAmountUnit').value = 'hits';
@@ -3237,7 +3200,7 @@ function confirmSlip(type) {
   }
 
   // Reset log form
-  setUsed('yes');
+  setUsed('urge');
   document.getElementById('logMethod').value = '';
   document.getElementById('logAmount').value = '';
   document.getElementById('logAmountUnit').value = 'hits';
@@ -3255,41 +3218,19 @@ function selectUrgeIntensity(n, btn) {
   document.querySelectorAll('.urge-int-btn').forEach(function(b) { b.classList.remove('selected'); });
   btn.classList.add('selected');
 }
-function selectUrgeTrigger(t, btn) {
-  selectedUrgeTrigger = t;
-  document.querySelectorAll('.urge-trigger-btn').forEach(function(b) { b.classList.remove('selected'); });
-  btn.classList.add('selected');
-}
 function getUrgeLog() {
   try { return JSON.parse(storageGet('urgelog') || '[]'); } catch(e) { return []; }
 }
 function deleteUrgeEntry(ts) {
   var log = getUrgeLog().filter(function(e) { return e.ts !== ts; });
   storageSet('urgelog', JSON.stringify(log));
-  renderUrgePattern();
+  renderLog();
 }
-function logUrge() {
-  if (!selectedUrgeIntensity) { alert('Please rate the intensity first.'); return; }
-  var entry = {
-    ts: Date.now(),
-    intensity: selectedUrgeIntensity,
-    trigger: selectedUrgeTrigger || 'Unspecified',
-    instead: (document.getElementById('urgeInstead').value || '').trim()
-  };
-  var log = getUrgeLog();
-  log.unshift(entry);
-  if (log.length > 100) log = log.slice(0, 100);
-  storageSet('urgelog', JSON.stringify(log));
-  selectedUrgeIntensity = null;
-  selectedUrgeTrigger = null;
-  document.querySelectorAll('.urge-int-btn').forEach(function(b) { b.classList.remove('selected'); });
-  document.querySelectorAll('.urge-trigger-btn').forEach(function(b) { b.classList.remove('selected'); });
-  document.getElementById('urgeInstead').value = '';
-  var btn = document.getElementById('urgeLogBtn');
-  btn.textContent = '\u2713 Logged \u2014 you rode it out';
-  btn.style.background = '#2a9d8f';
-  setTimeout(function() { btn.textContent = 'Log It'; btn.style.background = ''; }, 3000);
-  renderUrgePattern();
+// Tools shortcut: jump to the one log form with "Urge" picked
+function goLogUrge() {
+  showSection('log', document.querySelector('.nav-item[onclick*="\'log\'"]'));
+  setUsed('urge');
+  document.querySelector('.log-form').scrollIntoView({ behavior: 'smooth' });
 }
 function renderUrgePattern() {
   var el = document.getElementById('urgePatternCard');
@@ -3300,83 +3241,13 @@ function renderUrgePattern() {
   log.forEach(function(e) { triggerCounts[e.trigger] = (triggerCounts[e.trigger] || 0) + 1; });
   var topTrigger = Object.keys(triggerCounts).sort(function(a,b){ return triggerCounts[b]-triggerCounts[a]; })[0];
   var avgIntensity = (log.reduce(function(s,e){return s+e.intensity;},0)/log.length).toFixed(1);
-  var histHTML = log.map(function(e) {
-    var d = new Date(e.ts);
-    var ds = d.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' \u00b7 ' + d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
-    return '<div class="urge-history-item" style="display:flex; align-items:flex-start; gap:8px;">' +
-      '<div style="flex:1;">' +
-        '<strong>Intensity ' + e.intensity + '</strong> \u00b7 ' + e.trigger +
-        (e.instead ? ' \u00b7 <em>' + e.instead.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</em>' : '') +
-        '<div class="urge-history-meta">' + ds + '</div>' +
-      '</div>' +
-      '<button onclick="deleteUrgeEntry(' + e.ts + ')" style="background:none; border:none; color:var(--muted); font-size:1rem; cursor:pointer; padding:2px 4px; border-radius:6px; flex-shrink:0; line-height:1;" title="Delete">\u2715</button>' +
-    '</div>';
-  }).join('');
   el.innerHTML =
     '<div class="urge-pattern">' +
       '<div class="urge-pattern-line">You\'ve ridden out <strong>' + log.length + ' urge' + (log.length!==1?'s':'') + '</strong>. Every single one passed.</div>' +
-      '<div class="urge-pattern-line">Top trigger: <strong>' + topTrigger + '</strong> &nbsp;\u00b7&nbsp; Avg intensity: <strong>' + avgIntensity + '/10</strong></div>' +
-    '</div>' +
-    '<div class="card"><div class="card-title" style="font-size:0.85rem;">Urge log</div><div class="card-body" style="padding-top:4px;">' + histHTML + '</div></div>';
+      '<div class="urge-pattern-line">Top trigger: <strong>' + escapeHTML(topTrigger) + '</strong> &nbsp;\u00b7&nbsp; Avg intensity: <strong>' + avgIntensity + '/10</strong></div>' +
+    '</div>';
 }
 
-// ——— Recovery Snapshot ———
-var RECOVERY_BEATS = [
-  { hours: 1,    text: 'Heart rate & blood pressure normalizing' },
-  { hours: 6,    text: 'THC in blood dropping fast' },
-  { hours: 12,   text: 'Sleep shifting toward natural REM' },
-  { hours: 24,   text: 'Lungs clearing cannabis residue' },
-  { hours: 48,   text: 'Smell & taste sensitivity returning' },
-  { hours: 72,   text: 'THC fully cleared from bloodstream' },
-  { hours: 96,   text: 'Dopamine receptors beginning to rebuild' },
-  { hours: 120,  text: 'Acute withdrawal easing' },
-  { hours: 144,  text: 'Energy levels stabilizing' },
-  { hours: 168,  text: 'The hardest week is behind you' },
-  { hours: 216,  text: 'Lung function measurably improving' },
-  { hours: 264,  text: 'Sleep quality noticeably improving' },
-  { hours: 336,  text: 'Memory & concentration sharpening' },
-  { hours: 432,  text: 'Natural mood regulation returning' },
-  { hours: 504,  text: 'Anxiety from withdrawal mostly resolved' },
-  { hours: 600,  text: 'Appetite & metabolism normalizing' },
-  { hours: 720,  text: 'Cognitive clarity & motivation lifting' },
-  { hours: 1080, text: 'Emotional regulation improving steadily' },
-  { hours: 1440, text: 'Sleep hormone rhythms restoring' },
-  { hours: 2160, text: 'Brain reward system largely normalized' },
-  { hours: 2880, text: 'Lung capacity near full recovery' },
-  { hours: 3600, text: 'Hormones & metabolism fully rebalanced' },
-  { hours: 4320, text: 'Dopamine receptors near full recovery' },
-  { hours: 6480, text: 'Cardiovascular health significantly restored' },
-  { hours: 8760, text: 'Full cognitive & emotional baseline restored' }
-];
-function renderRecoverySnapshot(totalHours) {
-  var el = document.getElementById('recoverySnapshotCard');
-  if (!el) return;
-  if (totalHours < 0) {
-    el.innerHTML = '<div class="snap-card"><div class="snap-day">Your Recovery</div><div class="snap-empty">Set your quit date above to see what\'s healing in your body right now.</div></div>';
-    return;
-  }
-  var days = Math.floor(totalHours / 24);
-  var dayLabel = days === 0 ? 'Less than a day in' : days === 1 ? 'Day 1' : 'Day ' + days;
-  var phase = totalHours < 72   ? 'The first 3 days are the hardest. You\'re doing it.' :
-              totalHours < 168  ? 'Your brain is already changing. Keep going.' :
-              totalHours < 720  ? 'Real progress is happening beneath the surface.' :
-              totalHours < 2160 ? 'Your body has done remarkable work. Don\'t stop now.' :
-                                  'You\'ve come so far. This is who you are now.';
-  var achieved = RECOVERY_BEATS.filter(function(b) { return totalHours >= b.hours; });
-  var recent = achieved.slice(-3).reverse();
-  if (recent.length === 0) recent = [{ text: 'Recovery has begun' }];
-  var bulletsHTML = recent.map(function(b) {
-    return '<div class="snap-bullet">✓ ' + b.text + '</div>';
-  }).join('');
-  el.innerHTML = '<div class="snap-card">' +
-    '<div class="snap-header"><div class="snap-day">' + dayLabel + '</div><div class="snap-phase">' + phase + '</div></div>' +
-    '<div class="snap-section-label">Happening in your body right now</div>' +
-    '<div class="snap-bullets">' + bulletsHTML + '</div>' +
-  '</div>';
-}
-
-
-// ——— Ritual Library ———
 function getRituals() {
   try { return JSON.parse(storageGet('rituals') || '[]'); } catch(e) { return []; }
 }
@@ -3472,9 +3343,9 @@ function renderBrainToday(totalHours) {
   var fact = bucket.facts[dayIdx];
   var days = Math.floor(totalHours / 24);
   var dayLabel = days === 0 ? 'Less than a day in' : days === 1 ? 'Day 1' : 'Day ' + days;
-  el.innerHTML = '<div class="brain-today-card">' +
+  el.innerHTML = renderScienceTimeline(totalHours) + '<div class="brain-today-card">' +
     '<div class="brain-today-header">' +
-      '<div class="brain-today-eyebrow">Today in Your Brain</div>' +
+      '<div class="brain-today-eyebrow">Fact of the Day</div>' +
       '<div class="brain-today-day">' + dayLabel + ' \u00b7 ' + bucket.label + '</div>' +
       '<div class="brain-today-title">' + fact.title + '</div>' +
     '</div>' +
@@ -3482,105 +3353,6 @@ function renderBrainToday(totalHours) {
       '<div class="brain-today-fact">' + fact.body + '</div>' +
       '<div class="brain-today-means-label">What this means for you</div>' +
       '<div class="brain-today-means">' + fact.means + '</div>' +
-    '</div>' +
-  '</div>';
-}
-
-// ——— Withdrawal Stages ———
-var WITHDRAWAL_STAGES = [
-  {
-    maxHours: 24,
-    name: 'Day One',
-    emoji: '🌱',
-    color: '#3d7a5e',
-    bg: '#e8f5ee',
-    tagline: 'The journey starts here.',
-    body: 'THC is clearing from your bloodstream. Your endocannabinoid system is beginning to notice the shift. You may feel restless, irritable, or have a mild headache — that\'s your brain starting to recalibrate.',
-    tip: 'Hydrate, eat light, and be patient with yourself today.'
-  },
-  {
-    maxHours: 72,
-    name: 'Acute Peak',
-    emoji: '🌊',
-    color: '#c4783a',
-    bg: '#fdf0e4',
-    tagline: 'The hardest part is often right here.',
-    body: 'Withdrawal typically peaks in the first 48–72 hours. Irritability, anxiety, sweating, and disrupted sleep are common. Your nervous system is recalibrating without THC as a buffer — this is temporary.',
-    tip: 'This peak always passes. Most symptoms ease significantly after day 3.'
-  },
-  {
-    maxHours: 168,
-    name: 'Acute Withdrawal',
-    emoji: '🔄',
-    color: '#c4783a',
-    bg: '#fdf0e4',
-    tagline: 'Holding steady through the hard stretch.',
-    body: 'Physical symptoms are beginning to ease. Sleep may still be disrupted — vivid dreams are your REM sleep returning. Mood swings and cravings are still common but usually less intense than days 1–3.',
-    tip: 'Keep your environment calm. This is when new habits take root.'
-  },
-  {
-    maxHours: 336,
-    name: 'Stabilizing',
-    emoji: '⚖️',
-    color: '#7b6fa0',
-    bg: '#f0eef7',
-    tagline: 'Your brain is finding its new baseline.',
-    body: 'The acute phase is largely behind you. Your dopamine system is slowly upregulating. Mood and energy are stabilizing, though strong cravings may still appear linked to habit cues and familiar situations.',
-    tip: 'Identify your trigger patterns now — habit replacement matters most here.'
-  },
-  {
-    maxHours: 720,
-    name: 'Early Recovery',
-    emoji: '🌤️',
-    color: '#5a8fc4',
-    bg: '#eaf2fb',
-    tagline: 'The fog is starting to lift.',
-    body: 'Most physical withdrawal has resolved. Cognitive clarity, motivation, and emotional regulation are gradually returning. CB1 receptor density is beginning to recover, and the brain\'s reward system is waking back up.',
-    tip: 'Cravings now are mostly psychological. New routines are your strongest tool.'
-  },
-  {
-    maxHours: 2160,
-    name: 'Neurological Reset',
-    emoji: '🧠',
-    color: '#3d7a5e',
-    bg: '#e8f5ee',
-    tagline: 'Real, measurable brain changes are happening.',
-    body: 'Research shows CB1 receptor density recovers significantly by 30 days. Your brain\'s reward system is relearning what feels good without THC. Memory, focus, and emotional processing are all improving measurably.',
-    tip: 'The further you get from your last use, the weaker cravings become.'
-  },
-  {
-    maxHours: Infinity,
-    name: 'Long-Term Recovery',
-    emoji: '🌺',
-    color: '#3d7a5e',
-    bg: '#e8f5ee',
-    tagline: 'You\'ve built something real.',
-    body: 'Studies show CB1 receptors have largely recovered by 90 days. Your brain\'s neuroplasticity has been working in your favor the whole time. PAWS can still bring occasional mood dips, but the overall trajectory is clearly upward.',
-    tip: 'Your identity as someone who doesn\'t smoke is now established. Protect it.'
-  }
-];
-
-function renderWithdrawalStage(totalHours) {
-  var el = document.getElementById('withdrawalStageCard');
-  if (!el) return;
-  if (totalHours < 0) {
-    el.innerHTML = '<div class="card"><div class="card-body" style="text-align:center; color:var(--text-muted); font-size:0.95rem; padding:16px 0;">Set your clean date to see where you are in withdrawal.</div></div>';
-    return;
-  }
-  var stage = WITHDRAWAL_STAGES.find(function(s) { return totalHours < s.maxHours; }) || WITHDRAWAL_STAGES[WITHDRAWAL_STAGES.length - 1];
-  el.innerHTML = '<div class="card" style="background:' + stage.bg + '; border-left:4px solid ' + stage.color + ';">' +
-    '<div class="card-body">' +
-      '<div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">' +
-        '<span style="font-size:1.8rem;">' + stage.emoji + '</span>' +
-        '<div>' +
-          '<div style="font-weight:700; color:' + stage.color + '; font-size:1.05rem;">' + stage.name + '</div>' +
-          '<div style="font-size:0.85rem; color:var(--text-muted); font-style:italic;">' + stage.tagline + '</div>' +
-        '</div>' +
-      '</div>' +
-      '<p style="font-size:0.9rem; color:var(--text); line-height:1.65; margin-bottom:10px;">' + stage.body + '</p>' +
-      '<div style="background:rgba(255,255,255,0.65); border-radius:8px; padding:9px 12px; font-size:0.85rem; color:' + stage.color + ';">' +
-        '💡 ' + stage.tip +
-      '</div>' +
     '</div>' +
   '</div>';
 }
@@ -3756,9 +3528,16 @@ let selectedUsed = 'yes';
 function setUsed(val) {
   if (val === 'no') val = 'note'; // remap legacy craving entries
   selectedUsed = val;
+  document.getElementById('usedUrge').className = 'used-btn' + (val === 'urge' ? ' selected-urge' : '');
   document.getElementById('usedYes').className  = 'used-btn' + (val === 'yes'  ? ' selected-yes'  : '');
   document.getElementById('usedNote').className = 'used-btn' + (val === 'note' ? ' selected-note' : '');
+  document.getElementById('urgeFields').style.display = val === 'urge' ? 'block' : 'none';
   document.getElementById('useFieldsWrapper').style.display = val === 'yes' ? 'block' : 'none';
+  document.getElementById('logTriggerField').style.display = val === 'note' ? 'none' : 'block';
+  document.getElementById('logNotesLabel').textContent = val === 'urge' ? 'What did you do instead? (optional)' : 'Notes';
+  document.getElementById('logNotes').placeholder = val === 'urge'
+    ? 'e.g. went for a walk, did the Craving Flow, made tea…'
+    : 'What was going on? How did you feel before, during, after?';
   var rm = document.getElementById('relapseMessage');
   if (rm) rm.style.display = val === 'yes' ? 'block' : 'none';
 }
@@ -3787,6 +3566,23 @@ function saveLogEntry() {
 
   if (!dt) return alert('Please set a date and time.');
 
+  if (used === 'urge') {
+    if (!selectedUrgeIntensity) return alert('Please rate how intense it was.');
+    var urges = getUrgeLog();
+    urges.unshift({ ts: new Date(dt).getTime() || Date.now(), intensity: selectedUrgeIntensity, trigger: logTrigger || 'Unspecified', instead: notes });
+    if (urges.length > 200) urges = urges.slice(0, 200);
+    storageSet('urgelog', JSON.stringify(urges));
+    selectedUrgeIntensity = null;
+    document.querySelectorAll('.urge-int-btn').forEach(function(b) { b.classList.remove('selected'); });
+    document.getElementById('logNotes').value = '';
+    resetLogTrigger();
+    var saveBtn = document.querySelector('#section-log .btn-primary');
+    saveBtn.textContent = '\u2713 Logged. You rode it out.';
+    setTimeout(function() { saveBtn.textContent = 'Save Entry'; }, 2500);
+    renderLog();
+    return;
+  }
+
   let entries = getLogEntries();
 
   if (editingId !== null) {
@@ -3806,7 +3602,7 @@ function saveLogEntry() {
   storageSet('usageLog', JSON.stringify(entries));
 
   // Reset form
-  setUsed('yes');
+  setUsed('urge');
   document.getElementById('logMethod').value = '';
   document.getElementById('logAmount').value = '';
   document.getElementById('logAmountUnit').value = 'hits';
@@ -3853,35 +3649,56 @@ function deleteLogEntry(id) {
 
 function renderLog() {
   const entries = getLogEntries();
+  const urges = getUrgeLog();
   const container = document.getElementById('logEntriesContainer');
 
-  // Stats
-  document.getElementById('logTotal').textContent = entries.length;
+  document.getElementById('logUrgeCount').textContent = urges.length;
   document.getElementById('logUsedCount').textContent = entries.filter(e => e.used === 'yes').length;
   document.getElementById('logNoteCount').textContent = entries.filter(e => e.used !== 'yes').length;
-  document.getElementById('reasonsInsight').style.display = 'none';
+  renderUrgePattern();
 
-  // Entry list
-  if (entries.length === 0) {
-    container.innerHTML = `<div class="log-empty">No entries yet. Use the form above to log usage or notes.</div>`;
+  const items = entries.map(e => ({ kind: 'entry', t: new Date(e.dt).getTime() || e.id, e }))
+    .concat(urges.map(u => ({ kind: 'urge', t: u.ts, e: u })))
+    .sort((a, b) => b.t - a.t);
+
+  if (items.length === 0) {
+    container.innerHTML = `<div class="log-empty">No entries yet. Log an urge you rode out, a slip, or a note.</div>`;
     return;
   }
 
-  container.innerHTML = entries.map(e => {
-    const date = new Date(e.dt);
+  const intensityBadge = n => {
+    if (!n) return '';
+    const color = n >= 8 ? '#c0392b' : n >= 5 ? '#c4783a' : '#3d7a5e';
+    const bg = n >= 8 ? '#fff0f0' : n >= 5 ? '#fdf0e4' : '#e8f5ee';
+    return `<div class="log-intensity-badge" style="background:${bg}; color:${color};">${n}</div>`;
+  };
+
+  container.innerHTML = items.map(({ kind, t, e }) => {
+    const date = new Date(t);
     const dateStr = date.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
     const timeStr = date.toLocaleTimeString('en-US', { hour:'numeric', minute:'2-digit' });
+    if (kind === 'urge') {
+      const body = `<strong>${escapeHTML(e.trigger)}</strong>${e.instead ? ' — ' + escapeHTML(e.instead) : ''}`;
+      return `
+      <div class="log-entry">
+        ${intensityBadge(e.intensity)}
+        <div style="flex:1; min-width:0;">
+          <div class="log-entry-meta">${dateStr} at ${timeStr}<span class="used-badge used-badge-urge">Urge beaten</span></div>
+          <div class="log-entry-reason">${body}</div>
+        </div>
+        <div class="log-actions">
+          <button class="log-delete" onclick="deleteUrgeEntry(${e.ts})" title="Delete">✕</button>
+        </div>
+      </div>`;
+    }
     const badgeClass = e.used === 'yes' ? 'used-badge-yes' : 'used-badge-note';
     const badgeLabel = e.used === 'yes' ? 'Used' : 'Note';
-    const intColor = e.intensity >= 8 ? '#c0392b' : e.intensity >= 5 ? '#c4783a' : '#3d7a5e';
-    const intBg = e.intensity >= 8 ? '#fff0f0' : e.intensity >= 5 ? '#fdf0e4' : '#e8f5ee';
-    const intensityBadge = e.intensity ? `<div class="log-intensity-badge" style="background:${intBg}; color:${intColor};">${e.intensity}</div>` : '';
     const entryBody = e.trigger
       ? `<strong>${escapeHTML(e.trigger)}</strong>${e.notes ? ' — ' + escapeHTML(e.notes) : ''}`
       : (e.notes ? escapeHTML(e.notes) : '—');
     return `
       <div class="log-entry">
-        ${intensityBadge}
+        ${intensityBadge(e.intensity)}
         <div style="flex:1; min-width:0;">
           <div class="log-entry-meta">${dateStr} at ${timeStr}${e.method ? ' · ' + escapeHTML(e.method) : ''}${e.amount ? ' · ' + escapeHTML(e.amount) + ' ' + escapeHTML(e.amountUnit || 'hits') : ''}<span class="used-badge ${badgeClass}">${badgeLabel}</span></div>
           <div class="log-entry-reason">${entryBody}</div>
@@ -3890,8 +3707,7 @@ function renderLog() {
           <button class="log-edit" onclick="editLogEntry(${e.id})" title="Edit">✎</button>
           <button class="log-delete" onclick="deleteLogEntry(${e.id})" title="Delete">✕</button>
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
@@ -3910,15 +3726,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
   renderLog();
   startCounter();
-  setUsed('yes');
+  setUsed('urge');
   renderFlowList();
+  renderPractices();
   renderReasons();
   renderBrainToday(-1);
   renderDeepDives(-1);
-  renderUrgePattern();
   renderRituals();
-  renderRecoverySnapshot(-1);
-  renderWithdrawalStage(-1);
   renderStreakMeta();
 });
 </script>

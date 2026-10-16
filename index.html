@@ -113,17 +113,8 @@
   }
   .btn-small:hover { border-color: var(--gold-bright); color: var(--gold-bright); }
 
-  .milestones { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 20px; }
-  .milestone {
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    background: rgba(255,255,255,0.07);
-    color: rgba(255,255,255,0.28);
-    border: 1.5px solid transparent;
-  }
-  .milestone.reached { background: var(--gold-pale); color: var(--gold); border-color: var(--gold-bright); }
+  .milestones { margin-top: 10px; }
+  .milestone-note { font-size: 0.78rem; color: rgba(255,255,255,0.9); margin-top: 6px; line-height: 1.5; padding: 0 12px; }
 
   /* ─── Nav ───────────────────────────────────────── */
   .nav-bar {
@@ -452,6 +443,48 @@
   .breath-count { text-align: center; font-size: 2rem; font-weight: 900; color: white; min-height: 2.4rem; }
   .sos-action-btn { width: 100%; background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.18); border-radius: 12px; padding: 12px; font-weight: 700; font-size: 0.9rem; cursor: pointer; margin-top: 10px; }
 
+  /* ─── Guided Movement Flows ──────────────────────── */
+  .flow-card { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); padding: 18px; margin-bottom: 8px; }
+  .flow-card-top { display: flex; gap: 14px; align-items: flex-start; }
+  .flow-card-emoji { font-size: 1.8rem; line-height: 1; }
+  .flow-card-name { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+  .flow-card-meta { font-size: 0.72rem; color: var(--blue); font-weight: 700; margin-top: 2px; }
+  .flow-card-desc { font-size: 0.84rem; color: #333333; line-height: 1.6; margin-top: 6px; }
+  .flow-card-poses { font-size: 0.75rem; color: var(--muted); margin-top: 8px; line-height: 1.6; }
+  .flow-start-btn { width: 100%; margin-top: 12px; background: var(--blue); color: white; border: none; border-radius: 12px; padding: 12px; font-weight: 800; font-size: 0.9rem; cursor: pointer; min-height: 44px; }
+  .flow-modal { z-index: 1100; }
+  .flow-progress { display: flex; gap: 4px; margin-bottom: 16px; }
+  .flow-progress-seg { flex: 1; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.15); }
+  .flow-progress-seg.done { background: rgba(255,255,255,0.75); }
+  .flow-progress-seg.current { background: #8f92ff; }
+  .flow-pose-emoji { font-size: 2.6rem; text-align: center; margin-bottom: 6px; }
+  .flow-pose-name { font-size: 1.35rem; font-weight: 900; color: white; text-align: center; }
+  .flow-pose-side { font-size: 0.78rem; font-weight: 700; color: #b9bbff; text-align: center; margin-top: 4px; min-height: 1.1em; }
+  .flow-ring { width: 120px; height: 120px; margin: 18px auto 10px; position: relative; }
+  .flow-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .flow-ring-track { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 8; }
+  .flow-ring-fill { fill: none; stroke: #8f92ff; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+  .flow-ring-num { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; font-weight: 900; color: white; font-variant-numeric: tabular-nums; }
+  .flow-cue { font-size: 0.92rem; color: rgba(255,255,255,0.85); line-height: 1.65; }
+  .flow-why { margin-top: 12px; background: rgba(143,146,255,0.12); border-left: 3px solid #8f92ff; border-radius: 8px; padding: 10px 12px; font-size: 0.82rem; color: rgba(255,255,255,0.78); line-height: 1.6; }
+  .flow-why strong { color: white; }
+  .flow-next { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 12px; }
+  .flow-controls { display: flex; gap: 8px; margin-top: 4px; }
+  .flow-controls .sos-action-btn { min-height: 44px; }
+  .flow-controls .flow-main { flex: 2; background: #5558e8; border-color: #5558e8; }
+  .flow-controls .flow-side { flex: 1; }
+  .flow-sound { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 0.78rem; font-weight: 700; cursor: pointer; padding: 8px; }
+  .sos-flow-btn { background: #5558e8; border-color: #5558e8; }
+
+  /* ─── Growing Flower ─────────────────────────────── */
+  .bloom-plant { width: 230px; max-width: 100%; margin: 4px auto 0; text-align: center; }
+  .bloom-plant svg { width: 150px; height: 170px; overflow: visible; }
+  .bloom-stage-name { font-size: 0.8rem; font-weight: 800; color: white; letter-spacing: 0.5px; margin-top: 2px; }
+  .bloom-stage-next { font-size: 0.7rem; color: rgba(255,255,255,0.75); margin-top: 2px; }
+  @keyframes bloomSway { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+  .bloom-plant .sway { transform-box: view-box; transform-origin: 75px 160px; animation: bloomSway 6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) { .bloom-plant .sway { animation: none; } }
+
   /* ─── My Reasons ─────────────────────────────────── */
   .reasons-add-row { display: flex; gap: 8px; margin-bottom: 12px; }
   .reasons-add-row input { flex: 1; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.9rem; color: var(--text); background: var(--bg); font-family: inherit; }
@@ -665,6 +698,7 @@
         <div class="lbl">seconds</div>
       </div>
     </div>
+    <div class="bloom-plant" id="bloomPlant" role="img" aria-label="Your recovery flower"></div>
     <div class="milestones" id="milestones"></div>
     <div class="streak-meta">
       <div class="streak-meta-item" id="prevStreakBadge"></div>
@@ -708,6 +742,7 @@
     <div class="sos-step-num">Step 3 — Move Your Body</div>
     <div class="sos-step-title">Change your physical state immediately</div>
     <div class="sos-step-body">Go outside. Do 10 jumping jacks. Walk to another room. Splash cold water on your face. Cravings live in your body — movement interrupts the signal at the source.</div>
+    <button class="sos-action-btn sos-flow-btn" onclick="openFlow('craving')">▶ Start the 5-minute Craving Flow</button>
   </div>
 
   <div class="sos-step">
@@ -717,6 +752,18 @@
   </div>
 
   <button class="sos-action-btn" onclick="closeSOS()" style="margin-top:6px; font-size:0.95rem;">✓ I'm okay — close SOS</button>
+</div>
+
+<!-- Guided movement flow player -->
+<div class="sos-modal flow-modal" id="flowModal">
+  <div class="sos-modal-header">
+    <div class="sos-modal-title" id="flowTitle">Flow</div>
+    <button class="sos-close" onclick="closeFlow()" aria-label="Close flow">✕</button>
+  </div>
+  <div class="flow-progress" id="flowProgress"></div>
+  <div class="sos-step" id="flowStage"></div>
+  <div class="flow-controls" id="flowControls"></div>
+  <div style="text-align:center;"><button class="flow-sound" id="flowSoundBtn" onclick="toggleFlowSound()"></button></div>
 </div>
 
 <!-- SOS Floating Button -->
@@ -1124,7 +1171,7 @@
   </div>
   <div class="strategy-card">
     <div class="strategy-emoji">🏃</div>
-    <div><div class="strategy-name">Move Your Body</div><div class="strategy-desc">Physical movement burns off restless energy and releases endorphins that dampen cravings. Even 5 minutes works.</div>
+    <div><div class="strategy-name">Move Your Body</div><div class="strategy-desc">Physical movement burns off restless energy and releases endorphins that dampen cravings. Even 5 minutes works. <strong>Want it guided?</strong> Try the Craving Flow in Recharge.</div>
       <ol class="strategy-steps"><li>Walk briskly around the block</li><li>Do 20 jumping jacks or push-ups</li><li>Stretch for 5 minutes</li><li>Dance to one song</li></ol>
     </div>
   </div>
@@ -1441,6 +1488,28 @@
     <div class="card-body" style="margin-top:4px;">Craving-specific tools live in <strong>Tools</strong>. Your quit-date-aware journal prompts live in <strong>Today</strong>. Everything here supports the whole picture: mind, body, sleep, stress, and motivation.</div>
   </div>
 
+  <div class="section-title">Move: Guided Flows</div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🧠</div>
+      <div><div class="body-sys-name">Why movement beats a craving</div><div class="body-sys-timeline">Read this once. It makes every flow work better.</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <ul>
+        <li><strong>It feeds the same system THC used.</strong> Exercise raises anandamide, your body's own cannabinoid. That is part of the "runner's high." You are giving your endocannabinoid system a natural top-up while it rebuilds.</li>
+        <li><strong>It works in real studies.</strong> In a 2011 study, daily cannabis users who were not trying to quit did ten 30-minute treadmill sessions over two weeks. Their use dropped by more than half.</li>
+        <li><strong>It shrinks cravings fast.</strong> Research on short bursts of exercise (mostly in people quitting nicotine) shows craving strength falls within minutes and stays lower for a while after.</li>
+        <li><strong>Long exhales flip your calm switch.</strong> Slow breathing, especially a long breath out, activates the vagus nerve and moves your body out of fight-or-flight. Every flow pairs poses with breath for this reason.</li>
+        <li><strong>It trains the urge-surfing muscle.</strong> Holding a pose means feeling a sensation without reacting to it. That is exactly the skill you use to ride out a craving.</li>
+      </ul>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:8px;">Go gently. Skip anything that hurts, and check with your doctor if you have an injury, are pregnant, or have a heart condition.</div>
+    </div>
+  </div>
+
+  <div id="flowList"></div>
+
   <div class="section-title">Mindfulness Exercises</div>
 
   <div class="strategy-card">
@@ -1686,6 +1755,35 @@
     </div>
   </div>
 
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🍽️</div>
+      <div><div class="body-sys-name">Real Meals</div><div class="body-sys-timeline">Full plates that keep blood sugar and mood steady</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🐟</div><div><div class="supp-name">Sheet-Pan Salmon &amp; Sweet Potato</div><div class="supp-dose">1 salmon fillet, 1 sweet potato in cubes, 1 cup broccoli, 1 tbsp olive oil, salt, pepper, lemon. Roast potato at 400°F for 10 min, add salmon and broccoli, roast 12 to 15 min more. Serves 1, about 30 min.</div><div class="supp-why">Salmon brings omega-3 fats for brain cell health plus protein with tryptophan. Sweet potato is a slow carb that helps your brain use that tryptophan to make serotonin. One pan, little cleanup.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🌶️</div><div><div class="supp-name">Turkey &amp; Black Bean Chili</div><div class="supp-dose">1 lb ground turkey, 1 onion, 2 cloves garlic, 1 can black beans, 1 can diced tomatoes, 1 tbsp chili powder, 1 tsp cumin. Brown turkey with onion and garlic, add the rest, simmer 25 min. Serves 4.</div><div class="supp-why">Turkey and beans pair protein with lots of fiber, the combo that flattens blood sugar swings. A big batch means dinner is already decided on the nights you are too tired to cook, which are often the riskiest nights.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍛</div><div><div class="supp-name">Chickpea &amp; Spinach Curry</div><div class="supp-dose">1 can chickpeas, 1 can coconut milk, 2 big handfuls spinach, 1 onion, 2 tbsp curry powder, 1 tsp grated ginger. Soften onion, stir in spices, add chickpeas and coconut milk, simmer 15 min, wilt in spinach. Serve over rice. Serves 3.</div><div class="supp-why">Chickpeas and spinach are rich in magnesium and folate, both linked to steadier mood and better sleep. Fully plant-based and cheap to make.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍳</div><div><div class="supp-name">15-Minute Veggie Egg Fried Rice</div><div class="supp-dose">1 cup cooked rice (day-old works best), 2 eggs, 1 cup frozen mixed veg, 1 tbsp soy sauce, 1 tsp sesame oil, green onion. Scramble eggs, set aside, fry veg and rice, toss everything with soy and sesame oil.</div><div class="supp-why">Eggs carry choline, which your brain uses to make acetylcholine, a messenger involved in memory and focus. Fast enough to beat the urge to order takeout or reach for the old routine.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🍿</div>
+      <div><div class="body-sys-name">Munchie Swaps</div><div class="body-sys-timeline">When you want something crunchy, sweet, salty or creamy</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div style="font-size:0.82rem; color:#333; padding:4px 0 12px;">If snacks used to go with getting high, the snack is part of the habit. Picking a new go-to keeps the comfort and drops the routine it was tied to.</div>
+      <div class="supp-item"><div class="supp-icon">🍿</div><div><div class="supp-name">Crunchy: Olive Oil Popcorn</div><div class="supp-dose">3 cups air-popped popcorn, 1 tsp olive oil, pinch of salt, optional nutritional yeast or smoked paprika</div><div class="supp-why">Popcorn is a whole grain with real fiber, and a big bowl is low in calories. It scratches the crunch itch that chips usually fill.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍇</div><div><div class="supp-name">Sweet: Frozen Grapes + Dark Chocolate</div><div class="supp-dose">A handful of frozen grapes, or 1 to 2 squares of 70%+ dark chocolate with a few almonds</div><div class="supp-why">Frozen grapes eat like candy but slowly. Dark chocolate has magnesium, and the almonds add protein and fat so the sugar hits softer.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🫘</div><div><div class="supp-name">Salty: Roasted Chickpeas</div><div class="supp-dose">1 can chickpeas (rinsed and patted dry), 1 tbsp olive oil, salt, garlic powder. Roast at 400°F for 25 to 30 min, shaking halfway.</div><div class="supp-why">Crunchy and salty like pretzels, but with protein and fiber that actually fill you up instead of leaving you wanting more.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🥄</div><div><div class="supp-name">Creamy: Greek Yogurt Bowl</div><div class="supp-dose">¾ cup Greek yogurt, 1 tsp honey, cinnamon, a spoon of nut butter or granola on top</div><div class="supp-why">Thick, cold and creamy like ice cream, with about three times the protein. Protein is the most filling nutrient and the best at keeping blood sugar steady.</div></div></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- SECTION: Log -->
@@ -1787,15 +1885,27 @@ window.onerror = function(msg, src, line) {
 
 // ——— Data ———
 const MILESTONES = [
-  { days: 1, label: '1 Day' },
-  { days: 3, label: '3 Days' },
-  { days: 7, label: '1 Week' },
-  { days: 14, label: '2 Weeks' },
-  { days: 30, label: '1 Month' },
-  { days: 60, label: '2 Months' },
-  { days: 90, label: '3 Months' },
-  { days: 180, label: '6 Months' },
-  { days: 365, label: '1 Year' },
+  { h: 12,    label: '12 Hours', note: 'THC levels in your blood have dropped sharply.' },
+  { h: 24,    label: '1 Day',    note: 'Your first full day. The habit loop has been broken once.' },
+  { h: 72,    label: '3 Days',   note: 'Withdrawal usually peaks around now. It gets easier from here.' },
+  { h: 120,   label: '5 Days',   note: 'Past the peak. Irritability and restlessness are starting to ease.' },
+  { h: 168,   label: '1 Week',   note: 'Brain scans show CB1 receptors measurably recovering.' },
+  { h: 240,   label: '10 Days',  note: 'Most physical withdrawal symptoms have faded.' },
+  { h: 336,   label: '2 Weeks',  note: 'Your dopamine system is actively normalizing.' },
+  { h: 504,   label: '3 Weeks',  note: 'Three weeks of new routines. Repetition is what rewires habits.' },
+  { h: 720,   label: '1 Month',  note: 'Research shows CB1 receptors back near normal levels around now.' },
+  { h: 1080,  label: '45 Days',  note: 'Vivid dreams usually settle as REM sleep rebalances.' },
+  { h: 1440,  label: '2 Months', note: 'Mood and motivation are steadier for most people.' },
+  { h: 2160,  label: '3 Months', note: 'Studies show memory and attention measurably improving.' },
+  { h: 2400,  label: '100 Days', note: 'Triple digits. A huge milestone.' },
+  { h: 2880,  label: '4 Months', note: 'New habits are starting to feel like your normal.' },
+  { h: 4320,  label: '6 Months', note: 'Half a year. The highest-risk months are behind you.' },
+  { h: 6480,  label: '9 Months', note: 'Nine months for your brain and body to rebuild.' },
+  { h: 8760,  label: '1 Year',   note: 'A full year. Every season and every holiday, done.' },
+  { h: 12000, label: '500 Days', note: 'Five hundred days of choosing yourself.' },
+  { h: 17520, label: '2 Years',  note: 'Two full years. This is who you are now.' },
+  { h: 26280, label: '3 Years',  note: 'Three years. Your story is a recovery story.' },
+  { h: 43800, label: '5 Years',  note: 'Five years. Someone just starting out needs to hear how you did it.' },
 ];
 
 const SCIENCE_TIMELINE = [
@@ -2400,7 +2510,8 @@ function tickCounter() {
     document.getElementById('minCount').textContent = mins;
     document.getElementById('secCount').textContent = secs;
 
-    try { renderMilestones(days); } catch(e) {}
+    try { renderMilestones(diff / 3600000); } catch(e) {}
+    try { renderBloom(diff / 86400000); } catch(e) {}
     try { renderStreakMeta(); } catch(e) {}
     try { renderEducation(diff / 3600000); } catch(e) {}
     try { renderRecoverySnapshot(diff / 3600000); } catch(e) {}
@@ -2410,14 +2521,121 @@ function tickCounter() {
 // keep updateCounter as alias
 function updateCounter() { tickCounter(); }
 
-function renderMilestones(days) {
+// ——— Growing Flower ———
+// Grows a little every day: stem height and petal opening ease between stages.
+var BLOOM_STAGES = [
+  { d: 0,   name: 'Seed planted',  stem: 0,   leaves: 0, bud: 0 },
+  { d: 1,   name: 'Sprouting',     stem: 16,  leaves: 0, bud: 0 },
+  { d: 3,   name: 'Seedling',      stem: 34,  leaves: 1, bud: 0 },
+  { d: 7,   name: 'Young plant',   stem: 52,  leaves: 2, bud: 0 },
+  { d: 14,  name: 'Growing strong',stem: 70,  leaves: 3, bud: 0 },
+  { d: 30,  name: 'Budding',       stem: 86,  leaves: 3, bud: 0.15 },
+  { d: 60,  name: 'Bud opening',   stem: 96,  leaves: 4, bud: 0.35 },
+  { d: 90,  name: 'First bloom',   stem: 104, leaves: 4, bud: 0.65 },
+  { d: 180, name: 'Full bloom',    stem: 110, leaves: 4, bud: 1 },
+  { d: 365, name: 'Flourishing',   stem: 112, leaves: 4, bud: 1, extra: true }
+];
+var bloomLastKey = null;
+
+function renderBloom(days) {
+  var el = document.getElementById('bloomPlant');
+  if (!el) return;
+  var dayInt = Math.floor(days);
+  if (bloomLastKey === dayInt) return; // redraw once per day, not every second
+  bloomLastKey = dayInt;
+
+  var i = 0;
+  while (i < BLOOM_STAGES.length - 1 && days >= BLOOM_STAGES[i + 1].d) i++;
+  var cur = BLOOM_STAGES[i], nxt = BLOOM_STAGES[i + 1];
+  var t = nxt ? Math.min(1, (days - cur.d) / (nxt.d - cur.d)) : 1;
+  var stem = cur.stem + (nxt ? (nxt.stem - cur.stem) * t : 0);
+  var bud = cur.bud + (nxt && cur.bud > 0 ? (nxt.bud - cur.bud) * t : 0);
+
+  var G = 146, X = 75, topY = G - stem;
+  var svg = '<svg viewBox="0 0 150 175" aria-hidden="true">' +
+    '<defs><filter id="bloomShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000" flood-opacity="0.25"/></filter>' +
+    '<radialGradient id="bloomPetal" cx="50%" cy="85%" r="90%"><stop offset="0%" stop-color="#ffd1e0"/><stop offset="55%" stop-color="#ff6f9f"/><stop offset="100%" stop-color="#e8336f"/></radialGradient></defs>' +
+    '<g filter="url(#bloomShadow)"><g class="sway">';
+
+  if (stem > 0) {
+    svg += '<path d="M' + X + ' ' + G + ' Q' + (X - 6) + ' ' + (G - stem / 2) + ' ' + X + ' ' + topY + '" stroke="#2f9e5b" stroke-width="' + (stem > 60 ? 4 : 3) + '" fill="none" stroke-linecap="round"/>';
+  }
+  // Sprout leaves (cotyledons) until true leaves take over
+  if (cur.d >= 1 && cur.leaves === 0) {
+    svg += bloomLeaf(X, topY + 2, -1, 9) + bloomLeaf(X, topY + 2, 1, 9);
+  }
+  // Leaf pairs spaced up the stem, alternating sides
+  for (var k = 0; k < cur.leaves; k++) {
+    var y = G - stem * (0.22 + k * 0.19);
+    var size = 13 + Math.min(6, stem / 18) - k * 1.5;
+    svg += bloomLeaf(X - 1, y, k % 2 ? 1 : -1, size);
+    if (stem > 40) svg += bloomLeaf(X - 1, y - 6, k % 2 ? -1 : 1, size * 0.8);
+  }
+  if (bud > 0) svg += bloomFlower(X, topY, bud, 1);
+  if (cur.extra) {
+    svg += '<path d="M' + X + ' ' + (G - 40) + ' Q' + (X + 22) + ' ' + (G - 55) + ' ' + (X + 30) + ' ' + (G - 72) + '" stroke="#2f9e5b" stroke-width="2.5" fill="none" stroke-linecap="round"/>';
+    svg += bloomFlower(X + 30, G - 72, 1, 0.55);
+  }
+  svg += '</g>';
+  // Seed sits on the soil until it sprouts
+  if (cur.d === 0) svg += '<path d="M' + (X - 16) + ' ' + (G - 1) + ' Q' + X + ' ' + (G - 12) + ' ' + (X + 16) + ' ' + (G - 1) + 'z" fill="#5b3a22"/><ellipse cx="' + X + '" cy="' + (G - 10) + '" rx="5.5" ry="4" fill="#8a5528"/><path d="M' + (X - 2.5) + ' ' + (G - 12) + ' q2.5 -2 5 0" stroke="#c08a4f" stroke-width="1" fill="none"/>';
+  // Pot
+  svg += '<ellipse cx="' + X + '" cy="' + G + '" rx="30" ry="5" fill="#5b3a22"/>' +
+    '<path d="M' + (X - 32) + ' ' + G + ' h64 l-7 26 h-50 z" fill="#c96a3c"/>' +
+    '<rect x="' + (X - 34) + '" y="' + (G - 2) + '" width="68" height="8" rx="3" fill="#dd7d4c"/>';
+  if (cur.extra) {
+    [[30, 40], [120, 30], [112, 78], [36, 92]].forEach(function(p) {
+      svg += '<text x="' + p[0] + '" y="' + p[1] + '" font-size="11" fill="#fff6c2">✦</text>';
+    });
+  }
+  svg += '</g></svg>';
+
+  var nextLine = nxt
+    ? 'Next: ' + nxt.name.toLowerCase() + ' in ' + Math.max(1, Math.ceil(nxt.d - days)) + (Math.ceil(nxt.d - days) === 1 ? ' day' : ' days')
+    : 'Keep tending it. You grew this.';
+  el.innerHTML = svg + '<div class="bloom-stage-name">🌱 ' + cur.name + '</div><div class="bloom-stage-next">' + nextLine + '</div>';
+  el.setAttribute('aria-label', 'Your recovery flower: ' + cur.name + '. ' + nextLine);
+}
+
+function bloomLeaf(x, y, dir, size) {
+  // A simple almond-shaped leaf growing out from the stem
+  var tipX = x + dir * size * 1.6, tipY = y - size * 0.55;
+  return '<path d="M' + x + ' ' + y + ' Q' + (x + dir * size * 0.8) + ' ' + (y - size * 1.1) + ' ' + tipX + ' ' + tipY +
+    ' Q' + (x + dir * size * 0.9) + ' ' + (y + size * 0.15) + ' ' + x + ' ' + y + 'z" fill="#3fb36d"/>' +
+    '<path d="M' + x + ' ' + y + ' L' + (x + dir * size * 1.2) + ' ' + (y - size * 0.45) + '" stroke="#2c8a52" stroke-width="0.8"/>';
+}
+
+function bloomFlower(x, y, open, scale) {
+  // open: 0.15 closed bud to 1 full five-petal bloom
+  var s = scale || 1, out = '<g transform="translate(' + x + ' ' + y + ') scale(' + s + ')">';
+  if (open < 0.3) {
+    var h = 10 + open * 30;
+    out += '<path d="M0 0 C-7 -' + (h * 0.4) + ' -5 -' + h + ' 0 -' + (h + 4) + ' C5 -' + h + ' 7 -' + (h * 0.4) + ' 0 0z" fill="#ff6f9f"/>' +
+      '<path d="M0 2 C-8 -4 -7 -' + (h * 0.55) + ' -2 -' + (h * 0.7) + ' L0 -2 L2 -' + (h * 0.7) + ' C7 -' + (h * 0.55) + ' 8 -4 0 2z" fill="#3fb36d"/>';
+    return out + '</g>';
+  }
+  var len = 8 + open * 18, wid = 5 + open * 8, spread = 0.35 + open * 0.65;
+  for (var p = 0; p < 5; p++) {
+    var ang = -90 + (p - 2) * 72 * spread;
+    out += '<ellipse cx="0" cy="-' + (len * 0.55) + '" rx="' + wid + '" ry="' + (len * 0.6) + '" fill="url(#bloomPetal)" transform="rotate(' + ang.toFixed(1) + ') translate(0 -2)"/>';
+  }
+  out += '<circle r="' + (3 + open * 3) + '" fill="#ffd34d"/>';
+  if (open > 0.6) {
+    for (var q = 0; q < 5; q++) {
+      var a = (q * 72 - 90) * Math.PI / 180;
+      out += '<circle cx="' + (Math.cos(a) * (6 + open * 3)).toFixed(1) + '" cy="' + (Math.sin(a) * (6 + open * 3)).toFixed(1) + '" r="1.4" fill="#fff3a6"/>';
+    }
+  }
+  return out + '</g>';
+}
+
+// One line saying what the latest milestone means (the flower shows progress)
+function renderMilestones(totalHours) {
   const el = document.getElementById('milestones');
-  const reached = MILESTONES.filter(m => days >= m.days);
-  el.innerHTML = reached.map(m => `
-    <div class="milestone reached">
-      ★ ${m.label}
-    </div>
-  `).join('');
+  const reached = MILESTONES.filter(m => totalHours >= m.h);
+  const latest = reached[reached.length - 1];
+  const html = latest ? `<div class="milestone-note">★ ${latest.label}: ${latest.note}</div>` : '';
+  if (el.innerHTML !== html) el.innerHTML = html;
 }
 
 function resetDate() {
@@ -2641,6 +2859,265 @@ function stopBreathing() {
   if (cnt) cnt.textContent = '';
   var btn = document.getElementById('breathBtn');
   if (btn) btn.textContent = '▶ Start Breathing';
+}
+
+// ——— Guided Movement Flows ———
+// side: true means "switch sides halfway" (the player announces it)
+var FLOWS = [
+  { id: 'craving', emoji: '🌊', name: 'Craving Flow', where: 'Standing · anywhere · no mat',
+    desc: 'For riding out an urge right now. Burns off the jittery energy, then brings you down with long exhales.',
+    poses: [
+      { e: '🧍', n: 'Grounding Stand', s: 30, cue: 'Stand with feet hip-width apart. Press all four corners of each foot into the floor. Soften your knees. Breathe in for 4, out for 6.',
+        why: 'Feeling your feet on the ground gives your brain a steady signal of safety. It pulls attention out of the craving loop and into your body.' },
+      { e: '🫨', n: 'Shake It Out', s: 40, cue: 'Shake your hands, then your arms, then bounce gently through your knees. Let your shoulders and jaw go loose.',
+        why: 'Cravings come with restless, buzzy energy. Shaking uses it up instead of letting it build. Many animals shake after a stressful moment to reset.' },
+      { e: '🌙', n: 'Standing Side Stretch', s: 40, side: true, cue: 'Reach one arm overhead and lean the other way, like a crescent moon. Breathe into the long side of your ribs.',
+        why: 'Stretching the sides of your ribcage lets your lungs expand more, which makes slow, deep breathing easier.' },
+      { e: '🙇', n: 'Ragdoll Forward Fold', s: 40, cue: 'Bend your knees generously and fold forward. Hold opposite elbows and let your head hang heavy. Sway a little if it feels good.',
+        why: 'With your head below your heart and your breath slow, your body shifts toward rest-and-digest mode. Calm follows the body.' },
+      { e: '🪑', n: 'Chair Pose Pulses', s: 30, cue: 'Feet together, sit back like there is a chair behind you, arms forward. Pulse gently up and down. Keep breathing.',
+        why: 'Your thigh muscles are the biggest in your body. Working them raises your heart rate quickly, which kicks off endorphins and anandamide.' },
+      { e: '🏃', n: 'March or Jumping Jacks', s: 45, cue: 'March in place with high knees, or do jumping jacks. Pick whichever gets your heart going without hurting.',
+        why: 'Short bursts of exercise are one of the best-studied ways to cut craving strength. Effects show up within minutes.' },
+      { e: '🫶', n: 'Chest Opener', s: 30, cue: 'Clasp your hands behind your back (or hold a towel). Lift your chest, draw your shoulder blades together, and look slightly up.',
+        why: 'Stress pulls us into a hunched, protective shape. Opening the chest reverses it and gives your breath more room.' },
+      { e: '😮‍💨', n: 'Physiological Sighs', s: 45, cue: 'Two quick inhales through the nose (one big, one small top-up), then one long, slow exhale through the mouth. Repeat.',
+        why: 'The double inhale reopens tiny air sacs in your lungs; the long exhale slows your heart. Researchers call it the fastest known way to calm down in real time.' }
+    ]
+  },
+  { id: 'seated', emoji: '💺', name: 'No-Floor Flow', where: 'Seated · desk, couch or parked car',
+    desc: 'For work, the couch, or a parked car. Releases the neck, shoulder and hip tension that stress builds up.',
+    poses: [
+      { e: '🪷', n: 'Tall Seat, Slow Breath', s: 30, cue: 'Sit toward the front of your seat, feet flat, spine tall. Hands on thighs. Breathe in for 4, out for 6.',
+        why: 'Sitting tall frees your diaphragm, the main breathing muscle. A slumped posture forces shallow chest breathing, which feels like stress.' },
+      { e: '🔄', n: 'Neck Half Circles', s: 40, cue: 'Drop your chin to your chest. Slowly roll one ear toward one shoulder, back through the middle, then to the other side. No full circles.',
+        why: 'Stress loves to park in your neck and upper shoulders. Releasing it lowers the tension signals your body sends back to your brain.' },
+      { e: '🤷', n: 'Shoulder Rolls', s: 30, cue: 'Lift your shoulders to your ears, roll them back and down. Slow and big. Reverse direction halfway through.',
+        why: 'Rolling the shoulders gets blood moving through muscles that tighten up when you are anxious or have been sitting for a while.' },
+      { e: '🐈', n: 'Seated Cat-Cow', s: 45, cue: 'Hands on knees. Breathe in, arch your back and lift your chest. Breathe out, round your spine and tuck your chin. Move with your breath.',
+        why: 'Linking each movement to a breath is the core of why yoga calms people down. Your breath sets the pace instead of your racing thoughts.' },
+      { e: '🌀', n: 'Seated Twist', s: 40, side: true, cue: 'Sit tall, then turn your chest to one side, holding the back of the chair or your knee. Grow taller on each inhale, twist a little on each exhale.',
+        why: 'Twists move your spine through a range it rarely uses while sitting. Many people find twisting feels like wringing out tension.' },
+      { e: '4️⃣', n: 'Seated Figure-Four', s: 40, side: true, cue: 'Rest one ankle on the opposite knee. Keep your back straight and lean forward slightly until you feel the outer hip stretch.',
+        why: 'Hips hold a lot of tension from sitting and stress. This stretch is easy to do almost anywhere, including in a parked car.' },
+      { e: '✊', n: 'Squeeze and Release', s: 30, cue: 'Make tight fists and tense your arms for 5 seconds. Then let everything go for 5 seconds. Repeat.',
+        why: 'This is progressive muscle relaxation. Tensing first, then releasing, teaches your muscles what relaxed actually feels like.' },
+      { e: '😌', n: 'Eyes Closed, Five Breaths', s: 35, cue: 'Close your eyes. Take five slow breaths, making each exhale a little longer than the inhale. Notice how you feel now.',
+        why: 'Checking in at the end builds awareness. Noticing that the craving shrank is proof for next time that it always does.' }
+    ]
+  },
+  { id: 'bedtime', emoji: '🌙', name: 'Bedtime Wind-Down', where: 'Floor or bed · about 8 minutes',
+    desc: 'For the nights sleep feels impossible without it. Slow floor poses that tell your nervous system the day is over.',
+    poses: [
+      { e: '🧎', n: "Child's Pose", s: 60, cue: 'Kneel, big toes together, knees wide. Fold forward and rest your forehead on the floor, a pillow, or your stacked hands. Breathe into your back.',
+        why: 'Folding forward with your head supported is deeply soothing. Breathing into your back body slows your breath without you having to try.' },
+      { e: '🐈', n: 'Slow Cat-Cow', s: 45, cue: 'On hands and knees. Inhale, drop your belly and lift your gaze. Exhale, round your back toward the ceiling. Go as slowly as you can.',
+        why: 'Gentle spinal movement releases the stiffness of the day. Moving slowly with your breath begins to lower your heart rate.' },
+      { e: '🙇', n: 'Seated Forward Fold', s: 60, cue: 'Sit with legs out long, knees bent as much as you need. Fold forward over your legs and let your head relax. No pulling.',
+        why: 'Forward folds are traditionally used to calm the mind before sleep. The goal is surrender, not touching your toes.' },
+      { e: '🌀', n: 'Lying Twist', s: 60, side: true, cue: 'Lie on your back, hug your knees, then let them fall to one side. Stretch your arms out like a T and look the other way if your neck is happy.',
+        why: 'A lying twist releases the lower back and lets gravity do the work. It is a classic bedtime pose for a reason.' },
+      { e: '👶', n: 'Happy Baby', s: 45, cue: 'On your back, draw your knees toward your armpits and hold your feet, ankles, or the backs of your thighs. Rock gently side to side.',
+        why: 'Gently opening the hips and rocking is calming in the same way rocking soothes a baby. Rhythm settles the nervous system.' },
+      { e: '🦵', n: 'Legs Up the Wall', s: 90, cue: 'Scoot your hips close to a wall (or headboard) and rest your legs up it. Arms relaxed by your sides. Just breathe.',
+        why: 'This gentle inversion is one of the most popular poses for winding down. It is restful and asks almost nothing of you.' },
+      { e: '🛌', n: 'Rest with 4-7-8 Breathing', s: 90, cue: 'Lie flat, arms and legs relaxed. Breathe in for 4, hold for 7, breathe out slowly for 8. Repeat until the timer ends.',
+        why: 'An exhale twice as long as your inhale slows your heart rate. Many people fall asleep during this, which is the point.' }
+    ]
+  },
+  { id: 'morning', emoji: '☀️', name: 'Morning Wake-Up', where: 'Standing and floor · about 6 minutes',
+    desc: 'For the flat, foggy mornings of early recovery. Gets blood moving to your brain and gives your day a starting line.',
+    poses: [
+      { e: '🙆', n: 'Big Reach and Yawn', s: 30, cue: 'Reach both arms overhead, rise onto your toes, and stretch like you just woke up. Let yourself yawn.',
+        why: 'Stretching and yawning are your body’s own wake-up routine. They raise alertness and get blood flowing after hours lying still.' },
+      { e: '⭕', n: 'Arm Circles', s: 40, cue: 'Arms out to the sides. Small circles forward, growing bigger. Reverse direction halfway through.',
+        why: 'Gets blood moving through your shoulders and upper back and gently raises your heart rate.' },
+      { e: '🔃', n: 'Hip Circles', s: 40, cue: 'Hands on hips, feet wider than hips. Draw big slow circles with your hips. Switch directions halfway.',
+        why: 'Your hips stiffen overnight. Loosening them first makes every other movement in your day feel easier.' },
+      { e: '🦎', n: 'Lunge with a Twist', s: 60, side: true, cue: 'Step one foot forward into a lunge, back knee down if you like. Place the opposite hand on the floor and reach the other arm up to the sky.',
+        why: 'Trainers call this the world’s greatest stretch. It opens hips, hamstrings, chest and spine all at once.' },
+      { e: '🏋️', n: 'Bodyweight Squats', s: 45, cue: 'Feet shoulder-width, sit your hips back and down, then stand up tall. Steady pace. Hold onto a counter if you need balance.',
+        why: 'Working your largest muscles raises your heart rate and sends more blood to your brain, which helps cut through morning fog.' },
+      { e: '🐕', n: 'Downward Dog', s: 45, cue: 'From hands and knees, lift your hips up and back into an upside-down V. Bend your knees as much as you need. Pedal your feet.',
+        why: 'Stretches your whole back body and brings blood toward your head. A great reset for low energy.' },
+      { e: '🌅', n: 'Stand Tall and Set Your Intention', s: 35, cue: 'Stand tall, hand on your heart. Take three slow breaths and finish this sentence in your head: "Today, I will..."',
+        why: 'One small intention gives your day direction. Recovery is built out of small, kept promises to yourself.' }
+    ]
+  }
+];
+
+function flowTotalSecs(flow) { return flow.poses.reduce(function(t, p) { return t + p.s; }, 0); }
+
+function renderFlowList() {
+  var el = document.getElementById('flowList');
+  if (!el) return;
+  el.innerHTML = FLOWS.map(function(f) {
+    var mins = Math.round(flowTotalSecs(f) / 60);
+    return '<div class="flow-card">' +
+      '<div class="flow-card-top"><div class="flow-card-emoji">' + f.emoji + '</div><div style="flex:1;">' +
+        '<div class="flow-card-name">' + f.name + '</div>' +
+        '<div class="flow-card-meta">' + mins + ' min · ' + f.poses.length + ' poses · ' + f.where + '</div>' +
+        '<div class="flow-card-desc">' + f.desc + '</div>' +
+        '<div class="flow-card-poses">' + f.poses.map(function(p) { return p.n; }).join(' → ') + '</div>' +
+      '</div></div>' +
+      '<button class="flow-start-btn" onclick="openFlow(\'' + f.id + '\')">▶ Start guided flow</button>' +
+    '</div>';
+  }).join('');
+}
+
+var flowState = { flow: null, idx: -1, secsLeft: 0, running: false, timer: null, wakeLock: null };
+var FLOW_RING_C = 2 * Math.PI * 52;
+
+function flowSoundOn() { return storageGet('flowSound') !== 'off'; }
+function toggleFlowSound() {
+  storageSet('flowSound', flowSoundOn() ? 'off' : 'on');
+  renderFlowSoundBtn();
+}
+function renderFlowSoundBtn() {
+  document.getElementById('flowSoundBtn').textContent = flowSoundOn() ? '🔔 Chime on' : '🔕 Chime off';
+}
+var flowAudioCtx = null;
+function flowChime() {
+  try { if (navigator.vibrate) navigator.vibrate(150); } catch(e) {}
+  if (!flowSoundOn()) return;
+  try {
+    flowAudioCtx = flowAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    var ctx = flowAudioCtx, t = ctx.currentTime;
+    [660, 990].forEach(function(freq, i) {
+      var o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0.0001, t + i * 0.12);
+      g.gain.exponentialRampToValueAtTime(0.18, t + i * 0.12 + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.12 + 0.9);
+      o.connect(g); g.connect(ctx.destination);
+      o.start(t + i * 0.12); o.stop(t + i * 0.12 + 1);
+    });
+  } catch(e) {}
+}
+
+function openFlow(id) {
+  var flow = FLOWS.find(function(f) { return f.id === id; });
+  if (!flow) return;
+  stopBreathing();
+  flowState.flow = flow;
+  flowState.idx = -1;
+  flowState.running = false;
+  clearInterval(flowState.timer);
+  document.getElementById('flowTitle').textContent = flow.emoji + ' ' + flow.name;
+  document.getElementById('flowModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderFlowSoundBtn();
+  renderFlow();
+}
+
+function closeFlow() {
+  clearInterval(flowState.timer);
+  flowState.running = false;
+  releaseFlowWakeLock();
+  document.getElementById('flowModal').classList.remove('open');
+  if (!document.getElementById('sosModal').classList.contains('open')) document.body.style.overflow = '';
+}
+
+function requestFlowWakeLock() {
+  try {
+    if ('wakeLock' in navigator && !flowState.wakeLock) {
+      navigator.wakeLock.request('screen').then(function(l) { flowState.wakeLock = l; }).catch(function() {});
+    }
+  } catch(e) {}
+}
+function releaseFlowWakeLock() {
+  try { if (flowState.wakeLock) flowState.wakeLock.release(); } catch(e) {}
+  flowState.wakeLock = null;
+}
+
+function goToPose(i) {
+  var flow = flowState.flow;
+  clearInterval(flowState.timer);
+  if (i >= flow.poses.length) { flowState.idx = flow.poses.length; flowState.running = false; releaseFlowWakeLock(); flowChime(); renderFlow(); return; }
+  flowState.idx = Math.max(0, i);
+  flowState.secsLeft = flow.poses[flowState.idx].s;
+  renderFlow();
+  if (flowState.running) startFlowTimer();
+}
+
+function startFlowTimer() {
+  clearInterval(flowState.timer);
+  flowState.timer = setInterval(function() {
+    var pose = flowState.flow.poses[flowState.idx];
+    flowState.secsLeft--;
+    if (pose.side && flowState.secsLeft === Math.floor(pose.s / 2)) flowChime();
+    if (flowState.secsLeft <= 0) { flowChime(); goToPose(flowState.idx + 1); return; }
+    renderFlowTick();
+  }, 1000);
+}
+
+function flowPlayPause() {
+  if (flowState.idx === -1) { flowState.running = true; requestFlowWakeLock(); flowChime(); goToPose(0); return; }
+  flowState.running = !flowState.running;
+  if (flowState.running) { requestFlowWakeLock(); startFlowTimer(); } else { clearInterval(flowState.timer); }
+  renderFlow();
+}
+
+function renderFlowTick() {
+  var pose = flowState.flow.poses[flowState.idx];
+  var num = document.getElementById('flowRingNum');
+  if (!num) return;
+  num.textContent = flowState.secsLeft;
+  document.getElementById('flowRingFill').style.strokeDashoffset = (FLOW_RING_C * (1 - flowState.secsLeft / pose.s)).toFixed(1);
+  var side = document.getElementById('flowSide');
+  if (pose.side) side.textContent = flowState.secsLeft > Math.floor(pose.s / 2) ? 'First side' : 'Switch sides ↔';
+}
+
+function renderFlow() {
+  var flow = flowState.flow, idx = flowState.idx, n = flow.poses.length;
+  var stage = document.getElementById('flowStage');
+  var controls = document.getElementById('flowControls');
+
+  document.getElementById('flowProgress').innerHTML = flow.poses.map(function(p, i) {
+    return '<div class="flow-progress-seg' + (i < idx ? ' done' : i === idx ? ' current' : '') + '"></div>';
+  }).join('');
+
+  if (idx === -1) {
+    var mins = Math.round(flowTotalSecs(flow) / 60);
+    stage.innerHTML =
+      '<div class="sos-step-num">' + mins + ' minutes · ' + n + ' poses</div>' +
+      '<div class="sos-step-title">' + flow.where + '</div>' +
+      '<div class="sos-step-body">' + flow.desc + '</div>' +
+      '<div class="flow-why"><strong>How it works:</strong> each pose has a countdown. A chime plays when it is time to move on, and halfway through any pose that switches sides. Go gently and skip anything that hurts.</div>' +
+      '<div class="flow-next">First up: ' + flow.poses[0].e + ' ' + flow.poses[0].n + '</div>';
+    controls.innerHTML = '<button class="sos-action-btn flow-main" onclick="flowPlayPause()">▶ Start</button>';
+    return;
+  }
+
+  if (idx >= n) {
+    stage.innerHTML =
+      '<div class="flow-pose-emoji">🌺</div>' +
+      '<div class="flow-pose-name">Flow complete</div>' +
+      '<div class="flow-cue" style="margin-top:12px; text-align:center;">Notice how you feel right now compared to when you started. If you had a craving, it is probably smaller. Remember this feeling. It is proof for next time.</div>';
+    controls.innerHTML =
+      '<button class="sos-action-btn flow-side" onclick="openFlow(\'' + flow.id + '\')">↺ Again</button>' +
+      '<button class="sos-action-btn flow-main" onclick="closeFlow()">✓ Done</button>';
+    return;
+  }
+
+  var pose = flow.poses[idx];
+  var next = flow.poses[idx + 1];
+  stage.innerHTML =
+    '<div class="sos-step-num">Pose ' + (idx + 1) + ' of ' + n + '</div>' +
+    '<div class="flow-pose-emoji">' + pose.e + '</div>' +
+    '<div class="flow-pose-name">' + pose.n + '</div>' +
+    '<div class="flow-pose-side" id="flowSide">' + (pose.side ? 'Switch sides halfway' : '') + '</div>' +
+    '<div class="flow-ring"><svg viewBox="0 0 120 120"><circle class="flow-ring-track" cx="60" cy="60" r="52"/>' +
+      '<circle class="flow-ring-fill" id="flowRingFill" cx="60" cy="60" r="52" stroke-dasharray="' + FLOW_RING_C.toFixed(1) + '" stroke-dashoffset="0"/></svg>' +
+      '<div class="flow-ring-num" id="flowRingNum">' + flowState.secsLeft + '</div></div>' +
+    '<div class="flow-cue">' + pose.cue + '</div>' +
+    '<div class="flow-why"><strong>Why it helps:</strong> ' + pose.why + '</div>' +
+    '<div class="flow-next">' + (next ? 'Next: ' + next.e + ' ' + next.n : 'Last pose') + '</div>';
+  controls.innerHTML =
+    '<button class="sos-action-btn flow-side" onclick="goToPose(' + (idx - 1) + ')"' + (idx === 0 ? ' disabled style="opacity:0.4;"' : '') + '>◀ Back</button>' +
+    '<button class="sos-action-btn flow-main" onclick="flowPlayPause()">' + (flowState.running ? '⏸ Pause' : '▶ Resume') + '</button>' +
+    '<button class="sos-action-btn flow-side" onclick="goToPose(' + (idx + 1) + ')">Skip ▶</button>';
+  renderFlowTick();
 }
 
 // ——— My Reasons ———
@@ -3119,6 +3596,26 @@ var DEEP_DIVES = [
       { t: 'hl', s: 'Every hour past 72 is measurably easier than the one before it. The biology improves on a predictable, documented curve.' }
     ]
   },
+  { id: 'movement-ecs', unlockHours: 0, title: 'Movement & Your Endocannabinoid System', eyebrow: 'Always Unlocked', preview: 'Why exercise is the closest thing to a natural replacement.',
+    content: [
+      { t: 'p', s: 'Your endocannabinoid system is a signaling network that helps run mood, stress, appetite, sleep and pain. THC works by hijacking one of its receptors, called CB1. With regular use, your brain turns those receptors down to cope with the constant flood. When you quit, the system is temporarily under-powered. That gap is a big part of withdrawal.' },
+      { t: 'hl', s: 'Exercise raises anandamide, your body’s own cannabinoid. Researchers measuring runners found anandamide levels rise after a session of moderate aerobic exercise. Part of the “runner’s high” is your endocannabinoid system doing what THC used to do for it.' },
+      { t: 'p', s: 'Intensity matters. In those studies, moderate effort raised endocannabinoids more than a slow stroll or an all-out sprint. A good test: you can talk, but you could not sing. About 30 minutes of that, most days, is the target. Ten minutes still helps.' },
+      { t: 'p', s: 'It shows up in behavior too. In a 2011 study, daily cannabis users who were not trying to quit did ten 30-minute treadmill sessions over two weeks. Their cannabis use dropped by more than half during the study, with no other treatment.' },
+      { t: 'p', s: 'Yoga and breathwork work through a different door. Slow breathing with long exhales activates the vagus nerve, which lowers heart rate and moves your body out of fight-or-flight. Holding poses also trains interoception, the skill of noticing what is happening inside your body without reacting to it. That is the same skill you use to surf an urge.' },
+      { t: 'hl', s: 'You do not need a gym. A brisk walk, a guided flow in Recharge, or dancing in your kitchen all count. The best exercise for recovery is the one you will actually do again tomorrow.' }
+    ]
+  },
+  { id: 'food-cravings', unlockHours: 0, title: 'Food, Blood Sugar & the Munchies', eyebrow: 'Always Unlocked', preview: 'How what you eat makes cravings louder or quieter.',
+    content: [
+      { t: 'p', s: 'Appetite is one of the first things to change when you quit. Many people lose their appetite for the first week or two, which is a recognized withdrawal symptom. Then it often swings the other way. Both are normal. Your appetite system is recalibrating without THC telling it when to be hungry.' },
+      { t: 'p', s: 'Blood sugar is where food and cravings meet. When your blood sugar crashes, you feel irritable, shaky, anxious and tired. Your brain can easily misread that as a craving, especially if you used to smoke when you felt that way. This is why the HALT check in Tools starts with “Am I hungry?”' },
+      { t: 'hl', s: 'Protein, fat and fiber together at each meal slow down how fast sugar hits your blood. Flatter blood sugar means fewer crashes, and fewer crashes means fewer false-alarm cravings.' },
+      { t: 'p', s: 'Some nutrients are worth leaning on. Foods with tryptophan (turkey, eggs, salmon, oats) are building blocks for serotonin, and pairing them with complex carbs helps your brain use them. Omega-3 fats in fish, walnuts and flax are part of your brain cells’ structure, and studies link them to steadier mood. Magnesium in leafy greens, beans, nuts and dark chocolate supports muscle relaxation and sleep.' },
+      { t: 'p', s: 'Water counts too. Even mild dehydration makes headaches, low mood and poor focus worse, and all three are common in early withdrawal. Keep a bottle nearby.' },
+      { t: 'hl', s: 'If you used to snack while high, the snack itself is tied to the habit. Pick a new ritual snack from the Munchie Swaps in Recharge so the craving for food stops pulling the old routine along with it.' }
+    ]
+  },
   { id: 'dopamine-week1', unlockHours: 168, title: 'Your Dopamine System at Week 1', eyebrow: 'Unlocks at 1 Week', preview: 'What\'s actually happening to your reward circuit right now.',
     content: [
       { t: 'p', s: 'At one week of abstinence, something significant is happening in your brain\'s dopamine system. Chronic cannabis use causes downregulation of D2 dopamine receptors in the striatum — your brain\'s reward hub — and reduces dopamine release in anticipation of rewards.' },
@@ -3414,6 +3911,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderLog();
   startCounter();
   setUsed('yes');
+  renderFlowList();
   renderReasons();
   renderBrainToday(-1);
   renderDeepDives(-1);

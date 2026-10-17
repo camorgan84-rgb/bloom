@@ -253,7 +253,7 @@
   .cbt-steps { padding-left: 16px; }
   .cbt-steps li { margin-bottom: 7px; }
 
-  /* ─── Collapsible tool groups (Tools tab) ────────── */
+  /* ─── Collapsible tool groups (Toolkit) ──────────── */
   .tool-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
   .tool-group > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 16px 18px; min-height: 44px; }
   .tool-group > summary::-webkit-details-marker { display: none; }
@@ -869,13 +869,9 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
     <span>Health</span>
   </button>
-  <button class="nav-item" onclick="showSection('tools', this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-    <span>Tools</span>
-  </button>
-  <button class="nav-item" onclick="showSection('recharge', this)">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-    <span>Recharge</span>
+  <button class="nav-item" onclick="showSection('toolkit', this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/><path d="M10 13v2h4v-2"/></svg>
+    <span>Toolkit</span>
   </button>
   <button class="nav-item" onclick="showSection('science', this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31l-4.24 6.36A2 2 0 0 0 7.41 18H16.6a2 2 0 0 0 1.65-3.13L14 9.31V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
@@ -1087,6 +1083,101 @@
   </div>
 
   </div>
+
+  <div class="section-title">Recovery Recipes</div>
+  <div class="disclaimer preg-show"><strong>Pregnant?</strong> Keep caffeine under 200 mg a day (about one 12 oz coffee), cook fish fully, and check herbal teas with your provider. Recipes with herbs that aren't advised in pregnancy are hidden for now.</div>
+  <div class="disclaimer"><strong>Heads up:</strong> These are general wellness recipes, not medical treatment. Check with your doctor before adding herbal ingredients if you're pregnant, breastfeeding, or taking medication — some (like valerian or ashwagandha) can interact with other drugs.</div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🌙</div>
+      <div><div class="body-sys-name">For Sleep</div><div class="body-sys-timeline">Wind down and stay down</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🍒</div><div><div class="supp-name">Tart Cherry Sleep Smoothie</div><div class="supp-dose">1 cup tart cherry juice, 1 banana, 1 tbsp almond butter, ½ tsp cinnamon, ice — blend until smooth</div><div class="supp-why">Tart cherries are one of the few natural food sources of melatonin; banana adds magnesium and potassium for muscle relaxation.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🥛</div><div><div class="supp-name">Golden Milk (Turmeric Latte)</div><div class="supp-dose">1 cup milk of choice, ½ tsp turmeric, pinch black pepper, ½ tsp cinnamon, 1 tsp honey — warm gently, don't boil, whisk well</div><div class="supp-why">Turmeric with black pepper has anti-inflammatory effects; the warm ritual itself signals to your body that it's bedtime.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🌸</div><div><div class="supp-name">Chamomile-Lavender Tea</div><div class="supp-dose">1 chamomile tea bag, pinch of dried lavender, 1 tsp honey — steep 5–7 minutes</div><div class="supp-why">Chamomile contains apigenin, a compound with mild calming effects; lavender's scent alone measurably lowers cortisol.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🧘</div>
+      <div><div class="body-sys-name">For Calm &amp; Anxiety</div><div class="body-sys-timeline">Take the edge off, without smoke</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🍫</div><div><div class="supp-name">Magnesium Cacao Nightcap</div><div class="supp-dose">1 cup warm milk, 1 tbsp raw cacao, 1 tsp maple syrup — whisk over low heat</div><div class="supp-why">Cacao naturally contains magnesium and mood-supporting compounds; having a go-to warm drink gives your hands something to do besides reach for a habit.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍵</div><div><div class="supp-name">L-Theanine Green Tea Latte</div><div class="supp-dose">Brewed green tea, steamed milk of choice, honey to taste</div><div class="supp-why">Green tea naturally contains L-theanine, which produces calm alertness without sedation — pairs with the L-Theanine supplement in your Health protocol.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">⚡</div>
+      <div><div class="body-sys-name">For Cravings &amp; Blood Sugar</div><div class="body-sys-timeline">Flatten the swings that fuel urges</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🥣</div><div><div class="supp-name">Stabilizing Protein Bowl</div><div class="supp-dose">2 eggs or ½ cup Greek yogurt, handful of berries, 1 tbsp nut butter, sprinkle of chia seeds</div><div class="supp-why">Blood sugar crashes intensify craving strength — protein, fat, and fiber together flatten that curve.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🥬</div><div><div class="supp-name">Green Recovery Smoothie</div><div class="supp-dose">Spinach, ½ frozen banana, ½ avocado, 1 tbsp ground flaxseed, unsweetened almond milk — blend</div><div class="supp-why">Leafy greens supply glutathione precursors that work alongside NAC in your Health tab supplement protocol.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🔋</div>
+      <div><div class="body-sys-name">For Energy &amp; Motivation</div><div class="body-sys-timeline">Fight the early fatigue and brain fog</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item preg-hide"><div class="supp-icon">☕</div><div><div class="supp-name">Adaptogen Morning Latte</div><div class="supp-dose">Brewed coffee or chicory, ¼ tsp ashwagandha or rhodiola, oat milk, cinnamon</div><div class="supp-why">Taken with your morning cortisol rhythm, adaptogens build stress resilience over time instead of just masking fatigue.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍍</div><div><div class="supp-name">Green Morning Smoothie</div><div class="supp-dose">Spinach, pineapple, banana, small piece of ginger, coconut water — blend</div><div class="supp-why">Hydration, natural sugars, and anti-inflammatory ginger help counter the energy dip common in early recovery.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🌿</div>
+      <div><div class="body-sys-name">For Digestion &amp; Appetite Reset</div><div class="body-sys-timeline">Support your body as appetite rebalances</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🍋</div><div><div class="supp-name">Ginger-Lemon Morning Water</div><div class="supp-dose">Warm water, juice of ½ lemon, small knob of grated ginger</div><div class="supp-why">A simple first-thing-in-the-morning ritual that supports digestion while appetite regulation resets (see Hormones &amp; Metabolism in Health).</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🥣</div><div><div class="supp-name">Fiber-Rich Overnight Oats</div><div class="supp-dose">½ cup oats, 1 tbsp chia seeds, almond milk, berries, cinnamon — refrigerate overnight</div><div class="supp-why">Stabilizes appetite and blood sugar first thing, when cravings and hunger can be easy to confuse.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🍽️</div>
+      <div><div class="body-sys-name">Real Meals</div><div class="body-sys-timeline">Full plates that keep blood sugar and mood steady</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div class="supp-item"><div class="supp-icon">🐟</div><div><div class="supp-name">Sheet-Pan Salmon &amp; Sweet Potato</div><div class="supp-dose">1 salmon fillet, 1 sweet potato in cubes, 1 cup broccoli, 1 tbsp olive oil, salt, pepper, lemon. Roast potato at 400°F for 10 min, add salmon and broccoli, roast 12 to 15 min more. Serves 1, about 30 min.</div><div class="supp-why">Salmon brings omega-3 fats for brain cell health plus protein with tryptophan. Sweet potato is a slow carb that helps your brain use that tryptophan to make serotonin. One pan, little cleanup.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🌶️</div><div><div class="supp-name">Turkey &amp; Black Bean Chili</div><div class="supp-dose">1 lb ground turkey, 1 onion, 2 cloves garlic, 1 can black beans, 1 can diced tomatoes, 1 tbsp chili powder, 1 tsp cumin. Brown turkey with onion and garlic, add the rest, simmer 25 min. Serves 4.</div><div class="supp-why">Turkey and beans pair protein with lots of fiber, the combo that flattens blood sugar swings. A big batch means dinner is already decided on the nights you are too tired to cook, which are often the riskiest nights.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍛</div><div><div class="supp-name">Chickpea &amp; Spinach Curry</div><div class="supp-dose">1 can chickpeas, 1 can coconut milk, 2 big handfuls spinach, 1 onion, 2 tbsp curry powder, 1 tsp grated ginger. Soften onion, stir in spices, add chickpeas and coconut milk, simmer 15 min, wilt in spinach. Serve over rice. Serves 3.</div><div class="supp-why">Chickpeas and spinach are rich in magnesium and folate, both linked to steadier mood and better sleep. Fully plant-based and cheap to make.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍳</div><div><div class="supp-name">15-Minute Veggie Egg Fried Rice</div><div class="supp-dose">1 cup cooked rice (day-old works best), 2 eggs, 1 cup frozen mixed veg, 1 tbsp soy sauce, 1 tsp sesame oil, green onion. Scramble eggs, set aside, fry veg and rice, toss everything with soy and sesame oil.</div><div class="supp-why">Eggs carry choline, which your brain uses to make acetylcholine, a messenger involved in memory and focus. Fast enough to beat the urge to order takeout or reach for the old routine.</div></div></div>
+    </div>
+  </div>
+
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🍿</div>
+      <div><div class="body-sys-name">Munchie Swaps</div><div class="body-sys-timeline">When you want something crunchy, sweet, salty or creamy</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <div style="font-size:0.82rem; color:#333; padding:4px 0 12px;">If snacks used to go with getting high, the snack is part of the habit. Picking a new go-to keeps the comfort and drops the routine it was tied to.</div>
+      <div class="supp-item"><div class="supp-icon">🍿</div><div><div class="supp-name">Crunchy: Olive Oil Popcorn</div><div class="supp-dose">3 cups air-popped popcorn, 1 tsp olive oil, pinch of salt, optional nutritional yeast or smoked paprika</div><div class="supp-why">Popcorn is a whole grain with real fiber, and a big bowl is low in calories. It scratches the crunch itch that chips usually fill.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🍇</div><div><div class="supp-name">Sweet: Frozen Grapes + Dark Chocolate</div><div class="supp-dose">A handful of frozen grapes, or 1 to 2 squares of 70%+ dark chocolate with a few almonds</div><div class="supp-why">Frozen grapes eat like candy but slowly. Dark chocolate has magnesium, and the almonds add protein and fat so the sugar hits softer.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🫘</div><div><div class="supp-name">Salty: Roasted Chickpeas</div><div class="supp-dose">1 can chickpeas (rinsed and patted dry), 1 tbsp olive oil, salt, garlic powder. Roast at 400°F for 25 to 30 min, shaking halfway.</div><div class="supp-why">Crunchy and salty like pretzels, but with protein and fiber that actually fill you up instead of leaving you wanting more.</div></div></div>
+      <div class="supp-item"><div class="supp-icon">🥄</div><div><div class="supp-name">Creamy: Greek Yogurt Bowl</div><div class="supp-dose">¾ cup Greek yogurt, 1 tsp honey, cinnamon, a spoon of nut butter or granola on top</div><div class="supp-why">Thick, cold and creamy like ice cream, with about three times the protein. Protein is the most filling nutrient and the best at keeping blood sugar steady.</div></div></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- SECTION: Science / Learn -->
@@ -1100,8 +1191,8 @@
 
 </div>
 
-<!-- SECTION: Tools (Cravings + CBT + EFT combined) -->
-<div class="section" id="section-tools">
+<!-- SECTION: Toolkit (cravings, daily practice, skills) -->
+<div class="section" id="section-toolkit">
 
   <div class="section-title" style="background:var(--warm-pale); border-left:4px solid var(--warm); border-radius:10px; padding:10px 14px; font-size:0.8rem; letter-spacing:0.08em; color:var(--warm);">⚡ WHEN A CRAVING HITS</div>
 
@@ -1151,7 +1242,7 @@
   </div>
   <div class="strategy-card">
     <div class="strategy-emoji">🏃</div>
-    <div><div class="strategy-name">Move Your Body</div><div class="strategy-desc">Physical movement burns off restless energy and releases endorphins that dampen cravings. Even 5 minutes works. <strong>Want it guided?</strong> Try the Craving Flow in Recharge.</div>
+    <div><div class="strategy-name">Move Your Body</div><div class="strategy-desc">Physical movement burns off restless energy and releases endorphins that dampen cravings. Even 5 minutes works. <strong>Want it guided?</strong> Try the Craving Flow under Daily Practice.</div>
       <ol class="strategy-steps"><li>Walk briskly around the block</li><li>March in place or do 10 slow squats</li><li>Stretch for 5 minutes</li><li>Dance to one song</li></ol>
     </div>
   </div>
@@ -1177,6 +1268,221 @@
     <div class="strategy-emoji">✏️</div>
     <div><div class="strategy-name">Write It Out</div><div class="strategy-desc">Externalizing the craving by writing it down interrupts automatic thinking and reduces its power.</div>
       <ol class="strategy-steps"><li>Grab any paper or open notes</li><li>Write: "Right now I'm feeling ____ because ____"</li><li>Write what you're afraid will happen if you don't use</li><li>Write one thing you're proud of since quitting</li></ol>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <div class="section-title" style="background:var(--green-pale); border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-size:0.8rem; letter-spacing:0.08em; color:var(--green); margin-top:8px;">🌿 DAILY PRACTICE</div>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🧘</span><span class="tool-group-text"><span class="tool-group-name">Guided Flows</span><span class="tool-group-meta">4 yoga and mobility routines, 5 to 8 min</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="body-sys-card">
+    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
+      <div class="body-sys-icon">🧠</div>
+      <div><div class="body-sys-name">Why movement beats a craving</div><div class="body-sys-timeline">Read this once. It makes every flow work better.</div></div>
+      <span class="arrow" style="margin-left:auto;">▾</span>
+    </div>
+    <div class="body-sys-body">
+      <ul>
+        <li><strong>It feeds the same system THC used.</strong> Exercise raises anandamide, your body's own cannabinoid. That is part of the "runner's high." You are giving your endocannabinoid system a natural top-up while it rebuilds.</li>
+        <li><strong>It works in real studies.</strong> In a 2011 study, daily cannabis users who were not trying to quit did ten 30-minute treadmill sessions over two weeks. Their use dropped by more than half.</li>
+        <li><strong>It shrinks cravings fast.</strong> Research on short bursts of exercise (mostly in people quitting nicotine) shows craving strength falls within minutes and stays lower for a while after.</li>
+        <li><strong>Long exhales flip your calm switch.</strong> Slow breathing, especially a long breath out, activates the vagus nerve and moves your body out of fight-or-flight. Every flow pairs poses with breath for this reason.</li>
+        <li><strong>It trains the urge-surfing muscle.</strong> Holding a pose means feeling a sensation without reacting to it. That is exactly the skill you use to ride out a craving.</li>
+      </ul>
+      <div style="font-size:0.78rem; color:var(--muted); margin-top:8px;">Go gently. Skip anything that hurts, and check with your doctor if you have an injury, are pregnant, or have a heart condition.</div>
+    </div>
+  </div>
+
+  <div class="card preg-show" style="background:#fdeef3; border-color:#f6c3d3;">
+    <div class="card-title" style="color:#7a2747;">🤰 Pregnancy-safe versions are on</div>
+    <div class="card-body">The flows below skip lying flat on your back, deep twists and jumping, and use props where they help. Move gently, stop if anything hurts or you feel dizzy, and check with your provider about exercise.</div>
+  </div>
+  <div id="flowList"></div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">⏱️</span><span class="tool-group-text"><span class="tool-group-name">Quick Practices</span><span class="tool-group-meta">4 guided exercises, 1 to 2 min</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="flow-card">
+    <div class="flow-card-desc" style="margin-top:0;">One guided exercise, 1 to 2 minutes. Use them on ordinary days so they work better on hard ones.</div>
+    <div class="practice-grid" id="practiceGrid"></div>
+  </div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🌿</span><span class="tool-group-text"><span class="tool-group-name">Mindfulness Exercises</span><span class="tool-group-meta">Body scan, mindful eating and more</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="strategy-card">
+    <div class="strategy-emoji">🧍</div>
+    <div><div class="strategy-name">Body Scan Meditation</div><div class="strategy-desc">Builds the skill of noticing sensation without needing to fix or escape it — the core muscle of riding out a craving.</div>
+      <ol class="strategy-steps"><li>Lie down or sit comfortably, eyes closed</li><li>Bring attention to your toes — just notice, don't change anything</li><li>Slowly move attention up through feet, legs, torso, arms, head (20–30 sec each)</li><li>If your mind wanders, gently bring it back to the body</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🍇</div>
+    <div><div class="strategy-name">Mindful Eating Reset</div><div class="strategy-desc">Retrains attention and slows down the same "reach for something to change how I feel" impulse that drives use.</div>
+      <ol class="strategy-steps"><li>Pick one small food item</li><li>Look at it, smell it, notice its texture before eating</li><li>Take one bite, chew slowly, set it down between bites</li><li>Notice flavor changing as you chew</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">💛</div>
+    <div><div class="strategy-name">Self-Compassion Break</div><div class="strategy-desc">For the moments guilt or shame about a craving (or a slip) show up. Shame fuels relapse; compassion interrupts it.</div>
+      <ol class="strategy-steps"><li>Name it: "This is a hard moment"</li><li>Normalize it: "Struggling is part of recovery, not a sign I'm failing"</li><li>Hand on heart (or chest), say: "May I be kind to myself right now"</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🚶</div>
+    <div><div class="strategy-name">Mindful Walking</div><div class="strategy-desc">Combines movement (which burns off craving energy) with grounding attention.</div>
+      <ol class="strategy-steps"><li>Walk slightly slower than normal</li><li>Feel each foot contact the ground</li><li>Match your breath to your steps</li><li>Name 3 things you notice along the way</li></ol>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">💆</span><span class="tool-group-text"><span class="tool-group-name">Nervous System Regulation</span><span class="tool-group-meta">Humming, butterfly hug and more</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="card" style="background:var(--teal-pale); border-left:4px solid var(--teal);">
+    <div class="card-body">Your vagus nerve is the main line between brain and body for calming down. These tools directly stimulate it — they're not just "relaxing," they physiologically shift you out of fight-or-flight.</div>
+  </div>
+
+  <div class="strategy-card">
+    <div class="strategy-emoji">🐝</div>
+    <div><div class="strategy-name">Humming / Bee Breath</div><div class="strategy-desc">The vibration from humming directly stimulates the vagus nerve where it runs through the throat.</div>
+      <ol class="strategy-steps"><li>Close your mouth, breathe in through the nose</li><li>Hum steadily on the exhale until your breath runs out</li><li>Feel the vibration in your throat and chest</li><li>Repeat 5–10 rounds</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🦋</div>
+    <div><div class="strategy-name">Butterfly Hug</div><div class="strategy-desc">Alternating bilateral tapping is used in trauma therapy to calm the nervous system and can be done anywhere, discreetly.</div>
+      <ol class="strategy-steps"><li>Cross your arms over your chest, hands on opposite shoulders</li><li>Slowly alternate tapping left, then right</li><li>Breathe slowly as you tap for 1–2 minutes</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">👀</div>
+    <div><div class="strategy-name">Orienting / Safety Scan</div><div class="strategy-desc">A polyvagal technique that tells your nervous system "no threat here" by re-engaging your visual sense of the present room.</div>
+      <ol class="strategy-steps"><li>Slowly turn your head left, then right</li><li>Let your eyes land on a few objects — really see them</li><li>Silently note: "I am here. I am safe right now."</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🎶</div>
+    <div><div class="strategy-name">Vocal Toning</div><div class="strategy-desc">Singing, gargling, and chanting all use the same throat muscles that stimulate the vagus nerve.</div>
+      <ol class="strategy-steps"><li>Sing along loudly to one full song</li><li>Or gargle water for 30 seconds</li><li>Or chant a long "om" for a few breaths</li></ol>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🌙</span><span class="tool-group-text"><span class="tool-group-name">Sleep Toolkit</span><span class="tool-group-meta">Wind-down, digital sunset, 20-minute rule</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="disclaimer"><strong>Heads up:</strong> Disrupted sleep and vivid dreams are common in the first 1–4 weeks as your natural REM cycles return (see Recovery Progress in Health). It's temporary, and it's a sign of healing, not a problem.</div>
+
+  <div class="strategy-card">
+    <div class="strategy-emoji">🌙</div>
+    <div><div class="strategy-name">Wind-Down Routine</div><div class="strategy-desc">Doing the same sequence nightly trains your brain to associate it with sleep onset.</div>
+      <ol class="strategy-steps"><li>Pick a 30–60 min pre-bed window</li><li>Dim the lights in the house</li><li>Warm shower or a sleep-support tea (see Recovery Recipes in Health)</li><li>Light stretching or a few lines in your journal</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">📵</div>
+    <div><div class="strategy-name">Digital Sunset</div><div class="strategy-desc">Screen blue light suppresses melatonin right when you need it rising.</div>
+      <ol class="strategy-steps"><li>Stop phone/TV use 60 minutes before bed</li><li>Switch devices to night mode earlier in the evening</li><li>Swap scrolling for a physical book or audio</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🛏️</div>
+    <div><div class="strategy-name">The 20-Minute Rule</div><div class="strategy-desc">Lying awake and frustrated teaches your brain that bed = anxiety. Break that link.</div>
+      <ol class="strategy-steps"><li>If you're not asleep in ~20 minutes, get up</li><li>Do something calm and low-light (not your phone)</li><li>Return to bed only when you feel sleepy</li></ol>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🌳</span><span class="tool-group-text"><span class="tool-group-name">Stress Toolkit</span><span class="tool-group-meta">6 ways to bring stress down</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="strategy-card">
+    <div class="strategy-emoji">📝</div>
+    <div><div class="strategy-name">Brain Dump</div><div class="strategy-desc">Gets swirling thoughts out of your head and onto paper where they're easier to manage.</div>
+      <ol class="strategy-steps"><li>Set a 5-minute timer</li><li>Write every worry or task, no editing, no order</li><li>Close the notebook when the timer ends</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">⏳</div>
+    <div><div class="strategy-name">Scheduled Worry Time</div><div class="strategy-desc">Instead of trying to stop worrying (which backfires), give it a designated window.</div>
+      <ol class="strategy-steps"><li>Pick a daily 15-minute "worry time"</li><li>When a worry pops up outside that window, jot it down for later</li><li>Actually think it through during the scheduled time — no earlier</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🌳</div>
+    <div><div class="strategy-name">Nature Dose</div><div class="strategy-desc">Time outdoors measurably lowers cortisol — no special technique required.</div>
+      <ol class="strategy-steps"><li>Get outside for 10–20 minutes</li><li>Leave your phone in your pocket</li><li>Notice something natural: sky, trees, wind, birds</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🙅</div>
+    <div><div class="strategy-name">Boundary Check-In</div><div class="strategy-desc">Overcommitting is a quiet, constant stress source that often goes unnoticed.</div>
+      <ol class="strategy-steps"><li>Ask: "Is this actually mine to carry right now?"</li><li>Practice saying no to one nonessential ask this week</li><li>Notice how it feels afterward, not just before</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🎵</div>
+    <div><div class="strategy-name">Music Regulation</div><div class="strategy-desc">Slow-tempo music can gently pull your heart rate down to match it.</div>
+      <ol class="strategy-steps"><li>Build a "calm down" playlist ahead of time</li><li>Favor slower tracks (roughly 60–80 bpm)</li><li>Put it on at the first sign of tension, don't wait for a crisis</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🗣️</div>
+    <div><div class="strategy-name">Name It to Tame It</div><div class="strategy-desc">Putting a specific word on an emotion measurably lowers the brain's alarm response.</div>
+      <ol class="strategy-steps"><li>Pause and ask: "What exactly am I feeling?"</li><li>Get specific — not "bad," but "overwhelmed" or "on edge"</li><li>Say or write it in one sentence: "I feel ___ because ___"</li></ol>
+    </div>
+  </div>
+    </div>
+  </details>
+
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🎯</span><span class="tool-group-text"><span class="tool-group-name">Motivation Toolkit</span><span class="tool-group-meta">6 ways to keep your why front and center</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
+  <div class="strategy-card">
+    <div class="strategy-emoji">🪞</div>
+    <div><div class="strategy-name">Future Self Letter</div><div class="strategy-desc">Makes your "why" concrete instead of abstract.</div>
+      <ol class="strategy-steps"><li>Picture yourself one year clean</li><li>Write that version of you a letter about what changed</li><li>Keep it somewhere you'll reread it on a hard day</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🧱</div>
+    <div><div class="strategy-name">Habit Stacking</div><div class="strategy-desc">New habits stick far better when attached to something you already do daily.</div>
+      <ol class="strategy-steps"><li>Pick one existing daily habit (brushing teeth, making coffee)</li><li>Attach one recovery habit right after it (one gratitude line, a breathing round)</li><li>Keep the stack the same every day until it's automatic</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🏅</div>
+    <div><div class="strategy-name">Reward Ladder</div><div class="strategy-desc">Plan rewards in advance so motivation doesn't depend on willpower alone.</div>
+      <ol class="strategy-steps"><li>Day 7: something small and immediate (a favorite meal, a movie night)</li><li>Day 30: something you've been putting off (new gear, a class)</li><li>Day 90: something bigger (a trip, a bigger purchase)</li><li>Day 180+: something that marks the milestone permanently</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🧍</div>
+    <div><div class="strategy-name">Identity Statements</div><div class="strategy-desc">Identity-based language holds up better under pressure than willpower-based language.</div>
+      <ol class="strategy-steps"><li>Notice when you think "I'm trying to quit"</li><li>Swap it for "I'm someone who doesn't use"</li><li>Say it out loud once a day, especially on hard days</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">📣</div>
+    <div><div class="strategy-name">Accountability Ping</div><div class="strategy-desc">External accountability is one of the strongest predictors of sticking with recovery.</div>
+      <ol class="strategy-steps"><li>Pick one person you trust</li><li>Send them your day count today, even if it's small</li><li>Ask them to check in on a specific hard day (like a weekend)</li></ol>
+    </div>
+  </div>
+  <div class="strategy-card">
+    <div class="strategy-emoji">🎯</div>
+    <div><div class="strategy-name">Visualize the Win</div><div class="strategy-desc">Mental rehearsal of a specific future moment makes the goal feel real, not abstract.</div>
+      <ol class="strategy-steps"><li>Close your eyes for 60 seconds</li><li>Picture one specific future moment this makes possible</li><li>Notice details: where you are, who's there, how you feel</li></ol>
     </div>
   </div>
     </div>
@@ -1474,323 +1780,6 @@
 
 </div>
 
-<!-- SECTION: Recharge (Mindfulness, Nervous System, Sleep, Stress, Motivation, Recipes) -->
-<div class="section" id="section-recharge">
-
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🧘</span><span class="tool-group-text"><span class="tool-group-name">Guided Flows</span><span class="tool-group-meta">4 yoga and mobility routines, 5 to 8 min</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🧠</div>
-      <div><div class="body-sys-name">Why movement beats a craving</div><div class="body-sys-timeline">Read this once. It makes every flow work better.</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <ul>
-        <li><strong>It feeds the same system THC used.</strong> Exercise raises anandamide, your body's own cannabinoid. That is part of the "runner's high." You are giving your endocannabinoid system a natural top-up while it rebuilds.</li>
-        <li><strong>It works in real studies.</strong> In a 2011 study, daily cannabis users who were not trying to quit did ten 30-minute treadmill sessions over two weeks. Their use dropped by more than half.</li>
-        <li><strong>It shrinks cravings fast.</strong> Research on short bursts of exercise (mostly in people quitting nicotine) shows craving strength falls within minutes and stays lower for a while after.</li>
-        <li><strong>Long exhales flip your calm switch.</strong> Slow breathing, especially a long breath out, activates the vagus nerve and moves your body out of fight-or-flight. Every flow pairs poses with breath for this reason.</li>
-        <li><strong>It trains the urge-surfing muscle.</strong> Holding a pose means feeling a sensation without reacting to it. That is exactly the skill you use to ride out a craving.</li>
-      </ul>
-      <div style="font-size:0.78rem; color:var(--muted); margin-top:8px;">Go gently. Skip anything that hurts, and check with your doctor if you have an injury, are pregnant, or have a heart condition.</div>
-    </div>
-  </div>
-
-  <div class="card preg-show" style="background:#fdeef3; border-color:#f6c3d3;">
-    <div class="card-title" style="color:#7a2747;">🤰 Pregnancy-safe versions are on</div>
-    <div class="card-body">The flows below skip lying flat on your back, deep twists and jumping, and use props where they help. Move gently, stop if anything hurts or you feel dizzy, and check with your provider about exercise.</div>
-  </div>
-  <div id="flowList"></div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">⏱️</span><span class="tool-group-text"><span class="tool-group-name">Quick Practices</span><span class="tool-group-meta">4 guided exercises, 1 to 2 min</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="flow-card">
-    <div class="flow-card-desc" style="margin-top:0;">One guided exercise, 1 to 2 minutes. Use them on ordinary days so they work better on hard ones.</div>
-    <div class="practice-grid" id="practiceGrid"></div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🌿</span><span class="tool-group-text"><span class="tool-group-name">Mindfulness Exercises</span><span class="tool-group-meta">Body scan, mindful eating and more</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="strategy-card">
-    <div class="strategy-emoji">🧍</div>
-    <div><div class="strategy-name">Body Scan Meditation</div><div class="strategy-desc">Builds the skill of noticing sensation without needing to fix or escape it — the core muscle of riding out a craving.</div>
-      <ol class="strategy-steps"><li>Lie down or sit comfortably, eyes closed</li><li>Bring attention to your toes — just notice, don't change anything</li><li>Slowly move attention up through feet, legs, torso, arms, head (20–30 sec each)</li><li>If your mind wanders, gently bring it back to the body</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🍇</div>
-    <div><div class="strategy-name">Mindful Eating Reset</div><div class="strategy-desc">Retrains attention and slows down the same "reach for something to change how I feel" impulse that drives use.</div>
-      <ol class="strategy-steps"><li>Pick one small food item</li><li>Look at it, smell it, notice its texture before eating</li><li>Take one bite, chew slowly, set it down between bites</li><li>Notice flavor changing as you chew</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">💛</div>
-    <div><div class="strategy-name">Self-Compassion Break</div><div class="strategy-desc">For the moments guilt or shame about a craving (or a slip) show up. Shame fuels relapse; compassion interrupts it.</div>
-      <ol class="strategy-steps"><li>Name it: "This is a hard moment"</li><li>Normalize it: "Struggling is part of recovery, not a sign I'm failing"</li><li>Hand on heart (or chest), say: "May I be kind to myself right now"</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🚶</div>
-    <div><div class="strategy-name">Mindful Walking</div><div class="strategy-desc">Combines movement (which burns off craving energy) with grounding attention.</div>
-      <ol class="strategy-steps"><li>Walk slightly slower than normal</li><li>Feel each foot contact the ground</li><li>Match your breath to your steps</li><li>Name 3 things you notice along the way</li></ol>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">💆</span><span class="tool-group-text"><span class="tool-group-name">Nervous System Regulation</span><span class="tool-group-meta">Humming, butterfly hug and more</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="card" style="background:var(--teal-pale); border-left:4px solid var(--teal);">
-    <div class="card-body">Your vagus nerve is the main line between brain and body for calming down. These tools directly stimulate it — they're not just "relaxing," they physiologically shift you out of fight-or-flight.</div>
-  </div>
-
-  <div class="strategy-card">
-    <div class="strategy-emoji">🐝</div>
-    <div><div class="strategy-name">Humming / Bee Breath</div><div class="strategy-desc">The vibration from humming directly stimulates the vagus nerve where it runs through the throat.</div>
-      <ol class="strategy-steps"><li>Close your mouth, breathe in through the nose</li><li>Hum steadily on the exhale until your breath runs out</li><li>Feel the vibration in your throat and chest</li><li>Repeat 5–10 rounds</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🦋</div>
-    <div><div class="strategy-name">Butterfly Hug</div><div class="strategy-desc">Alternating bilateral tapping is used in trauma therapy to calm the nervous system and can be done anywhere, discreetly.</div>
-      <ol class="strategy-steps"><li>Cross your arms over your chest, hands on opposite shoulders</li><li>Slowly alternate tapping left, then right</li><li>Breathe slowly as you tap for 1–2 minutes</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">👀</div>
-    <div><div class="strategy-name">Orienting / Safety Scan</div><div class="strategy-desc">A polyvagal technique that tells your nervous system "no threat here" by re-engaging your visual sense of the present room.</div>
-      <ol class="strategy-steps"><li>Slowly turn your head left, then right</li><li>Let your eyes land on a few objects — really see them</li><li>Silently note: "I am here. I am safe right now."</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🎶</div>
-    <div><div class="strategy-name">Vocal Toning</div><div class="strategy-desc">Singing, gargling, and chanting all use the same throat muscles that stimulate the vagus nerve.</div>
-      <ol class="strategy-steps"><li>Sing along loudly to one full song</li><li>Or gargle water for 30 seconds</li><li>Or chant a long "om" for a few breaths</li></ol>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🌙</span><span class="tool-group-text"><span class="tool-group-name">Sleep Toolkit</span><span class="tool-group-meta">Wind-down, digital sunset, 20-minute rule</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="disclaimer"><strong>Heads up:</strong> Disrupted sleep and vivid dreams are common in the first 1–4 weeks as your natural REM cycles return (see Recovery Progress in Health). It's temporary, and it's a sign of healing, not a problem.</div>
-
-  <div class="strategy-card">
-    <div class="strategy-emoji">🌙</div>
-    <div><div class="strategy-name">Wind-Down Routine</div><div class="strategy-desc">Doing the same sequence nightly trains your brain to associate it with sleep onset.</div>
-      <ol class="strategy-steps"><li>Pick a 30–60 min pre-bed window</li><li>Dim the lights in the house</li><li>Warm shower or a sleep-support tea (see Recipes below)</li><li>Light stretching or a few lines in your journal</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">📵</div>
-    <div><div class="strategy-name">Digital Sunset</div><div class="strategy-desc">Screen blue light suppresses melatonin right when you need it rising.</div>
-      <ol class="strategy-steps"><li>Stop phone/TV use 60 minutes before bed</li><li>Switch devices to night mode earlier in the evening</li><li>Swap scrolling for a physical book or audio</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🛏️</div>
-    <div><div class="strategy-name">The 20-Minute Rule</div><div class="strategy-desc">Lying awake and frustrated teaches your brain that bed = anxiety. Break that link.</div>
-      <ol class="strategy-steps"><li>If you're not asleep in ~20 minutes, get up</li><li>Do something calm and low-light (not your phone)</li><li>Return to bed only when you feel sleepy</li></ol>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🌳</span><span class="tool-group-text"><span class="tool-group-name">Stress Toolkit</span><span class="tool-group-meta">6 ways to bring stress down</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="strategy-card">
-    <div class="strategy-emoji">📝</div>
-    <div><div class="strategy-name">Brain Dump</div><div class="strategy-desc">Gets swirling thoughts out of your head and onto paper where they're easier to manage.</div>
-      <ol class="strategy-steps"><li>Set a 5-minute timer</li><li>Write every worry or task, no editing, no order</li><li>Close the notebook when the timer ends</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">⏳</div>
-    <div><div class="strategy-name">Scheduled Worry Time</div><div class="strategy-desc">Instead of trying to stop worrying (which backfires), give it a designated window.</div>
-      <ol class="strategy-steps"><li>Pick a daily 15-minute "worry time"</li><li>When a worry pops up outside that window, jot it down for later</li><li>Actually think it through during the scheduled time — no earlier</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🌳</div>
-    <div><div class="strategy-name">Nature Dose</div><div class="strategy-desc">Time outdoors measurably lowers cortisol — no special technique required.</div>
-      <ol class="strategy-steps"><li>Get outside for 10–20 minutes</li><li>Leave your phone in your pocket</li><li>Notice something natural: sky, trees, wind, birds</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🙅</div>
-    <div><div class="strategy-name">Boundary Check-In</div><div class="strategy-desc">Overcommitting is a quiet, constant stress source that often goes unnoticed.</div>
-      <ol class="strategy-steps"><li>Ask: "Is this actually mine to carry right now?"</li><li>Practice saying no to one nonessential ask this week</li><li>Notice how it feels afterward, not just before</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🎵</div>
-    <div><div class="strategy-name">Music Regulation</div><div class="strategy-desc">Slow-tempo music can gently pull your heart rate down to match it.</div>
-      <ol class="strategy-steps"><li>Build a "calm down" playlist ahead of time</li><li>Favor slower tracks (roughly 60–80 bpm)</li><li>Put it on at the first sign of tension, don't wait for a crisis</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🗣️</div>
-    <div><div class="strategy-name">Name It to Tame It</div><div class="strategy-desc">Putting a specific word on an emotion measurably lowers the brain's alarm response.</div>
-      <ol class="strategy-steps"><li>Pause and ask: "What exactly am I feeling?"</li><li>Get specific — not "bad," but "overwhelmed" or "on edge"</li><li>Say or write it in one sentence: "I feel ___ because ___"</li></ol>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🎯</span><span class="tool-group-text"><span class="tool-group-name">Motivation Toolkit</span><span class="tool-group-meta">6 ways to keep your why front and center</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="strategy-card">
-    <div class="strategy-emoji">🪞</div>
-    <div><div class="strategy-name">Future Self Letter</div><div class="strategy-desc">Makes your "why" concrete instead of abstract.</div>
-      <ol class="strategy-steps"><li>Picture yourself one year clean</li><li>Write that version of you a letter about what changed</li><li>Keep it somewhere you'll reread it on a hard day</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🧱</div>
-    <div><div class="strategy-name">Habit Stacking</div><div class="strategy-desc">New habits stick far better when attached to something you already do daily.</div>
-      <ol class="strategy-steps"><li>Pick one existing daily habit (brushing teeth, making coffee)</li><li>Attach one recovery habit right after it (one gratitude line, a breathing round)</li><li>Keep the stack the same every day until it's automatic</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🏅</div>
-    <div><div class="strategy-name">Reward Ladder</div><div class="strategy-desc">Plan rewards in advance so motivation doesn't depend on willpower alone.</div>
-      <ol class="strategy-steps"><li>Day 7: something small and immediate (a favorite meal, a movie night)</li><li>Day 30: something you've been putting off (new gear, a class)</li><li>Day 90: something bigger (a trip, a bigger purchase)</li><li>Day 180+: something that marks the milestone permanently</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🧍</div>
-    <div><div class="strategy-name">Identity Statements</div><div class="strategy-desc">Identity-based language holds up better under pressure than willpower-based language.</div>
-      <ol class="strategy-steps"><li>Notice when you think "I'm trying to quit"</li><li>Swap it for "I'm someone who doesn't use"</li><li>Say it out loud once a day, especially on hard days</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">📣</div>
-    <div><div class="strategy-name">Accountability Ping</div><div class="strategy-desc">External accountability is one of the strongest predictors of sticking with recovery.</div>
-      <ol class="strategy-steps"><li>Pick one person you trust</li><li>Send them your day count today, even if it's small</li><li>Ask them to check in on a specific hard day (like a weekend)</li></ol>
-    </div>
-  </div>
-  <div class="strategy-card">
-    <div class="strategy-emoji">🎯</div>
-    <div><div class="strategy-name">Visualize the Win</div><div class="strategy-desc">Mental rehearsal of a specific future moment makes the goal feel real, not abstract.</div>
-      <ol class="strategy-steps"><li>Close your eyes for 60 seconds</li><li>Picture one specific future moment this makes possible</li><li>Notice details: where you are, who's there, how you feel</li></ol>
-    </div>
-  </div>
-    </div>
-  </details>
-
-  <details class="tool-group">
-    <summary><span class="tool-group-icon">🍽️</span><span class="tool-group-text"><span class="tool-group-name">Recovery Recipes</span><span class="tool-group-meta">Drinks, real meals and munchie swaps</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
-    <div class="tool-group-body">
-  <div class="disclaimer preg-show"><strong>Pregnant?</strong> Keep caffeine under 200 mg a day (about one 12 oz coffee), cook fish fully, and check herbal teas with your provider. Recipes with herbs that aren't advised in pregnancy are hidden for now.</div>
-  <div class="disclaimer"><strong>Heads up:</strong> These are general wellness recipes, not medical treatment. Check with your doctor before adding herbal ingredients if you're pregnant, breastfeeding, or taking medication — some (like valerian or ashwagandha) can interact with other drugs.</div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🌙</div>
-      <div><div class="body-sys-name">For Sleep</div><div class="body-sys-timeline">Wind down and stay down</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">🍒</div><div><div class="supp-name">Tart Cherry Sleep Smoothie</div><div class="supp-dose">1 cup tart cherry juice, 1 banana, 1 tbsp almond butter, ½ tsp cinnamon, ice — blend until smooth</div><div class="supp-why">Tart cherries are one of the few natural food sources of melatonin; banana adds magnesium and potassium for muscle relaxation.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🥛</div><div><div class="supp-name">Golden Milk (Turmeric Latte)</div><div class="supp-dose">1 cup milk of choice, ½ tsp turmeric, pinch black pepper, ½ tsp cinnamon, 1 tsp honey — warm gently, don't boil, whisk well</div><div class="supp-why">Turmeric with black pepper has anti-inflammatory effects; the warm ritual itself signals to your body that it's bedtime.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🌸</div><div><div class="supp-name">Chamomile-Lavender Tea</div><div class="supp-dose">1 chamomile tea bag, pinch of dried lavender, 1 tsp honey — steep 5–7 minutes</div><div class="supp-why">Chamomile contains apigenin, a compound with mild calming effects; lavender's scent alone measurably lowers cortisol.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🧘</div>
-      <div><div class="body-sys-name">For Calm &amp; Anxiety</div><div class="body-sys-timeline">Take the edge off, without smoke</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">🍫</div><div><div class="supp-name">Magnesium Cacao Nightcap</div><div class="supp-dose">1 cup warm milk, 1 tbsp raw cacao, 1 tsp maple syrup — whisk over low heat</div><div class="supp-why">Cacao naturally contains magnesium and mood-supporting compounds; having a go-to warm drink gives your hands something to do besides reach for a habit.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🍵</div><div><div class="supp-name">L-Theanine Green Tea Latte</div><div class="supp-dose">Brewed green tea, steamed milk of choice, honey to taste</div><div class="supp-why">Green tea naturally contains L-theanine, which produces calm alertness without sedation — pairs with the L-Theanine supplement in your Health protocol.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">⚡</div>
-      <div><div class="body-sys-name">For Cravings &amp; Blood Sugar</div><div class="body-sys-timeline">Flatten the swings that fuel urges</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">🥣</div><div><div class="supp-name">Stabilizing Protein Bowl</div><div class="supp-dose">2 eggs or ½ cup Greek yogurt, handful of berries, 1 tbsp nut butter, sprinkle of chia seeds</div><div class="supp-why">Blood sugar crashes intensify craving strength — protein, fat, and fiber together flatten that curve.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🥬</div><div><div class="supp-name">Green Recovery Smoothie</div><div class="supp-dose">Spinach, ½ frozen banana, ½ avocado, 1 tbsp ground flaxseed, unsweetened almond milk — blend</div><div class="supp-why">Leafy greens supply glutathione precursors that work alongside NAC in your Health tab supplement protocol.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🔋</div>
-      <div><div class="body-sys-name">For Energy &amp; Motivation</div><div class="body-sys-timeline">Fight the early fatigue and brain fog</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item preg-hide"><div class="supp-icon">☕</div><div><div class="supp-name">Adaptogen Morning Latte</div><div class="supp-dose">Brewed coffee or chicory, ¼ tsp ashwagandha or rhodiola, oat milk, cinnamon</div><div class="supp-why">Taken with your morning cortisol rhythm, adaptogens build stress resilience over time instead of just masking fatigue.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🍍</div><div><div class="supp-name">Green Morning Smoothie</div><div class="supp-dose">Spinach, pineapple, banana, small piece of ginger, coconut water — blend</div><div class="supp-why">Hydration, natural sugars, and anti-inflammatory ginger help counter the energy dip common in early recovery.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🌿</div>
-      <div><div class="body-sys-name">For Digestion &amp; Appetite Reset</div><div class="body-sys-timeline">Support your body as appetite rebalances</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">🍋</div><div><div class="supp-name">Ginger-Lemon Morning Water</div><div class="supp-dose">Warm water, juice of ½ lemon, small knob of grated ginger</div><div class="supp-why">A simple first-thing-in-the-morning ritual that supports digestion while appetite regulation resets (see Hormones &amp; Metabolism in Health).</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🥣</div><div><div class="supp-name">Fiber-Rich Overnight Oats</div><div class="supp-dose">½ cup oats, 1 tbsp chia seeds, almond milk, berries, cinnamon — refrigerate overnight</div><div class="supp-why">Stabilizes appetite and blood sugar first thing, when cravings and hunger can be easy to confuse.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🍽️</div>
-      <div><div class="body-sys-name">Real Meals</div><div class="body-sys-timeline">Full plates that keep blood sugar and mood steady</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">🐟</div><div><div class="supp-name">Sheet-Pan Salmon &amp; Sweet Potato</div><div class="supp-dose">1 salmon fillet, 1 sweet potato in cubes, 1 cup broccoli, 1 tbsp olive oil, salt, pepper, lemon. Roast potato at 400°F for 10 min, add salmon and broccoli, roast 12 to 15 min more. Serves 1, about 30 min.</div><div class="supp-why">Salmon brings omega-3 fats for brain cell health plus protein with tryptophan. Sweet potato is a slow carb that helps your brain use that tryptophan to make serotonin. One pan, little cleanup.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🌶️</div><div><div class="supp-name">Turkey &amp; Black Bean Chili</div><div class="supp-dose">1 lb ground turkey, 1 onion, 2 cloves garlic, 1 can black beans, 1 can diced tomatoes, 1 tbsp chili powder, 1 tsp cumin. Brown turkey with onion and garlic, add the rest, simmer 25 min. Serves 4.</div><div class="supp-why">Turkey and beans pair protein with lots of fiber, the combo that flattens blood sugar swings. A big batch means dinner is already decided on the nights you are too tired to cook, which are often the riskiest nights.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🍛</div><div><div class="supp-name">Chickpea &amp; Spinach Curry</div><div class="supp-dose">1 can chickpeas, 1 can coconut milk, 2 big handfuls spinach, 1 onion, 2 tbsp curry powder, 1 tsp grated ginger. Soften onion, stir in spices, add chickpeas and coconut milk, simmer 15 min, wilt in spinach. Serve over rice. Serves 3.</div><div class="supp-why">Chickpeas and spinach are rich in magnesium and folate, both linked to steadier mood and better sleep. Fully plant-based and cheap to make.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🍳</div><div><div class="supp-name">15-Minute Veggie Egg Fried Rice</div><div class="supp-dose">1 cup cooked rice (day-old works best), 2 eggs, 1 cup frozen mixed veg, 1 tbsp soy sauce, 1 tsp sesame oil, green onion. Scramble eggs, set aside, fry veg and rice, toss everything with soy and sesame oil.</div><div class="supp-why">Eggs carry choline, which your brain uses to make acetylcholine, a messenger involved in memory and focus. Fast enough to beat the urge to order takeout or reach for the old routine.</div></div></div>
-    </div>
-  </div>
-
-  <div class="body-sys-card">
-    <div class="body-sys-header accordion-header" onclick="toggleBodySys(this)">
-      <div class="body-sys-icon">🍿</div>
-      <div><div class="body-sys-name">Munchie Swaps</div><div class="body-sys-timeline">When you want something crunchy, sweet, salty or creamy</div></div>
-      <span class="arrow" style="margin-left:auto;">▾</span>
-    </div>
-    <div class="body-sys-body">
-      <div style="font-size:0.82rem; color:#333; padding:4px 0 12px;">If snacks used to go with getting high, the snack is part of the habit. Picking a new go-to keeps the comfort and drops the routine it was tied to.</div>
-      <div class="supp-item"><div class="supp-icon">🍿</div><div><div class="supp-name">Crunchy: Olive Oil Popcorn</div><div class="supp-dose">3 cups air-popped popcorn, 1 tsp olive oil, pinch of salt, optional nutritional yeast or smoked paprika</div><div class="supp-why">Popcorn is a whole grain with real fiber, and a big bowl is low in calories. It scratches the crunch itch that chips usually fill.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🍇</div><div><div class="supp-name">Sweet: Frozen Grapes + Dark Chocolate</div><div class="supp-dose">A handful of frozen grapes, or 1 to 2 squares of 70%+ dark chocolate with a few almonds</div><div class="supp-why">Frozen grapes eat like candy but slowly. Dark chocolate has magnesium, and the almonds add protein and fat so the sugar hits softer.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🫘</div><div><div class="supp-name">Salty: Roasted Chickpeas</div><div class="supp-dose">1 can chickpeas (rinsed and patted dry), 1 tbsp olive oil, salt, garlic powder. Roast at 400°F for 25 to 30 min, shaking halfway.</div><div class="supp-why">Crunchy and salty like pretzels, but with protein and fiber that actually fill you up instead of leaving you wanting more.</div></div></div>
-      <div class="supp-item"><div class="supp-icon">🥄</div><div><div class="supp-name">Creamy: Greek Yogurt Bowl</div><div class="supp-dose">¾ cup Greek yogurt, 1 tsp honey, cinnamon, a spoon of nut butter or granola on top</div><div class="supp-why">Thick, cold and creamy like ice cream, with about three times the protein. Protein is the most filling nutrient and the best at keeping blood sugar steady.</div></div></div>
-    </div>
-  </div>
-    </div>
-  </details>
-
-</div>
-
 <!-- SECTION: Log -->
 <div class="section" id="section-log">
   <div class="section-title">Your Log</div>
@@ -1914,7 +1903,7 @@ const MILESTONES = [
   { h: 4, label: '4 Hours', note: 'Heart rate and blood pressure are settling back toward normal.' },
   { h: 5, label: '5 Hours', note: 'Five hours of choosing yourself. Drink some water.' },
   { h: 6, label: '6 Hours', note: 'Restlessness may show up. That\'s your body adjusting, not danger.' },
-  { h: 7, label: '7 Hours', note: 'Feeling on edge? Try the Craving Flow or Box Breathing in Recharge.' },
+  { h: 7, label: '7 Hours', note: 'Feeling on edge? Try the Craving Flow or Box Breathing in your Toolkit.' },
   { h: 8, label: '8 Hours', note: 'If you smoked, your airways are already starting to clear.' },
   { h: 9, label: '9 Hours', note: 'Cravings come in waves. Each one peaks and passes in about 20 minutes.' },
   { h: 10, label: '10 Hours', note: 'Eat something steady. Protein helps even out mood and cravings.' },
@@ -2992,7 +2981,7 @@ function renderCBT(days) {
     </div>
   `;
 
-  // Tools tab — full set of prompts
+  // Toolkit — full set of prompts
   const cbtJournalHTML = `
     <div class="journal-card">
       <div class="journal-header">✏️ Journal Prompts — ${phase.name}</div>
@@ -3007,7 +2996,7 @@ function renderCBT(days) {
     <div class="journal-card">
       <div class="journal-header">✏️ Reflection for ${phase.name}</div>
       <div class="journal-prompt" style="font-size:1rem; line-height:1.7;">${featuredPrompt}</div>
-      <div style="margin-top:14px; font-size:0.7rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:1px;">More prompts in the Tools tab</div>
+      <div style="margin-top:14px; font-size:0.7rem; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:1px;">More prompts in your Toolkit</div>
     </div>`;
   document.getElementById('todayJournalContent').innerHTML = todayJournalHTML;
 }
@@ -3636,7 +3625,7 @@ function deleteUrgeEntry(ts) {
   storageSet('urgelog', JSON.stringify(log));
   renderLog();
 }
-// Tools shortcut: jump to the one log form with "Urge" picked
+// Toolkit shortcut: jump to the one log form with "Urge" picked
 function goLogUrge() {
   showSection('log', document.querySelector('.nav-item[onclick*="\'log\'"]'));
   setUsed('urge');
@@ -3797,17 +3786,17 @@ var DEEP_DIVES = [
       { t: 'p', s: 'Intensity matters. In those studies, moderate effort raised endocannabinoids more than a slow stroll or an all-out sprint. A good test: you can talk, but you could not sing. About 30 minutes of that, most days, is the target. Ten minutes still helps.' },
       { t: 'p', s: 'It shows up in behavior too. In a 2011 study, daily cannabis users who were not trying to quit did ten 30-minute treadmill sessions over two weeks. Their cannabis use dropped by more than half during the study, with no other treatment.' },
       { t: 'p', s: 'Yoga and breathwork work through a different door. Slow breathing with long exhales activates the vagus nerve, which lowers heart rate and moves your body out of fight-or-flight. Holding poses also trains interoception, the skill of noticing what is happening inside your body without reacting to it. That is the same skill you use to surf an urge.' },
-      { t: 'hl', s: 'You do not need a gym. A brisk walk, a guided flow in Recharge, or dancing in your kitchen all count. The best exercise for recovery is the one you will actually do again tomorrow.' }
+      { t: 'hl', s: 'You do not need a gym. A brisk walk, a guided flow in your Toolkit, or dancing in your kitchen all count. The best exercise for recovery is the one you will actually do again tomorrow.' }
     ]
   },
   { id: 'food-cravings', unlockHours: 0, title: 'Food, Blood Sugar & the Munchies', eyebrow: 'Always Unlocked', preview: 'How what you eat makes cravings louder or quieter.',
     content: [
       { t: 'p', s: 'Appetite is one of the first things to change when you quit. Many people lose their appetite for the first week or two, which is a recognized withdrawal symptom. Then it often swings the other way. Both are normal. Your appetite system is recalibrating without THC telling it when to be hungry.' },
-      { t: 'p', s: 'Blood sugar is where food and cravings meet. When your blood sugar crashes, you feel irritable, shaky, anxious and tired. Your brain can easily misread that as a craving, especially if you used to smoke when you felt that way. This is why the HALT check in Tools starts with “Am I hungry?”' },
+      { t: 'p', s: 'Blood sugar is where food and cravings meet. When your blood sugar crashes, you feel irritable, shaky, anxious and tired. Your brain can easily misread that as a craving, especially if you used to smoke when you felt that way. This is why the HALT check in your Toolkit starts with “Am I hungry?”' },
       { t: 'hl', s: 'Protein, fat and fiber together at each meal slow down how fast sugar hits your blood. Flatter blood sugar means fewer crashes, and fewer crashes means fewer false-alarm cravings.' },
       { t: 'p', s: 'Some nutrients are worth leaning on. Foods with tryptophan (turkey, eggs, salmon, oats) are building blocks for serotonin, and pairing them with complex carbs helps your brain use them. Omega-3 fats in fish, walnuts and flax are part of your brain cells’ structure, and studies link them to steadier mood. Magnesium in leafy greens, beans, nuts and dark chocolate supports muscle relaxation and sleep.' },
       { t: 'p', s: 'Water counts too. Even mild dehydration makes headaches, low mood and poor focus worse, and all three are common in early withdrawal. Keep a bottle nearby.' },
-      { t: 'hl', s: 'If you used to snack while high, the snack itself is tied to the habit. Pick a new ritual snack from the Munchie Swaps in Recharge so the craving for food stops pulling the old routine along with it.' }
+      { t: 'hl', s: 'If you used to snack while high, the snack itself is tied to the habit. Pick a new ritual snack from the Munchie Swaps in the Health tab so the craving for food stops pulling the old routine along with it.' }
     ]
   },
   { id: 'dopamine-week1', unlockHours: 168, title: 'Your Dopamine System at Week 1', eyebrow: 'Unlocks at 1 Week', preview: 'What\'s actually happening to your reward circuit right now.',

@@ -487,6 +487,27 @@
   .practice-btn span { font-size: 1.4rem; }
   .practice-btn small { font-weight: 600; font-size: 0.7rem; color: var(--blue); }
 
+  /* ─── Baby ──────────────────────────────────────── */
+  .baby-card { background: var(--card); border-radius: var(--radius); border: 1px solid #f6c3d3; padding: 18px; margin-bottom: 10px; }
+  .baby-top { display: flex; gap: 14px; align-items: center; }
+  .baby-art { width: 112px; height: 112px; flex-shrink: 0; }
+  .baby-info { min-width: 0; }
+  .baby-week { font-size: 1.15rem; font-weight: 900; color: var(--navy); line-height: 1.25; }
+  .baby-tri { font-size: 0.72rem; font-weight: 700; color: #c2456f; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .baby-size { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-top: 10px; line-height: 1.4; }
+  .baby-measure { font-size: 0.78rem; color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .baby-intro { font-size: 0.85rem; color: #333; line-height: 1.55; margin: 6px 0 14px; }
+  .baby-label { display: block; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin: 16px 0 6px; }
+  .baby-dev { padding-left: 18px; font-size: 0.86rem; color: #333; line-height: 1.6; }
+  .baby-dev li { margin-bottom: 3px; }
+  .baby-smokefree { margin-top: 14px; background: #fdeef3; border-radius: 10px; padding: 10px 12px; font-size: 0.84rem; color: #7a2747; line-height: 1.55; }
+  .baby-date { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 1rem; font-family: inherit; color: var(--text); background: var(--bg); margin-bottom: 4px; }
+  .baby-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 10px; }
+  .baby-actions button { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 50px; padding: 7px 14px; font-size: 0.78rem; cursor: pointer; min-height: 36px; font-family: inherit; }
+  .preg-show { display: none; }
+  body.pregnant .preg-show { display: block; }
+  body.pregnant .preg-hide { display: none !important; }
+
   /* ─── Growing Flower ─────────────────────────────── */
   .bloom-plant { width: 230px; max-width: 100%; margin: 4px auto 0; text-align: center; }
   .bloom-plant svg { width: 150px; height: 170px; overflow: visible; }
@@ -742,7 +763,7 @@
   <div class="sos-step">
     <div class="sos-step-num">Step 3 — Move Your Body</div>
     <div class="sos-step-title">Change your physical state immediately</div>
-    <div class="sos-step-body">Go outside. Do 10 jumping jacks. Walk to another room. Splash cold water on your face. Cravings live in your body — movement interrupts the signal at the source.</div>
+    <div class="sos-step-body">Go outside. March in place or walk to another room. Splash cold water on your face. Cravings live in your body — movement interrupts the signal at the source.</div>
     <button class="sos-action-btn sos-flow-btn" onclick="openFlow('craving')">▶ Start the 5-minute Craving Flow</button>
   </div>
 
@@ -822,6 +843,9 @@
 <!-- SECTION: Today -->
 <div class="section active" id="section-today">
 
+
+  <div class="section-title">Your Baby</div>
+  <div id="babyCard"></div>
 
   <div class="section-title">My Reasons to Quit</div>
   <div class="card">
@@ -961,6 +985,11 @@
   </div>
 
   <div class="section-title">Supplement Protocol</div>
+  <div class="card preg-show" style="background:#fdeef3; border-color:#f6c3d3;">
+    <div class="card-title" style="color:#7a2747;">🤰 Pregnancy mode is on</div>
+    <div class="card-body">Most recovery supplements haven't been tested in pregnancy, and some (like ashwagandha, rhodiola and melatonin) aren't recommended. While you're pregnant, take only what your OB or midwife recommends. That's usually a prenatal vitamin with folic acid, and sometimes DHA. The full protocol comes back if you remove your due date.</div>
+  </div>
+  <div class="preg-hide">
   <div class="disclaimer">
     <strong>Heads up:</strong> These are general wellness supplements used in recovery contexts. Always consult your doctor before starting, especially if you take medications or have health conditions.
   </div>
@@ -1007,6 +1036,7 @@
     </div>
   </div>
 
+  </div>
 </div>
 
 <!-- SECTION: Science / Learn -->
@@ -1136,7 +1166,7 @@
   <div class="strategy-card">
     <div class="strategy-emoji">🏃</div>
     <div><div class="strategy-name">Move Your Body</div><div class="strategy-desc">Physical movement burns off restless energy and releases endorphins that dampen cravings. Even 5 minutes works. <strong>Want it guided?</strong> Try the Craving Flow in Recharge.</div>
-      <ol class="strategy-steps"><li>Walk briskly around the block</li><li>Do 20 jumping jacks or push-ups</li><li>Stretch for 5 minutes</li><li>Dance to one song</li></ol>
+      <ol class="strategy-steps"><li>Walk briskly around the block</li><li>March in place or do 10 slow squats</li><li>Stretch for 5 minutes</li><li>Dance to one song</li></ol>
     </div>
   </div>
   <div class="strategy-card">
@@ -1468,6 +1498,10 @@
     </div>
   </div>
 
+  <div class="card preg-show" style="background:#fdeef3; border-color:#f6c3d3;">
+    <div class="card-title" style="color:#7a2747;">🤰 Pregnancy-safe versions are on</div>
+    <div class="card-body">The flows below skip lying flat on your back, deep twists and jumping, and use props where they help. Move gently, stop if anything hurts or you feel dizzy, and check with your provider about exercise.</div>
+  </div>
   <div id="flowList"></div>
 
   <div class="section-title">Quick Practices</div>
@@ -1634,6 +1668,7 @@
   </div>
 
   <div class="section-title">Recovery Recipes</div>
+  <div class="disclaimer preg-show"><strong>Pregnant?</strong> Keep caffeine under 200 mg a day (about one 12 oz coffee), cook fish fully, and check herbal teas with your provider. Recipes with herbs that aren't advised in pregnancy are hidden for now.</div>
   <div class="disclaimer"><strong>Heads up:</strong> These are general wellness recipes, not medical treatment. Check with your doctor before adding herbal ingredients if you're pregnant, breastfeeding, or taking medication — some (like valerian or ashwagandha) can interact with other drugs.</div>
 
   <div class="body-sys-card">
@@ -1680,7 +1715,7 @@
       <span class="arrow" style="margin-left:auto;">▾</span>
     </div>
     <div class="body-sys-body">
-      <div class="supp-item"><div class="supp-icon">☕</div><div><div class="supp-name">Adaptogen Morning Latte</div><div class="supp-dose">Brewed coffee or chicory, ¼ tsp ashwagandha or rhodiola, oat milk, cinnamon</div><div class="supp-why">Taken with your morning cortisol rhythm, adaptogens build stress resilience over time instead of just masking fatigue.</div></div></div>
+      <div class="supp-item preg-hide"><div class="supp-icon">☕</div><div><div class="supp-name">Adaptogen Morning Latte</div><div class="supp-dose">Brewed coffee or chicory, ¼ tsp ashwagandha or rhodiola, oat milk, cinnamon</div><div class="supp-why">Taken with your morning cortisol rhythm, adaptogens build stress resilience over time instead of just masking fatigue.</div></div></div>
       <div class="supp-item"><div class="supp-icon">🍍</div><div><div class="supp-name">Green Morning Smoothie</div><div class="supp-dose">Spinach, pineapple, banana, small piece of ginger, coconut water — blend</div><div class="supp-why">Hydration, natural sugars, and anti-inflammatory ginger help counter the energy dip common in early recovery.</div></div></div>
     </div>
   </div>
@@ -2164,7 +2199,7 @@ const PHASES = [
     name: 'Before Quitting',
     color: '#ffffff', bgColor: '#1a3560', borderColor: '#f0b429',
     desc: 'Preparing Your Mind & Body',
-    sub: 'The most powerful thing you can do today is decide and prepare. Set your quit date, start your supplements, and tell one person you trust.',
+    sub: 'The most powerful thing you can do today is decide and prepare. Set your quit date, clear out anything you use with, and tell one person you trust.',
     brain: 'THC binds to CB1 receptors throughout your brain, especially in the prefrontal cortex (decision-making), hippocampus (memory), and amygdala (emotion). Regular use has downregulated your natural endocannabinoid system — but this reverses with time.',
     body: 'Your lungs, liver, and immune system are ready to begin recovery the moment you stop. Start Omega-3, Magnesium, NAC, and Vitamin D now.',
     symptoms: ['Anticipation', 'Anxiety about quitting', 'Planning mode'],
@@ -2470,6 +2505,7 @@ function tickCounter() {
     document.getElementById('secCount').textContent = secs;
 
     try { renderBloom(diff / 86400000); } catch(e) {}
+    try { renderBaby(); } catch(e) {}
     try { renderStreakMeta(); } catch(e) {}
     try { renderEducation(diff / 3600000); } catch(e) {}
   } catch(e) {}
@@ -2581,6 +2617,194 @@ function bloomFlower(x, y, open, scale) {
     }
   }
   return out + '</g>';
+}
+
+// ——— Pregnancy ———
+// Typical sizes by week of pregnancy (counted from the first day of the last period).
+// len is crown-to-rump in cm until week 19, head-to-heel from week 20. wt in grams.
+var PREG_WEEKS = {
+  4:  { size: 'a poppy seed', e: '', len: 0.1, wt: 0, dev: ['The embryo is settling into the lining of your uterus.', 'The placenta is starting to form.'] },
+  5:  { size: 'a sesame seed', e: '', len: 0.2, wt: 0, dev: ['The neural tube, which becomes the brain and spinal cord, is forming.', 'The heart is starting to take shape.'] },
+  6:  { size: 'a lentil', e: '🫘', len: 0.6, wt: 0, dev: ['The heart has started beating.', 'Tiny buds that become arms and legs are appearing.'] },
+  7:  { size: 'a blueberry', e: '🫐', len: 1.3, wt: 0, dev: ['The brain is growing very quickly.', 'Arm and leg buds are getting longer.'] },
+  8:  { size: 'a raspberry', e: '', len: 1.6, wt: 1, dev: ['Fingers and toes are starting to form.', 'Baby is already moving, too small for you to feel.'] },
+  9:  { size: 'a cherry', e: '🍒', len: 2.3, wt: 2, dev: ['All the major organs have started forming.', 'Tiny muscles are letting baby wiggle.'] },
+  10: { size: 'a strawberry', e: '🍓', len: 3.1, wt: 4, dev: ['Baby is now officially called a fetus.', 'Vital organs are formed and starting to work.'] },
+  11: { size: 'a fig', e: '', len: 4.1, wt: 7, dev: ['Hair follicles and fingernails are forming.', 'Baby can open and close tiny fists.'] },
+  12: { size: 'a lime', e: '', len: 5.4, wt: 14, dev: ['Reflexes like sucking are developing.', 'The kidneys are starting to make urine.'] },
+  13: { size: 'a lemon', e: '🍋', len: 7.4, wt: 23, dev: ['Vocal cords are forming.', 'Fingerprints are starting to appear.'] },
+  14: { size: 'a peach', e: '🍑', len: 8.7, wt: 43, dev: ['Baby can squint and frown.', 'Fine, soft hair is starting to cover the body.'] },
+  15: { size: 'an apple', e: '🍎', len: 10.1, wt: 70, dev: ['Baby can sense light through closed eyelids.', 'Bones are getting harder.'] },
+  16: { size: 'an avocado', e: '🥑', len: 11.6, wt: 100, dev: ['The eyes can make small movements.', 'The heart pumps about 25 quarts of blood a day.'] },
+  17: { size: 'a pear', e: '🍐', len: 13, wt: 140, dev: ['Baby is starting to build body fat.', 'The skeleton is changing from soft cartilage to bone.'] },
+  18: { size: 'a bell pepper', e: '🫑', len: 14.2, wt: 190, dev: ['The ears are in place and baby may start to hear sounds.', 'You might start feeling flutters soon, if you haven\'t yet.'] },
+  19: { size: 'a mango', e: '🥭', len: 15.3, wt: 240, dev: ['A protective coating called vernix is covering the skin.', 'The parts of the brain for the senses are developing.'] },
+  20: { size: 'a banana', e: '🍌', len: 25.6, wt: 300, dev: ['You\'re halfway there.', 'Baby is swallowing and practicing for digestion.'] },
+  21: { size: 'a carrot', e: '🥕', len: 26.7, wt: 360, dev: ['Movements are getting stronger and easier to feel.', 'Taste buds are forming.'] },
+  22: { size: 'a papaya', e: '', len: 27.8, wt: 430, dev: ['Eyebrows and eyelids are fully formed.', 'Baby can grip with tiny hands.'] },
+  23: { size: 'a grapefruit', e: '', len: 28.9, wt: 500, dev: ['Baby can hear your voice and heartbeat.', 'Blood vessels in the lungs are developing.'] },
+  24: { size: 'an ear of corn', e: '🌽', len: 30, wt: 600, dev: ['The lungs are branching out and getting ready to breathe.', 'The face is nearly fully formed.'] },
+  25: { size: 'a cauliflower', e: '', len: 34.6, wt: 660, dev: ['Baby may respond to your voice with movement.', 'Hair is growing on the head.'] },
+  26: { size: 'a head of lettuce', e: '🥬', len: 35.6, wt: 760, dev: ['The eyes are getting ready to open.', 'The lungs are starting to make surfactant, which helps them inflate.'] },
+  27: { size: 'a head of cabbage', e: '🥬', len: 36.6, wt: 875, dev: ['Baby has regular sleep and wake times.', 'The brain is very active.'] },
+  28: { size: 'an eggplant', e: '🍆', len: 37.6, wt: 1000, dev: ['Baby can open and close their eyes and blink.', 'Welcome to the third trimester.'] },
+  29: { size: 'a butternut squash', e: '', len: 38.6, wt: 1150, dev: ['Muscles and lungs keep maturing.', 'Kicks and stretches are getting stronger.'] },
+  30: { size: 'a large cabbage', e: '🥬', len: 39.9, wt: 1300, dev: ['The brain is growing fast.', 'Bone marrow is now making red blood cells.'] },
+  31: { size: 'a coconut', e: '🥥', len: 41.1, wt: 1500, dev: ['All five senses are working.', 'Baby can turn their head from side to side.'] },
+  32: { size: 'a jicama', e: '', len: 42.4, wt: 1700, dev: ['Baby is practicing breathing movements.', 'Toenails have grown in.'] },
+  33: { size: 'a pineapple', e: '🍍', len: 43.7, wt: 1900, dev: ['Bones are hardening, though the skull stays soft for birth.', 'Baby is getting antibodies from you.'] },
+  34: { size: 'a cantaloupe', e: '🍈', len: 45, wt: 2100, dev: ['The central nervous system is maturing.', 'The lungs are getting more developed.'] },
+  35: { size: 'a honeydew melon', e: '🍈', len: 46.2, wt: 2400, dev: ['The kidneys are fully developed.', 'Most growth now is baby putting on weight.'] },
+  36: { size: 'a head of romaine', e: '🥬', len: 47.4, wt: 2600, dev: ['Baby is getting ready for birth.', 'Many babies settle head-down around now.'] },
+  37: { size: 'a bunch of Swiss chard', e: '🥬', len: 48.6, wt: 2900, dev: ['Baby is practicing breathing, sucking and gripping.', 'You\'re now early term.'] },
+  38: { size: 'a leek', e: '', len: 49.8, wt: 3100, dev: ['The organs are ready for life outside.', 'The brain and lungs are still maturing.'] },
+  39: { size: 'a small watermelon', e: '🍉', len: 50.7, wt: 3300, dev: ['You\'re full term.', 'The brain is still growing quickly.'] },
+  40: { size: 'a pumpkin', e: '🎃', len: 51.2, wt: 3400, dev: ['It\'s your due date week.', 'Only about 1 in 20 babies arrive on their due date, so any day now.'] }
+};
+
+function getDueDate() {
+  var v = storageGet('dueDate');
+  if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return null;
+  var p = v.split('-').map(Number);
+  return new Date(p[0], p[1] - 1, p[2]);
+}
+function isPregnant() { return !!getDueDate(); }
+
+// Days pregnant, counted the standard way (due date = day 280)
+function pregnancyDays() {
+  var due = getDueDate();
+  if (!due) return null;
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return 280 - Math.round((due - today) / 86400000);
+}
+
+function formatBabyLength(cm, week) {
+  var how = week >= 20 ? 'head to heel' : 'head to bottom';
+  if (cm < 1) return 'about ' + Math.round(cm * 10) + ' mm long';
+  var inches = cm / 2.54;
+  return (inches < 10 ? inches.toFixed(1) : Math.round(inches)) + ' in long (' + how + ')';
+}
+function formatBabyWeight(g) {
+  if (g < 1) return '';
+  if (g < 454) { var oz = g / 28.35; return (oz < 1 ? 'under 1' : oz < 10 ? oz.toFixed(1) : Math.round(oz)) + ' oz'; }
+  var lb = Math.floor(g / 453.6), rem = Math.round((g - lb * 453.6) / 28.35);
+  if (rem === 16) { lb++; rem = 0; }
+  return lb + ' lb ' + rem + ' oz';
+}
+
+// A simple drawing of baby that grows week to week
+function babySVG(week) {
+  var w = Math.max(4, Math.min(40, week));
+  var s = 0.2 + 0.8 * Math.pow((w - 4) / 36, 0.75);
+  var skin = '#f7c4b0', line = '#e29a82';
+  var out = '<svg class="baby-art" viewBox="0 0 160 160" aria-hidden="true">' +
+    '<circle cx="80" cy="80" r="72" fill="#fde8ef"/><circle cx="80" cy="80" r="72" fill="none" stroke="#f6c3d3" stroke-width="2"/>' +
+    '<g transform="translate(80 82) scale(' + s.toFixed(3) + ')">';
+  if (w < 9) {
+    // embryo: a curled C shape with a large head
+    out += '<path d="M-4 -18 C-28 -6 -20 30 8 30 C22 30 24 16 14 10" fill="none" stroke="' + skin + '" stroke-width="18" stroke-linecap="round"/>' +
+      '<circle cx="2" cy="-20" r="20" fill="' + skin + '"/>' +
+      '<circle cx="8" cy="-22" r="2.5" fill="' + line + '"/>';
+  } else {
+    var headR = 30 - (w - 9) * 0.32;
+    out += '<ellipse cx="10" cy="14" rx="28" ry="36" transform="rotate(-22 10 14)" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<ellipse cx="22" cy="34" rx="12" ry="24" transform="rotate(-62 22 34)" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<ellipse cx="2" cy="44" rx="9" ry="6" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<circle cx="-12" cy="-26" r="' + headR.toFixed(1) + '" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<ellipse cx="-6" cy="2" rx="7" ry="17" transform="rotate(28 -6 2)" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<circle cx="-16" cy="-8" r="5" fill="' + skin + '" stroke="' + line + '" stroke-width="1.5"/>' +
+      '<path d="M-24 -28 q4 3 8 0" fill="none" stroke="' + line + '" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M-2 -30 q5 5 0 10" fill="none" stroke="' + line + '" stroke-width="1.8" stroke-linecap="round"/>';
+  }
+  return out + '</g></svg>';
+}
+
+var babyLastKey = null, babyEditing = false;
+function renderBaby(force) {
+  var el = document.getElementById('babyCard');
+  if (!el) return;
+  var due = getDueDate();
+  var quit = storageGet('quitDate');
+  var daysClean = quit ? Math.floor((Date.now() - parseInt(quit, 10)) / 86400000) : null;
+  var key = (storageGet('dueDate') || '') + '|' + new Date().toDateString() + '|' + daysClean + '|' + babyEditing;
+  if (!force && key === babyLastKey) return;
+  babyLastKey = key;
+
+  if (!due || babyEditing) {
+    el.innerHTML = '<div class="baby-card">' +
+      '<div class="baby-week">' + (due ? 'Change your due date' : 'Add your due date') + '</div>' +
+      '<div class="baby-intro">See how big baby is this week and what\'s developing, right next to your own progress. Bloom also switches to pregnancy-safe exercises and tips.</div>' +
+      '<label class="baby-label" for="dueDateInput">Due date</label>' +
+      '<input type="date" id="dueDateInput" class="baby-date" value="' + (storageGet('dueDate') || '') + '">' +
+      '<div class="form-error" id="dueDateError" role="alert" hidden></div>' +
+      '<button class="flow-start-btn" onclick="saveDueDate()">Show my baby\'s growth</button>' +
+      (due ? '<div class="baby-actions"><button onclick="babyEditing=false; renderBaby(true)">Cancel</button><button onclick="removeDueDate()">Remove due date</button></div>' : '') +
+    '</div>';
+    return;
+  }
+
+  var gd = pregnancyDays();
+  var week = Math.floor(gd / 7), day = gd % 7;
+  var info = PREG_WEEKS[Math.max(4, Math.min(40, week))];
+  var daysToDue = 280 - gd;
+  var weekText = week < 4 ? 'Very early days' : week + (week === 1 ? ' week' : ' weeks') + (day ? ', ' + day + (day === 1 ? ' day' : ' days') : '');
+  var tri = week < 14 ? 'First trimester' : week < 28 ? 'Second trimester' : 'Third trimester';
+  var toGo = daysToDue > 6 ? Math.ceil(daysToDue / 7) + ' weeks to go' : daysToDue > 0 ? daysToDue + (daysToDue === 1 ? ' day' : ' days') + ' to go' : daysToDue === 0 ? 'Due today' : 'Past your due date';
+  var helps = week < 14 ? 'Baby\'s organs are forming right now. Every smoke-free day gives them a cleaner start.'
+    : week < 28 ? 'Baby\'s brain and senses are building fast. Staying smoke-free means no THC crossing to baby.'
+    : 'Baby is gaining weight and the brain is growing fast. Smoke-free weeks now support a healthy birth weight.';
+  var sf = '';
+  if (daysClean !== null) {
+    var babyAge = gd - 14; // about conception
+    sf = (babyAge > 0 && daysClean >= babyAge)
+      ? 'Baby\'s whole life so far has been smoke-free.'
+      : 'Baby has had ' + daysClean + ' smoke-free ' + (daysClean === 1 ? 'day' : 'days') + ' so far.';
+  }
+  var measure = [formatBabyLength(info.len, week), formatBabyWeight(info.wt)].filter(Boolean).join(' · ');
+  el.innerHTML = '<div class="baby-card">' +
+    '<div class="baby-top">' + babySVG(week) +
+      '<div class="baby-info">' +
+        '<div class="baby-week">' + weekText + '</div>' +
+        '<div class="baby-tri">' + tri + ' · ' + toGo + '</div>' +
+        '<div class="baby-size">About the size of ' + info.size + (info.e ? ' ' + info.e : '') + '</div>' +
+        '<div class="baby-measure">' + measure + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="baby-label">This week</div>' +
+    '<ul class="baby-dev">' + info.dev.map(function(d) { return '<li>' + d + '</li>'; }).join('') + '</ul>' +
+    '<div class="baby-smokefree">💗 ' + (sf ? sf + ' ' : '') + helps + '</div>' +
+    '<div class="baby-actions"><button onclick="babyEditing=true; renderBaby(true)">Change due date</button></div>' +
+  '</div>';
+}
+
+function saveDueDate() {
+  var v = document.getElementById('dueDateInput').value;
+  var err = document.getElementById('dueDateError');
+  if (!v) { err.textContent = 'Pick your due date first.'; err.hidden = false; return; }
+  var p = v.split('-').map(Number), due = new Date(p[0], p[1] - 1, p[2]);
+  var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var daysToDue = Math.round((due - today) / 86400000);
+  if (daysToDue > 280) { err.textContent = 'That date is more than 40 weeks away. Check the year?'; err.hidden = false; return; }
+  if (daysToDue < -14) { err.textContent = 'That date is more than 2 weeks ago. Check the date?'; err.hidden = false; return; }
+  storageSet('dueDate', v);
+  babyEditing = false;
+  applyPregnancyMode();
+}
+function removeDueDate() {
+  storageRemove('dueDate');
+  babyEditing = false;
+  applyPregnancyMode();
+}
+
+// Pregnancy mode: static content uses .preg-hide / .preg-show; flows swap in pose.preg
+function applyPregnancyMode() {
+  document.body.classList.toggle('pregnant', isPregnant());
+  renderBaby(true);
+  renderFlowList();
+  renderPractices();
+  var stored = storageGet('quitDate');
+  renderDeepDives(stored ? (Date.now() - parseInt(stored, 10)) / 3600000 : -1);
 }
 
 function resetDate() {
@@ -2795,10 +3019,12 @@ function stopBreathing() {
 var POSES = {
   box: { e: '📦', n: 'Box Breathing', s: 120, breath: [['Breathe in', 4], ['Hold', 4], ['Breathe out', 4], ['Hold', 4]],
     cue: 'Breathe in through your nose for 4, hold for 4, breathe out through your mouth for 4, hold empty for 4. Follow the cue above the timer.',
-    why: 'Equal, slow counts steady your heart rate and give your mind one simple job. It activates your body\u2019s built-in off switch for anxiety and craving.' },
+    why: 'Equal, slow counts steady your heart rate and give your mind one simple job. It activates your body\u2019s built-in off switch for anxiety and craving.',
+        preg: { cue: 'Breathe in through your nose for 4, hold for 4, breathe out for 4, hold for 4. Follow the cue above the timer. Skip the holds if you feel lightheaded.' } },
   breath478: { e: '🛌', n: 'Rest with 4-7-8 Breathing', s: 90, breath: [['Breathe in', 4], ['Hold', 7], ['Breathe out slowly', 8]],
     cue: 'Lie down or sit back, body relaxed. Breathe in for 4, hold for 7, breathe out slowly for 8. Follow the cue above the timer.',
-    why: 'An exhale twice as long as your inhale slows your heart rate. It is especially good before bed, and many people fall asleep during it.' },
+    why: 'An exhale twice as long as your inhale slows your heart rate. It is especially good before bed, and many people fall asleep during it.',
+        preg: { cue: 'Rest on your left side or propped up on pillows. Breathe in for 4, hold for 7, breathe out slowly for 8. Shorten the hold if you feel lightheaded.' } },
   sigh: { e: '😮‍💨', n: 'Physiological Sighs', s: 45,
     cue: 'Two quick inhales through the nose (one big, one small top-up), then one long, slow exhale through the mouth. Repeat.',
     why: 'The double inhale reopens tiny air sacs in your lungs; the long exhale slows your heart. Your body does this on its own after crying. Researchers call it the fastest known way to calm down in real time.' },
@@ -2824,11 +3050,14 @@ var FLOWS = [
       { e: '🌙', n: 'Standing Side Stretch', s: 40, side: true, cue: 'Reach one arm overhead and lean the other way, like a crescent moon. Breathe into the long side of your ribs.',
         why: 'Stretching the sides of your ribcage lets your lungs expand more, which makes slow, deep breathing easier.' },
       { e: '🙇', n: 'Ragdoll Forward Fold', s: 40, cue: 'Bend your knees generously and fold forward. Hold opposite elbows and let your head hang heavy. Sway a little if it feels good.',
-        why: 'With your head below your heart and your breath slow, your body shifts toward rest-and-digest mode. Calm follows the body.' },
+        why: 'With your head below your heart and your breath slow, your body shifts toward rest-and-digest mode. Calm follows the body.',
+        preg: { n: 'Supported Forward Fold', cue: 'Feet wide, knees bent, hands on your thighs or a chair. Fold forward only as far as feels easy, leaving room for your belly. Breathe slowly.' } },
       { e: '🪑', n: 'Chair Pose Pulses', s: 30, cue: 'Feet together, sit back like there is a chair behind you, arms forward. Pulse gently up and down. Keep breathing.',
-        why: 'Your thigh muscles are the biggest in your body. Working them raises your heart rate quickly, which kicks off endorphins and anandamide.' },
+        why: 'Your thigh muscles are the biggest in your body. Working them raises your heart rate quickly, which kicks off endorphins and anandamide.',
+        preg: { cue: 'Feet hip-width apart, sit back like there is a chair behind you, hands on your thighs. Small, gentle pulses. Hold a counter if you want support.' } },
       { e: '🏃', n: 'March or Jumping Jacks', s: 45, cue: 'March in place with high knees, or do jumping jacks. Pick whichever gets your heart going without hurting.',
-        why: 'Short bursts of exercise are one of the best-studied ways to cut craving strength. Effects show up within minutes.' },
+        why: 'Short bursts of exercise are one of the best-studied ways to cut craving strength. Effects show up within minutes.',
+        preg: { n: 'March in Place', cue: 'March in place, lifting your knees to a comfortable height and swinging your arms. Brisk, but easy enough that you can still talk.', why: 'Low-impact movement still raises your heart rate and releases feel-good chemicals, without jarring your body.' } },
       { e: '🫶', n: 'Chest Opener', s: 30, cue: 'Clasp your hands behind your back (or hold a towel). Lift your chest, draw your shoulder blades together, and look slightly up.',
         why: 'Stress pulls us into a hunched, protective shape. Opening the chest reverses it and gives your breath more room.' },
       POSES.sigh
@@ -2846,7 +3075,8 @@ var FLOWS = [
       { e: '🐈', n: 'Seated Cat-Cow', s: 45, cue: 'Hands on knees. Breathe in, arch your back and lift your chest. Breathe out, round your spine and tuck your chin. Move with your breath.',
         why: 'Linking each movement to a breath is the core of why yoga calms people down. Your breath sets the pace instead of your racing thoughts.' },
       { e: '🌀', n: 'Seated Twist', s: 40, side: true, cue: 'Sit tall, then turn your chest to one side, holding the back of the chair or your knee. Grow taller on each inhale, twist a little on each exhale.',
-        why: 'Twists move your spine through a range it rarely uses while sitting. Many people find twisting feels like wringing out tension.' },
+        why: 'Twists move your spine through a range it rarely uses while sitting. Many people find twisting feels like wringing out tension.',
+        preg: { n: 'Gentle Open Twist', cue: 'Sit tall and turn your shoulders gently to one side, keeping your belly facing forward. Turn from your upper back only. Small and easy.' } },
       { e: '4️⃣', n: 'Seated Figure-Four', s: 40, side: true, cue: 'Rest one ankle on the opposite knee. Keep your back straight and lean forward slightly until you feel the outer hip stretch.',
         why: 'Hips hold a lot of tension from sitting and stress. This stretch is easy to do almost anywhere, including in a parked car.' },
       POSES.squeeze,
@@ -2858,17 +3088,23 @@ var FLOWS = [
     desc: 'For the nights sleep feels impossible without it. Slow floor poses that tell your nervous system the day is over.',
     poses: [
       { e: '🧎', n: "Child's Pose", s: 60, cue: 'Kneel, big toes together, knees wide. Fold forward and rest your forehead on the floor, a pillow, or your stacked hands. Breathe into your back.',
-        why: 'Folding forward with your head supported is deeply soothing. Breathing into your back body slows your breath without you having to try.' },
+        why: 'Folding forward with your head supported is deeply soothing. Breathing into your back body slows your breath without you having to try.',
+        preg: { cue: 'Kneel with your knees wide to make room for your belly. Fold forward onto a pillow or your stacked hands. Breathe into your back.' } },
       { e: '🐈', n: 'Slow Cat-Cow', s: 45, cue: 'On hands and knees. Inhale, drop your belly and lift your gaze. Exhale, round your back toward the ceiling. Go as slowly as you can.',
-        why: 'Gentle spinal movement releases the stiffness of the day. Moving slowly with your breath begins to lower your heart rate.' },
+        why: 'Gentle spinal movement releases the stiffness of the day. Moving slowly with your breath begins to lower your heart rate.',
+        preg: { cue: 'On hands and knees. Inhale and gently lift your gaze, keeping the arch small so your belly doesn\u2019t sag. Exhale and round your back. Go slowly.' } },
       { e: '🙇', n: 'Seated Forward Fold', s: 60, cue: 'Sit with legs out long, knees bent as much as you need. Fold forward over your legs and let your head relax. No pulling.',
-        why: 'Forward folds are traditionally used to calm the mind before sleep. The goal is surrender, not touching your toes.' },
+        why: 'Forward folds are traditionally used to calm the mind before sleep. The goal is surrender, not touching your toes.',
+        preg: { n: 'Wide-Leg Seated Fold', cue: 'Sit with your legs wide apart and knees soft. Walk your hands forward just a little, keeping your back long and plenty of room for your belly.' } },
       { e: '🌀', n: 'Lying Twist', s: 60, side: true, cue: 'Lie on your back, hug your knees, then let them fall to one side. Stretch your arms out like a T and look the other way if your neck is happy.',
-        why: 'A lying twist releases the lower back and lets gravity do the work. It is a classic bedtime pose for a reason.' },
+        why: 'A lying twist releases the lower back and lets gravity do the work. It is a classic bedtime pose for a reason.',
+        preg: { e: '🛌', n: 'Side-Lying Rest', cue: 'Lie on your side with a pillow between your knees and one under your head. Switch sides halfway. Let your whole body get heavy.', why: 'Side-lying is the most comfortable rest position in pregnancy, and resting on your left side is often recommended for good blood flow to baby.' } },
       { e: '👶', n: 'Happy Baby', s: 45, cue: 'On your back, draw your knees toward your armpits and hold your feet, ankles, or the backs of your thighs. Rock gently side to side.',
-        why: 'Gently opening the hips and rocking is calming in the same way rocking soothes a baby. Rhythm settles the nervous system.' },
+        why: 'Gently opening the hips and rocking is calming in the same way rocking soothes a baby. Rhythm settles the nervous system.',
+        preg: { e: '🦋', n: 'Supported Butterfly', cue: 'Sit against a wall or pillows with the soles of your feet together and knees falling open. Rest your hands on your belly or knees.', why: 'Opening the hips gently while sitting upright eases pelvic tension without lying on your back.' } },
       { e: '🦵', n: 'Legs Up the Wall', s: 90, cue: 'Scoot your hips close to a wall (or headboard) and rest your legs up it. Arms relaxed by your sides. Just breathe.',
-        why: 'This gentle inversion is one of the most popular poses for winding down. It is restful and asks almost nothing of you.' },
+        why: 'This gentle inversion is one of the most popular poses for winding down. It is restful and asks almost nothing of you.',
+        preg: { e: '🛋️', n: 'Propped Recline', cue: 'Recline against a stack of pillows so your upper body is raised, with a pillow under your knees. Let your arms rest. Just breathe.', why: 'Propping yourself up avoids lying flat on your back, which can press on a large blood vessel later in pregnancy, while still letting you fully rest.' } },
       POSES.breath478
     ]
   },
@@ -2882,16 +3118,22 @@ var FLOWS = [
       { e: '🔃', n: 'Hip Circles', s: 40, cue: 'Hands on hips, feet wider than hips. Draw big slow circles with your hips. Switch directions halfway.',
         why: 'Your hips stiffen overnight. Loosening them first makes every other movement in your day feel easier.' },
       { e: '🦎', n: 'Lunge with a Twist', s: 60, side: true, cue: 'Step one foot forward into a lunge, back knee down if you like. Place the opposite hand on the floor and reach the other arm up to the sky.',
-        why: 'Trainers call this the world’s greatest stretch. It opens hips, hamstrings, chest and spine all at once.' },
+        why: 'Trainers call this the world’s greatest stretch. It opens hips, hamstrings, chest and spine all at once.',
+        preg: { n: 'Supported Low Lunge', cue: 'Step one foot forward into a lunge with your back knee down on a cushion. Hands on your front thigh or a chair. Lift your chest gently, with no twisting.', why: 'Opens the hip flexors, which tighten as your belly grows, without twisting or straining.' } },
       { e: '🏋️', n: 'Bodyweight Squats', s: 45, cue: 'Feet shoulder-width, sit your hips back and down, then stand up tall. Steady pace. Hold onto a counter if you need balance.',
-        why: 'Working your largest muscles raises your heart rate and sends more blood to your brain, which helps cut through morning fog.' },
+        why: 'Working your largest muscles raises your heart rate and sends more blood to your brain, which helps cut through morning fog.',
+        preg: { cue: 'Feet wider than hips, hold a counter or chair, and sit back into a comfortable squat. Stand up slowly.' } },
       { e: '🐕', n: 'Downward Dog', s: 45, cue: 'From hands and knees, lift your hips up and back into an upside-down V. Bend your knees as much as you need. Pedal your feet.',
-        why: 'Stretches your whole back body and brings blood toward your head. A great reset for low energy.' },
+        why: 'Stretches your whole back body and brings blood toward your head. A great reset for low energy.',
+        preg: { e: '🪑', n: 'Chair Down Dog', cue: 'Put your hands on the seat of a sturdy chair or a counter and walk your feet back until your back is long. Keep your knees soft. Stand up slowly.', why: 'Stretches your back and shoulders without putting your head below your heart, which can cause dizziness in pregnancy.' } },
       { e: '🌅', n: 'Stand Tall and Set Your Intention', s: 35, cue: 'Stand tall, hand on your heart. Take three slow breaths and finish this sentence in your head: "Today, I will..."',
         why: 'One small intention gives your day direction. Recovery is built out of small, kept promises to yourself.' }
     ]
   }
 ];
+
+// Pregnancy-safe version of a pose, when one exists and pregnancy mode is on
+function P(pose) { return isPregnant() && pose.preg ? Object.assign({}, pose, pose.preg) : pose; }
 
 function flowTotalSecs(flow) { return flow.poses.reduce(function(t, p) { return t + p.s; }, 0); }
 
@@ -2905,7 +3147,7 @@ function renderFlowList() {
         '<div class="flow-card-name">' + f.name + '</div>' +
         '<div class="flow-card-meta">' + mins + ' min · ' + f.poses.length + ' poses · ' + f.where + '</div>' +
         '<div class="flow-card-desc">' + f.desc + '</div>' +
-        '<div class="flow-card-poses">' + f.poses.map(function(p) { return p.n; }).join(' → ') + '</div>' +
+        '<div class="flow-card-poses">' + f.poses.map(function(p) { return P(p).n; }).join(' → ') + '</div>' +
       '</div></div>' +
       '<button class="flow-start-btn" onclick="openFlow(\'' + f.id + '\')">▶ Start guided flow</button>' +
     '</div>';
@@ -2916,12 +3158,12 @@ function renderPractices() {
   var el = document.getElementById('practiceGrid');
   if (!el) return;
   el.innerHTML = PRACTICES.map(function(pr, i) {
-    var p = POSES[pr.pose];
+    var p = P(POSES[pr.pose]);
     return '<button class="practice-btn" onclick="openPractice(' + i + ')"><span>' + p.e + '</span>' + p.n.replace('Rest with ', '') + '<small>' + (pr.secs / 60) + ' min</small></button>';
   }).join('');
 }
 function openPractice(i) {
-  var pr = PRACTICES[i], p = POSES[pr.pose];
+  var pr = PRACTICES[i], p = P(POSES[pr.pose]);
   openFlow({ id: 'practice-' + pr.pose, emoji: p.e, name: p.n.replace('Rest with ', ''), where: (pr.secs / 60) + ' minutes · sitting or lying down',
     desc: p.why, poses: [Object.assign({}, p, { s: pr.secs })] });
 }
@@ -2959,6 +3201,7 @@ function flowChime() {
 function openFlow(idOrFlow) {
   var flow = typeof idOrFlow === 'object' ? idOrFlow : FLOWS.find(function(f) { return f.id === idOrFlow; });
   if (!flow) return;
+  flow = Object.assign({}, flow, { poses: flow.poses.map(P) });
   stopBreathing();
   flowState.flow = flow;
   flowState.idx = -1;
@@ -3364,6 +3607,18 @@ function renderBrainToday(totalHours) {
 
 // ——— Deep Dives ———
 var DEEP_DIVES = [
+  { id: 'pregnancy', pregOnly: true, unlockHours: -1, title: 'Cannabis, Pregnancy & Your Baby', eyebrow: 'For You and Baby', preview: 'What THC does during pregnancy, and why quitting at any point helps.',
+    content: [
+      { t: 'p', s: 'You are doing something hard and important. This is here to help, not to make you feel guilty. Whatever happened before, what you do from today matters.' },
+      { t: 'p', s: 'THC crosses the placenta, so when you use, some of it reaches your baby. Your baby\u2019s own endocannabinoid system helps guide how their brain wires itself, and it is developing throughout pregnancy.' },
+      { t: 'hl', s: 'Studies link cannabis use during pregnancy with lower birth weight and a higher chance of preterm birth, and some link it to attention and behavior differences in childhood. Research is still growing, which is why doctors\u2019 groups like ACOG recommend avoiding cannabis completely while pregnant and breastfeeding.' },
+      { t: 'p', s: 'Quitting at any point helps. Your baby\u2019s brain grows through the whole pregnancy, and especially fast in the last trimester. Every smoke-free week from now on is a week with no THC reaching them.' },
+      { t: 'p', s: 'Cannabis withdrawal is uncomfortable, but it is not considered dangerous for you or your baby. You still don\u2019t have to white-knuckle it. Tell your OB or midwife you are quitting. They can help with sleep, anxiety and nausea using options that are safe in pregnancy.' },
+      { t: 'p', s: 'If you used cannabis for morning sickness, you are not alone, and there are pregnancy-safe treatments that work. Ask your provider about them.' },
+      { t: 'p', s: 'THC also passes into breast milk. Staying smoke-free after your baby arrives keeps protecting them if you breastfeed.' },
+      { t: 'hl', s: 'Free, confidential help, 24/7: SAMHSA National Helpline, 1-800-662-4357. You can call just to talk through your options.' }
+    ]
+  },
   { id: 'first72', unlockHours: 0, title: 'The First 72 Hours', eyebrow: 'Always Unlocked', preview: 'The hardest window — and the neuroscience of why.',
     content: [
       { t: 'p', s: 'The first 72 hours of cannabis abstinence are, for most people, the hardest. This isn\'t a coincidence or a personal weakness — it\'s the predictable result of specific neurological processes unfolding on a known timeline.' },
@@ -3454,7 +3709,7 @@ function renderDeepDives(totalHours) {
   var el = document.getElementById('deepDivesCard');
   if (!el) return;
   var now = totalHours < 0 ? -1 : totalHours;
-  el.innerHTML = DEEP_DIVES.map(function(d) {
+  el.innerHTML = DEEP_DIVES.filter(function(d) { return !d.pregOnly || isPregnant(); }).map(function(d) {
     var unlocked = now >= d.unlockHours;
     var isNew = unlocked && d.unlockHours > 0 && now < d.unlockHours + 72;
     var newBadge = isNew ? '<span class="deep-dive-new">NEW</span>' : '';
@@ -3744,8 +3999,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderLog();
   startCounter();
   setUsed('urge');
-  renderFlowList();
-  renderPractices();
+  applyPregnancyMode();
   renderReasons();
   renderRituals();
   renderStreakMeta();

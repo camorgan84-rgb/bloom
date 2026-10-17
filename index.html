@@ -1175,6 +1175,9 @@
 <!-- SECTION: Science / Learn -->
 <div class="section" id="section-science">
 
+  <div class="section-title">Fact of the Day</div>
+  <div id="factOfDayCard"></div>
+
   <div class="section-title">Deep Dives</div>
   <div id="deepDivesCard"></div>
 
@@ -3693,12 +3696,15 @@ var BRAIN_TODAY_FACTS = [
 ];
 
 function renderBrainToday(totalHours) {
-  var el = document.getElementById('brainTodayCard');
-  if (!el) return;
+  var el = document.getElementById('brainTodayCard');      // Today: brain & body right now
+  var factEl = document.getElementById('factOfDayCard');   // Learn: fact of the day
   if (totalHours < 0) {
-    el.innerHTML = '<div class="brain-today-card"><div class="brain-today-header"><div class="brain-today-eyebrow">Your Brain &amp; Body</div><div class="brain-today-title">Set your quit date to see what\'s happening in your brain and body right now.</div></div></div>';
+    if (el) el.innerHTML = '<div class="brain-today-card"><div class="brain-today-header"><div class="brain-today-eyebrow">Your Brain &amp; Body</div><div class="brain-today-title">Set your quit date to see what\'s happening in your brain and body right now.</div></div></div>';
+    if (factEl) factEl.innerHTML = '<div class="brain-today-card"><div class="brain-today-header"><div class="brain-today-title">Set your quit date on Today to get a new fact matched to where you are.</div></div></div>';
     return;
   }
+  if (el) el.innerHTML = renderScienceTimeline(totalHours);
+  if (!factEl) return;
   var bucket = null;
   for (var i = 0; i < BRAIN_TODAY_FACTS.length; i++) {
     if (totalHours >= BRAIN_TODAY_FACTS[i].minHours && totalHours < BRAIN_TODAY_FACTS[i].maxHours) {
@@ -3711,10 +3717,9 @@ function renderBrainToday(totalHours) {
   var fact = bucket.facts[dayIdx];
   var days = Math.floor(totalHours / 24);
   var dayLabel = days === 0 ? 'Less than a day in' : days === 1 ? 'Day 1' : 'Day ' + days;
-  el.innerHTML = renderScienceTimeline(totalHours) + '<div class="brain-today-card">' +
+  factEl.innerHTML = '<div class="brain-today-card">' +
     '<div class="brain-today-header">' +
-      '<div class="brain-today-eyebrow">Fact of the Day</div>' +
-      '<div class="brain-today-day">' + dayLabel + ' \u00b7 ' + bucket.label + '</div>' +
+      '<div class="brain-today-day">' + dayLabel + ' · ' + bucket.label + '</div>' +
       '<div class="brain-today-title">' + fact.title + '</div>' +
     '</div>' +
     '<div class="brain-today-body">' +

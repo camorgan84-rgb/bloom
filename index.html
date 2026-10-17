@@ -901,6 +901,9 @@
   <div class="section-title">Where You Are</div>
   <div id="phaseContent"></div>
 
+  <div class="section-title">Right Now in Your Brain &amp; Body</div>
+  <div id="brainTodayCard"></div>
+
   <div class="section-title">Today's Journal Prompt</div>
   <div id="todayJournalContent">
     <div class="journal-card">
@@ -1182,9 +1185,6 @@
 
 <!-- SECTION: Science / Learn -->
 <div class="section" id="section-science">
-
-  <div class="section-title">Right Now in Your Brain &amp; Body</div>
-  <div id="brainTodayCard"></div>
 
   <div class="section-title">Deep Dives</div>
   <div id="deepDivesCard"></div>
@@ -3727,7 +3727,7 @@ function renderBrainToday(totalHours) {
   var el = document.getElementById('brainTodayCard');
   if (!el) return;
   if (totalHours < 0) {
-    el.innerHTML = '<div class="brain-today-card"><div class="brain-today-header"><div class="brain-today-eyebrow">Today in Your Brain</div><div class="brain-today-title">Set your quit date to see what\'s happening in your brain right now.</div></div></div>';
+    el.innerHTML = '<div class="brain-today-card"><div class="brain-today-header"><div class="brain-today-eyebrow">Your Brain &amp; Body</div><div class="brain-today-title">Set your quit date to see what\'s happening in your brain and body right now.</div></div></div>';
     return;
   }
   var bucket = null;

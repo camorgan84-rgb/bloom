@@ -508,6 +508,33 @@
   .practice-btn span { font-size: 1.4rem; }
   .practice-btn small { font-weight: 600; font-size: 0.7rem; color: var(--blue); }
 
+  /* ─── Milestones tab ─────────────────────────────── */
+  .ms-next { background: linear-gradient(180deg, #1a3560 0%, #3b2a6b 100%); color: white; border-radius: var(--radius); padding: 20px; margin-bottom: 6px; }
+  .ms-next-label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); }
+  .ms-next-title { font-size: 1.5rem; font-weight: 900; margin-top: 6px; }
+  .ms-next-count { font-size: 2rem; font-weight: 900; margin-top: 4px; font-variant-numeric: tabular-nums; letter-spacing: -0.5px; }
+  .ms-bar { height: 6px; background: rgba(255,255,255,0.15); border-radius: 3px; overflow: hidden; margin-top: 10px; }
+  .ms-bar-fill { height: 100%; width: 0; background: #ff6f9f; border-radius: 3px; transition: width 1s linear; }
+  .ms-next-note { font-size: 0.88rem; line-height: 1.55; color: rgba(255,255,255,0.88); margin-top: 12px; }
+  .ms-next-when { font-size: 0.75rem; color: var(--gold-bright); font-weight: 700; margin-top: 6px; }
+  .ms-list { position: relative; padding-left: 4px; }
+  .ms-item { position: relative; display: flex; gap: 12px; padding: 0 0 16px; }
+  .ms-item::before { content: ''; position: absolute; left: 11px; top: 24px; bottom: 0; width: 2px; background: var(--border); }
+  .ms-item:last-child::before { display: none; }
+  .ms-dot { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; border: 2px solid var(--border); background: var(--card); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 900; color: white; position: relative; z-index: 1; }
+  .is-reached .ms-dot { background: var(--green); border-color: var(--green); }
+  .is-reached::before { background: var(--green); }
+  .is-next .ms-dot { border-color: #e8336f; box-shadow: 0 0 0 4px #fde8ef; }
+  .ms-body { min-width: 0; flex: 1; padding-top: 2px; }
+  .ms-row { display: flex; align-items: center; gap: 8px; }
+  .ms-label { font-weight: 800; font-size: 0.92rem; color: var(--text); }
+  .is-upcoming .ms-label { color: #555; }
+  .ms-chip { background: #fde8ef; color: #c2456f; border-radius: 50px; padding: 2px 8px; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; }
+  .ms-note { font-size: 0.84rem; color: #333; line-height: 1.5; margin-top: 2px; }
+  .is-upcoming .ms-note { color: var(--muted); }
+  .ms-when { font-size: 0.72rem; color: var(--blue); font-weight: 700; margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .is-reached .ms-when { color: var(--green); }
+
   /* ─── Baby ──────────────────────────────────────── */
   .baby-card { background: var(--card); border-radius: var(--radius); border: 1px solid #f6c3d3; padding: 18px; margin-bottom: 10px; }
   .baby-top { display: flex; gap: 14px; align-items: center; }
@@ -830,6 +857,10 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
     <span>Today</span>
   </button>
+  <button class="nav-item" onclick="showSection('milestones', this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg>
+    <span>Milestones</span>
+  </button>
   <button class="nav-item" onclick="showSection('log', this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
     <span>Log</span>
@@ -882,6 +913,13 @@
     </div>
   </div>
 
+</div>
+
+<!-- SECTION: Milestones -->
+<div class="section" id="section-milestones">
+  <div class="section-title">Up Next</div>
+  <div id="msNext"></div>
+  <div id="msList"></div>
 </div>
 
 <!-- SECTION: Health -->
@@ -1868,28 +1906,63 @@ window.onerror = function(msg, src, line) {
 };
 
 // ——— Data ———
+// One list for every milestone: the Milestones tab and the Today card both read it
 const MILESTONES = [
-  { h: 12,    label: '12 Hours', note: 'THC levels in your blood have dropped sharply.' },
-  { h: 24,    label: '1 Day',    note: 'Your first full day. The habit loop has been broken once.' },
-  { h: 72,    label: '3 Days',   note: 'Withdrawal usually peaks around now. It gets easier from here.' },
-  { h: 120,   label: '5 Days',   note: 'Past the peak. Irritability and restlessness are starting to ease.' },
-  { h: 168,   label: '1 Week',   note: 'Brain scans show CB1 receptors measurably recovering.' },
-  { h: 240,   label: '10 Days',  note: 'Most physical withdrawal symptoms have faded.' },
-  { h: 336,   label: '2 Weeks',  note: 'Your dopamine system is actively normalizing.' },
-  { h: 504,   label: '3 Weeks',  note: 'Three weeks of new routines. Repetition is what rewires habits.' },
-  { h: 720,   label: '1 Month',  note: 'Research shows CB1 receptors back near normal levels around now.' },
-  { h: 1080,  label: '45 Days',  note: 'Vivid dreams usually settle as REM sleep rebalances.' },
-  { h: 1440,  label: '2 Months', note: 'Mood and motivation are steadier for most people.' },
-  { h: 2160,  label: '3 Months', note: 'Studies show memory and attention measurably improving.' },
-  { h: 2400,  label: '100 Days', note: 'Triple digits. A huge milestone.' },
-  { h: 2880,  label: '4 Months', note: 'New habits are starting to feel like your normal.' },
-  { h: 4320,  label: '6 Months', note: 'Half a year. The highest-risk months are behind you.' },
-  { h: 6480,  label: '9 Months', note: 'Nine months for your brain and body to rebuild.' },
-  { h: 8760,  label: '1 Year',   note: 'A full year. Every season and every holiday, done.' },
+  { h: 1, label: '1 Hour', note: 'The first hour is done. Making the decision is the hardest part.' },
+  { h: 2, label: '2 Hours', note: 'THC levels in your blood are already falling.' },
+  { h: 3, label: '3 Hours', note: 'Your liver is busy breaking THC down into inactive pieces.' },
+  { h: 4, label: '4 Hours', note: 'Heart rate and blood pressure are settling back toward normal.' },
+  { h: 5, label: '5 Hours', note: 'Five hours of choosing yourself. Drink some water.' },
+  { h: 6, label: '6 Hours', note: 'Restlessness may show up. That\'s your body adjusting, not danger.' },
+  { h: 7, label: '7 Hours', note: 'Feeling on edge? Try the Craving Flow or Box Breathing in Recharge.' },
+  { h: 8, label: '8 Hours', note: 'If you smoked, your airways are already starting to clear.' },
+  { h: 9, label: '9 Hours', note: 'Cravings come in waves. Each one peaks and passes in about 20 minutes.' },
+  { h: 10, label: '10 Hours', note: 'Eat something steady. Protein helps even out mood and cravings.' },
+  { h: 11, label: '11 Hours', note: 'Your brain is noticing the change. That\'s where rebalancing starts.' },
+  { h: 12, label: '12 Hours', note: 'Half a day. THC levels in your blood have dropped sharply.' },
+  { h: 14, label: '14 Hours', note: 'Short windows of feeling okay may start to appear. Notice them.' },
+  { h: 16, label: '16 Hours', note: 'Habit cravings can hit at your usual times. Have a plan ready.' },
+  { h: 18, label: '18 Hours', note: 'You\'ve already ridden out several cravings. Each one passed.' },
+  { h: 20, label: '20 Hours', note: 'Sleep tonight may be restless. That\'s normal and temporary.' },
+  { h: 22, label: '22 Hours', note: 'Almost a full day. Look how far you\'ve come.' },
+  { h: 24, label: '1 Day', note: 'Your first full day. The habit loop has been broken once.' },
+  { h: 30, label: '30 Hours', note: 'Withdrawal is building. Uncomfortable, but you can ride it out.' },
+  { h: 36, label: '36 Hours', note: 'Vivid dreams can start as your REM sleep comes back.' },
+  { h: 42, label: '42 Hours', note: 'Irritability is common now. Tell someone you trust how you feel.' },
+  { h: 48, label: '2 Days', note: 'Many people find days 2 to 3 the hardest. You\'re in it, and you\'re doing it.' },
+  { h: 60, label: '60 Hours', note: 'Keep your hands busy and your water bottle full.' },
+  { h: 72, label: '3 Days', note: 'Withdrawal often peaks between days 2 and 6. You may be at the top of the hill.' },
+  { h: 96, label: '4 Days', note: 'Appetite may start coming back. Eat regular, steady meals.' },
+  { h: 120, label: '5 Days', note: 'Past the peak for many people. Irritability starts to ease.' },
+  { h: 144, label: '6 Days', note: 'Sleep is still adjusting. Protect your bedtime.' },
+  { h: 168, label: '1 Week', note: 'Brain scans show CB1 receptors already recovering at one week.' },
+  { h: 192, label: '8 Days', note: 'Week two begins. Physical symptoms keep fading.' },
+  { h: 216, label: '9 Days', note: 'Clear-headed moments are getting longer.' },
+  { h: 240, label: '10 Days', note: 'For many people, most physical withdrawal symptoms have faded.' },
+  { h: 264, label: '11 Days', note: 'Notice what you\'re doing with the time and money you used to spend.' },
+  { h: 288, label: '12 Days', note: 'A flat mood is common now. It\'s your reward system rebuilding.' },
+  { h: 312, label: '13 Days', note: 'Two weeks tomorrow. Plan a small reward.' },
+  { h: 336, label: '2 Weeks', note: 'Your dopamine system is recovering, and natural rewards start to feel better.' },
+  { h: 408, label: '17 Days', note: 'Cravings now are mostly habit and memory, not chemistry.' },
+  { h: 504, label: '3 Weeks', note: 'Three weeks of new routines. Repetition is what rewires habits.' },
+  { h: 576, label: '24 Days', note: 'Mood and energy are usually steadier by now.' },
+  { h: 672, label: '4 Weeks', note: 'Research shows CB1 receptors back near normal at about 4 weeks.' },
+  { h: 720, label: '1 Month', note: 'One month. Sleep is improving for most people.' },
+  { h: 1080, label: '45 Days', note: 'Vivid dreams usually settle as REM sleep rebalances.' },
+  { h: 1440, label: '2 Months', note: 'Mood and motivation are steadier for most people.' },
+  { h: 1800, label: '75 Days', note: 'Memory and focus keep sharpening.' },
+  { h: 2160, label: '3 Months', note: 'Studies show memory and attention measurably improving.' },
+  { h: 2400, label: '100 Days', note: 'Triple digits. A huge milestone.' },
+  { h: 2880, label: '4 Months', note: 'New habits are starting to feel like your normal.' },
+  { h: 3600, label: '5 Months', note: 'Cravings are rare and short for most people now.' },
+  { h: 4320, label: '6 Months', note: 'Half a year. The highest-risk months are behind you.' },
+  { h: 6480, label: '9 Months', note: 'Nine months for your brain and body to rebuild.' },
+  { h: 8760, label: '1 Year', note: 'A full year. Every season and every holiday, done.' },
   { h: 12000, label: '500 Days', note: 'Five hundred days of choosing yourself.' },
-  { h: 17520, label: '2 Years',  note: 'Two full years. This is who you are now.' },
-  { h: 26280, label: '3 Years',  note: 'Three years. Your story is a recovery story.' },
-  { h: 43800, label: '5 Years',  note: 'Five years. Someone just starting out needs to hear how you did it.' },
+  { h: 13128, label: '18 Months', note: 'A year and a half. This is your normal now.' },
+  { h: 17520, label: '2 Years', note: 'Two full years. This is who you are now.' },
+  { h: 26280, label: '3 Years', note: 'Three years. Your story is a recovery story.' },
+  { h: 43800, label: '5 Years', note: 'Five years. Someone just starting out needs to hear how you did it.' }
 ];
 
 const SCIENCE_TIMELINE = [
@@ -2496,6 +2569,7 @@ function tickCounter() {
 
     try { renderBloom(diff / 86400000); } catch(e) {}
     try { renderBaby(); } catch(e) {}
+    try { tickMilestones(); } catch(e) {}
     try { renderStreakMeta(); } catch(e) {}
     try { renderEducation(diff / 3600000); } catch(e) {}
   } catch(e) {}
@@ -2607,6 +2681,101 @@ function bloomFlower(x, y, open, scale) {
     }
   }
   return out + '</g>';
+}
+
+// ——— Milestones tab ———
+var MS_GROUPS = [
+  { name: 'The first day', upTo: 24 },
+  { name: 'The first week', upTo: 168 },
+  { name: 'The first month', upTo: 720 },
+  { name: 'The first year', upTo: 8760 },
+  { name: 'Beyond', upTo: Infinity }
+];
+var msLastReached = null;
+
+function quitHours() {
+  var q = storageGet('quitDate');
+  return q ? (Date.now() - parseInt(q, 10)) / 3600000 : -1;
+}
+function msWhen(m, withTime) {
+  var d = new Date(parseInt(storageGet('quitDate'), 10) + m.h * 3600000);
+  var opts = { weekday: 'short', month: 'short', day: 'numeric' };
+  if (withTime) { opts.hour = 'numeric'; opts.minute = '2-digit'; }
+  return d.toLocaleString('en-US', opts);
+}
+function msCountdown(hoursLeft) {
+  var secs = Math.max(0, Math.ceil(hoursLeft * 3600));
+  var d = Math.floor(secs / 86400), h = Math.floor(secs % 86400 / 3600), m = Math.floor(secs % 3600 / 60), sec = secs % 60;
+  if (d > 0) return d + 'd ' + h + 'h ' + m + 'm';
+  if (h > 0) return h + 'h ' + m + 'm ' + sec + 's';
+  return m + 'm ' + sec + 's';
+}
+
+function renderMilestonesTab(scrollToNext) {
+  var next = document.getElementById('msNext'), list = document.getElementById('msList');
+  if (!next || !list) return;
+  var hrs = quitHours(), started = hrs >= 0;
+  var reached = started ? MILESTONES.filter(function(m) { return hrs >= m.h; }).length : 0;
+  msLastReached = reached;
+  var nxt = MILESTONES[reached];
+
+  if (!started) {
+    next.innerHTML = '<div class="ms-next"><div class="ms-next-label">Not started yet</div><div class="ms-next-title">Set your quit date on Today</div><div class="ms-next-note">Then every milestone below gets a date and a countdown.</div></div>';
+  } else if (!nxt) {
+    next.innerHTML = '<div class="ms-next"><div class="ms-next-label">All ' + MILESTONES.length + ' milestones reached</div><div class="ms-next-title">Five years and counting</div><div class="ms-next-note">You did every single one.</div></div>';
+  } else {
+    next.innerHTML = '<div class="ms-next">' +
+      '<div class="ms-next-label">Next milestone · ' + reached + ' of ' + MILESTONES.length + ' reached</div>' +
+      '<div class="ms-next-title">' + nxt.label + '</div>' +
+      '<div class="ms-next-count" id="msCountdown">' + msCountdown(nxt.h - hrs) + '</div>' +
+      '<div class="ms-bar"><div class="ms-bar-fill" id="msBar"></div></div>' +
+      '<div class="ms-next-note">' + nxt.note + '</div>' +
+      '<div class="ms-next-when">' + msWhen(nxt, nxt.h < 168) + '</div>' +
+    '</div>';
+  }
+
+  var html = '', from = 0;
+  MS_GROUPS.forEach(function(g) {
+    var items = MILESTONES.filter(function(m) { return m.h > from && m.h <= g.upTo; });
+    from = g.upTo;
+    if (!items.length) return;
+    html += '<div class="section-title">' + g.name + '</div><div class="ms-list">';
+    items.forEach(function(m) {
+      var idx = MILESTONES.indexOf(m);
+      var state = !started ? 'upcoming' : idx < reached ? 'reached' : idx === reached ? 'next' : 'upcoming';
+      var when = !started ? '' : state === 'reached' ? 'Reached ' + msWhen(m, m.h < 168) : msWhen(m, m.h < 168);
+      html += '<div class="ms-item is-' + state + '"' + (state === 'next' ? ' id="msNextItem"' : '') + '>' +
+        '<div class="ms-dot" aria-hidden="true">' + (state === 'reached' ? '✓' : '') + '</div>' +
+        '<div class="ms-body"><div class="ms-row"><span class="ms-label">' + m.label + '</span>' +
+          (state === 'next' ? '<span class="ms-chip">Up next</span>' : '') + '</div>' +
+          '<div class="ms-note">' + m.note + '</div>' +
+          (when ? '<div class="ms-when">' + when + '</div>' : '') +
+        '</div></div>';
+    });
+    html += '</div>';
+  });
+  list.innerHTML = html;
+  tickMilestones();
+  if (scrollToNext) {
+    var el = document.getElementById('msNextItem');
+    if (el) setTimeout(function() { el.scrollIntoView({ block: 'center' }); }, 50);
+  }
+}
+
+// Runs every second from the counter; cheap unless a milestone was just reached
+function tickMilestones() {
+  var sec = document.getElementById('section-milestones');
+  if (!sec || !sec.classList.contains('active')) return;
+  var hrs = quitHours();
+  if (hrs < 0) return;
+  var reached = MILESTONES.filter(function(m) { return hrs >= m.h; }).length;
+  if (reached !== msLastReached) { renderMilestonesTab(false); return; }
+  var nxt = MILESTONES[reached], prev = MILESTONES[reached - 1];
+  var c = document.getElementById('msCountdown'), bar = document.getElementById('msBar');
+  if (!nxt || !c) return;
+  c.textContent = msCountdown(nxt.h - hrs);
+  var start = prev ? prev.h : 0;
+  bar.style.width = Math.min(100, (hrs - start) / (nxt.h - start) * 100).toFixed(1) + '%';
 }
 
 // ——— Pregnancy ———
@@ -2903,7 +3072,10 @@ function renderEducation(totalHours) {
   var nextHTML = '';
   if (next) {
     var hrsLeft = next.h - totalHours;
-    var left = hrsLeft >= 48 ? Math.ceil(hrsLeft / 24) + ' days' : Math.ceil(hrsLeft) + ' hours';
+    var left = hrsLeft >= 48 ? Math.ceil(hrsLeft / 24) + ' days'
+      : hrsLeft >= 1.5 ? Math.round(hrsLeft) + ' hours'
+      : hrsLeft >= 1 ? '1 hour'
+      : Math.max(1, Math.ceil(hrsLeft * 60)) + ' min';
     nextHTML = '<div class="phase-next"><span class="phase-next-label">Next milestone · ' + next.label + ' in ' + left + '</span>' + next.note + '</div>';
   }
   document.getElementById('phaseContent').innerHTML =
@@ -3753,6 +3925,7 @@ function showSection(name, btn) {
   document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
   document.getElementById('section-' + name).classList.add('active');
   btn.classList.add('active');
+  if (name === 'milestones') renderMilestonesTab(true);
 }
 
 // ——— Accordion ———

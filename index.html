@@ -825,22 +825,18 @@
 
 <!-- Slip Modal -->
 <div class="slip-modal" id="slipModal">
-  <div class="slip-modal-inner">
-    <div class="slip-modal-title">How do you want to log this?</div>
-    <div class="slip-modal-sub">A slip and a relapse aren't the same thing. Be honest with yourself — both paths forward start with logging it.</div>
-    <button class="slip-choice" onclick="confirmSlip('slip')">
-      🌊 A slip — I used once and I'm getting back up
-      <span class="slip-choice-sub">Your previous streak is saved. Counter resets from now.</span>
+  <div class="slip-modal-inner" role="dialog" aria-labelledby="slipTitle">
+    <div class="slip-modal-title" id="slipTitle">Restart your counter?</div>
+    <div class="slip-modal-sub">Logging this honestly matters. You decide whether your counter starts over.</div>
+    <button class="slip-choice" onclick="confirmSlip('keep')">
+      ➡️ No, keep my counter going
+      <span class="slip-choice-sub">The use is saved in your log. Your counter, flower and milestones stay as they are.</span>
     </button>
-    <button class="slip-choice" onclick="confirmSlip('relapse')">
-      🔄 Full relapse — I've been using regularly
-      <span class="slip-choice-sub">Counter resets. Your history stays. Recovery isn't linear.</span>
+    <button class="slip-choice" onclick="confirmSlip('reset')">
+      🔄 Yes, restart my counter
+      <span class="slip-choice-sub">Your counter starts again from the time you used.</span>
     </button>
-    <button class="slip-choice" onclick="confirmSlip('logonly')">
-      📋 Just log it — don't change my quit date
-      <span class="slip-choice-sub">Entry is saved for your records. Your streak stays untouched.</span>
-    </button>
-    <button class="slip-cancel" onclick="cancelSlip()">Cancel — don't save this entry</button>
+    <button class="slip-cancel" onclick="cancelSlip()">Cancel, don't save this entry</button>
   </div>
 </div>
 
@@ -3545,8 +3541,8 @@ function confirmSlip(type) {
   entries.unshift({ id: Date.now(), dt: d.dt, used: 'yes', method: d.method, amount: d.amount, amountUnit: d.amountUnit, intensity: d.intensity, trigger: d.trigger, notes: d.notes, slipType: type });
   storageSet('usageLog', JSON.stringify(entries));
 
-  // "Log only" — record it but leave the streak and quit date alone
-  if (type === 'logonly') {
+  // "Keep" — record it but leave the counter and quit date alone
+  if (type === 'keep') {
     setUsed('urge');
     document.getElementById('logMethod').value = '';
     document.getElementById('logAmount').value = '';

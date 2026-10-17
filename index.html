@@ -253,6 +253,20 @@
   .cbt-steps { padding-left: 16px; }
   .cbt-steps li { margin-bottom: 7px; }
 
+  /* ─── Collapsible tool groups (Tools tab) ────────── */
+  .tool-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; overflow: hidden; }
+  .tool-group > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 16px 18px; min-height: 44px; }
+  .tool-group > summary::-webkit-details-marker { display: none; }
+  .tool-group > summary:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .tool-group-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .tool-group-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .tool-group-name { font-weight: 800; font-size: 0.95rem; color: var(--text); }
+  .tool-group-meta { font-size: 0.72rem; color: var(--blue); font-weight: 700; margin-top: 2px; }
+  .tool-group-arrow { color: var(--muted); font-size: 0.8rem; transition: transform 0.2s; }
+  .tool-group[open] .tool-group-arrow { transform: rotate(180deg); }
+  .tool-group-body { padding: 0 12px 12px; }
+  .tool-group-body > .section-title:first-child { margin-top: 4px; }
+
   /* ─── Craving strategies ────────────────────────── */
   .strategy-card { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); padding: 18px; margin-bottom: 8px; display: flex; gap: 14px; align-items: flex-start; }
   .strategy-emoji { font-size: 1.8rem; line-height: 1; }
@@ -1072,7 +1086,9 @@
     </div>
   </div>
 
-  <div class="section-title">Craving Strategies</div>
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🌊</span><span class="tool-group-text"><span class="tool-group-name">Craving Strategies</span><span class="tool-group-meta">8 ways to ride out an urge</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
   <div class="card" style="background:var(--warm-pale); border-left: 4px solid var(--warm);">
     <div class="card-title" style="color:var(--warm);">Remember: Cravings peak in 15–20 minutes, then pass. You just have to outlast the wave.</div>
   </div>
@@ -1125,10 +1141,14 @@
       <ol class="strategy-steps"><li>Grab any paper or open notes</li><li>Write: "Right now I'm feeling ____ because ____"</li><li>Write what you're afraid will happen if you don't use</li><li>Write one thing you're proud of since quitting</li></ol>
     </div>
   </div>
+    </div>
+  </details>
 
   <div class="section-title" style="background:var(--blue-pale); border-left:4px solid var(--blue); border-radius:10px; padding:10px 14px; font-size:0.8rem; letter-spacing:0.08em; color:var(--blue); margin-top:8px;">🧠 BUILD YOUR SKILLS</div>
 
-  <div class="section-title" style="margin-top:4px;">CBT Strategies</div>
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">🧩</span><span class="tool-group-text"><span class="tool-group-name">CBT Strategies</span><span class="tool-group-meta">Triggers, thought records, relapse plan</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
     <div class="cbt-card">
     <div class="cbt-header">
       <div class="cbt-icon">🔍</div>
@@ -1278,16 +1298,24 @@
       </div>
     </div>
   </div>
+    </div>
+  </details>
 
-  <div class="section-title">Journal Prompts</div>
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">✏️</span><span class="tool-group-text"><span class="tool-group-name">Journal Prompts</span><span class="tool-group-meta">Prompts for where you are right now</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
   <div id="cbtJournalContent">
     <div class="journal-card">
       <div class="journal-header">✏️ Reflections</div>
       <div class="journal-no-date" style="color:rgba(255,255,255,0.4);">Set your quit date to see prompts tailored to where you are.</div>
     </div>
   </div>
+    </div>
+  </details>
 
-  <div class="section-title" style="margin-top:8px;">EFT Tapping</div>
+  <details class="tool-group">
+    <summary><span class="tool-group-icon">👆</span><span class="tool-group-text"><span class="tool-group-name">EFT Tapping</span><span class="tool-group-meta">A guided tapping sequence for cravings</span></span><span class="tool-group-arrow" aria-hidden="true">▾</span></summary>
+    <div class="tool-group-body">
 
   <div class="card" style="background:var(--lavender-pale); border-left:4px solid var(--lavender);">
     <div class="card-title" style="color:var(--lavender);">What is EFT?</div>
@@ -1403,6 +1431,8 @@
       </div>
     </div>
   </div>
+    </div>
+  </details>
 
 </div>
 

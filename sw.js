@@ -1,6 +1,6 @@
 // Bloom offline support. Serves the saved copy right away, then quietly
 // fetches the latest version so the next launch is up to date.
-const CACHE = 'bloom-v2';
+const CACHE = 'bloom-v3';
 const FILES = ['./', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png'];
 

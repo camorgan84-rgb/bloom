@@ -265,7 +265,6 @@
   .disclaimer { background: var(--gold-pale); border: 1px solid var(--gold-bright); border-radius: 12px; padding: 12px 16px; font-size: 0.78rem; color: #7a4e08; margin-bottom: 14px; line-height: 1.6; }
   .progress-bar-bg { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
   .progress-bar-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width 0.6s ease; }
-  .edu-note { font-size: 0.8rem; color: var(--muted); margin: -6px 0 14px; }
   .info-box { background: var(--blue-pale); border-left: 3px solid var(--blue); border-radius: 8px; padding: 12px 14px; font-size: 0.83rem; color: var(--navy); line-height: 1.6; margin-top: 12px; }
   ul.clean-list { padding-left: 18px; }
   ul.clean-list li { margin-bottom: 5px; font-size: 0.87rem; line-height: 1.6; }
@@ -669,15 +668,6 @@
   .body-sys-body ul { padding-left: 16px; }
   .body-sys-body ul li { margin-bottom: 5px; }
 
-  .myth-card { background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 8px; overflow: hidden; }
-  .myth-header { padding: 14px 18px; display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
-  .myth-x { background: #fff0f0; color: var(--red); border-radius: 6px; padding: 3px 8px; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; margin-top: 2px; letter-spacing: 0.3px; }
-  .myth-text { font-weight: 700; font-size: 0.9rem; color: var(--text); flex: 1; }
-  .myth-arrow { color: var(--muted); font-size: 0.75rem; flex-shrink: 0; margin-top: 3px; transition: transform 0.2s; }
-  .myth-card.open .myth-arrow { transform: rotate(180deg); }
-  .myth-fact { display: none; background: #edf7f1; border-top: 1px solid #c8e8d4; padding: 14px 18px; font-size: 0.86rem; color: #1a5e40; line-height: 1.65; }
-  .myth-fact.open { display: block; }
-  .myth-fact strong { font-weight: 800; }
 </style>
 </head>
 <body>
@@ -1047,72 +1037,6 @@
 
   <div class="section-title">Deep Dives</div>
   <div id="deepDivesCard"></div>
-
-  <div class="section-title">Myth-Busting</div>
-  <p class="edu-note" style="margin-top:-6px;">The stories that keep people stuck — and the science that breaks them.</p>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"Cannabis isn't actually addictive."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> Cannabis Use Disorder is a recognized medical diagnosis in the DSM-5. It affects ~9% of people who try cannabis, rising to ~17% of those who start in adolescence, and up to ~50% of daily users. Addiction is defined by continued use despite consequences — not just physical dependence. The label doesn't determine your experience; your experience does.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"Weed withdrawal isn't real."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> Cannabis Withdrawal Syndrome is clinically documented. Symptoms — irritability, insomnia, anxiety, appetite loss, restlessness, and physical discomfort — are reported by up to 47% of regular users upon stopping. The fact that it's less severe than alcohol or opioid withdrawal doesn't make it imaginary. What you're feeling is real, and it has a known trajectory and endpoint.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"I'll just have one hit to take the edge off."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> Even a single use after abstinence resets dopamine sensitization and re-activates cue-reward pathways in your brain — making the next craving significantly stronger. Research consistently shows that "just one" leads back to regular use in the majority of cases. This is not a willpower failure; it's how the brain works. The craving telling you this is not your friend right now.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"I've quit before — I can do it whenever I want."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> Stopping and restarting repeatedly (yo-yo quitting) can make cravings more intense each cycle — a phenomenon called sensitization. Having quit before is a real strength; it proves you can do it. The skill being built now is staying quit. That's a different and harder thing, and it deserves to be treated that way.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"My anxiety is worse without it, so it must help."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> THC causes anxiety tolerance — your brain raises its baseline anxiety level to compensate for THC's dampening effect. When you stop, that elevated baseline feels like new or worsening anxiety. It isn't. It's your brain's compensation unwinding. This rebound anxiety fades within 3–4 weeks as your endocannabinoid system recalibrates. Using cannabis to treat anxiety caused by cannabis is a cycle, not a treatment.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"I only use it to sleep, so I need it."</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> THC suppresses REM sleep. While it helps with sleep onset, it degrades sleep quality over time — which is why so many regular users wake unrested. The insomnia in early recovery is temporary (typically 1–3 weeks). After that window, natural sleep quality significantly exceeds anything cannabis-assisted sleep provides. You are not losing a sleep tool — you are getting real sleep back.</div>
-  </div>
-
-  <div class="myth-card" onclick="toggleMyth(this)">
-    <div class="myth-header">
-      <div class="myth-x">MYTH</div>
-      <div class="myth-text">"Other people can smoke without problems — why can't I?"</div>
-      <div class="myth-arrow">▾</div>
-    </div>
-    <div class="myth-fact"><strong>Fact:</strong> Vulnerability to Cannabis Use Disorder is shaped by genetics, age of first use, frequency, potency, and mental health history. The fact that others use without addiction doesn't make your experience invalid — it makes it specific to your neurobiology. Comparison is one of the most common ways the addicted brain talks people out of recovery. Your experience is real regardless of anyone else's.</div>
-  </div>
 
 </div>
 
@@ -3755,13 +3679,6 @@ function toggleBodySys(header) {
   var isOpen = body.classList.contains('open');
   body.classList.toggle('open', !isOpen);
   if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
-}
-function toggleMyth(card) {
-  var fact = card.querySelector('.myth-fact');
-  var arrow = card.querySelector('.myth-arrow');
-  var isOpen = fact.classList.contains('open');
-  fact.classList.toggle('open', !isOpen);
-  card.classList.toggle('open', !isOpen);
 }
 
 // ——— Nav ———

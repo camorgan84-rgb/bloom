@@ -604,9 +604,6 @@
   .urge-int-row { display: flex; gap: 5px; }
 
   /* ─── Milestone Shield ──────────────────────────────── */
-  /* ─── Streak Meta (prev streak + cumulative) ────────── */
-  .streak-meta { display:flex; gap:8px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
-  .streak-meta-item { background:rgba(255,255,255,0.15); border-radius:50px; padding:4px 12px; font-size:0.75rem; color:rgba(255,255,255,0.85); display:none; }
 
   /* ─── Slip Modal ────────────────────────────────────── */
   .slip-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.55); z-index:1100; align-items:center; justify-content:center; padding:20px; }
@@ -761,10 +758,6 @@
       </div>
     </div>
     <div class="bloom-plant" id="bloomPlant" role="img" aria-label="Your recovery flower"></div>
-    <div class="streak-meta">
-      <div class="streak-meta-item" id="prevStreakBadge"></div>
-      <div class="streak-meta-item" id="cumulativeBadge"></div>
-    </div>
     <button class="btn-small" onclick="resetDate()">Change date</button>
   </div>
 </div>
@@ -2559,7 +2552,6 @@ function tickCounter() {
     try { renderBloom(diff / 86400000); } catch(e) {}
     try { renderBaby(); } catch(e) {}
     try { tickMilestones(); } catch(e) {}
-    try { renderStreakMeta(); } catch(e) {}
     try { renderEducation(diff / 3600000); } catch(e) {}
   } catch(e) {}
 }
@@ -3532,24 +3524,6 @@ function saveStreakToHistory(type) {
   if (history.length > 20) history = history.slice(0, 20);
   storageSet('streakHistory', JSON.stringify(history));
 }
-function renderStreakMeta() {
-  var history = getStreakHistory();
-  var stored = storageGet('quitDate');
-  if (!stored) return;
-  var currentDays = Math.floor((Date.now() - parseInt(stored, 10)) / 86400000);
-  var totalDays = currentDays + history.reduce(function(s, h) { return s + h.days; }, 0);
-
-  var prevEl = document.getElementById('prevStreakBadge');
-  var cumEl  = document.getElementById('cumulativeBadge');
-  if (prevEl && history.length > 0) {
-    prevEl.style.display = 'block';
-    prevEl.textContent = 'Previous streak: ' + history[0].days + 'd';
-  }
-  if (cumEl && history.length > 0) {
-    cumEl.style.display = 'block';
-    cumEl.textContent = totalDays + ' total clean days';
-  }
-}
 // ——— Slip Modal ———
 var pendingSlipEntry = null;
 function openSlipModal(entryData) {
@@ -3605,7 +3579,6 @@ function confirmSlip(type) {
   document.getElementById('logNotes').value = '';
   resetLogTrigger();
   renderLog();
-  renderStreakMeta();
 }
 
 // ——— Urge Log ———
@@ -4152,7 +4125,6 @@ window.addEventListener('DOMContentLoaded', () => {
   applyPregnancyMode();
   renderReasons();
   renderRituals();
-  renderStreakMeta();
 });
 </script>
 </body>
